@@ -10,6 +10,31 @@ Feito por **Matheus Castellar**. Projeto gratuito, da comunidade e sem fins lucr
 
 O Rota Auto recebe o vídeo do Android Auto no celular e o transmite pela rede Wi-Fi da moto para o Tripper Dash. Mapas e aplicativos de mídia compatíveis funcionam pelo Android Auto; o Rota Auto cuida da conexão, da adaptação da imagem e dos comandos da moto. Este é o projeto principal com Android Auto, não um aplicativo independente do SDK do Google Maps.
 
+## Na moto
+
+Fotos reais do Rota Auto funcionando em uma Guerrilla 450. A **logo Guerrilla, o widget de informações e o enquadramento são personalizações opcionais**, não a aparência padrão.
+
+<table>
+  <tr><th>Spotify</th><th>Mapa e música juntos</th></tr>
+  <tr>
+    <td><a href="docs/images/dashboard-spotify.jpg"><img src="docs/images/dashboard-spotify.jpg" height="360" alt="Spotify no Tripper Dash, com logo Guerrilla e widget de informações opcionais"></a></td>
+    <td><a href="docs/images/dashboard-maps-music.jpg"><img src="docs/images/dashboard-maps-music.jpg" height="360" alt="Tela dividida do Android Auto com Google Maps e Spotify na moto"></a></td>
+  </tr>
+</table>
+
+## No aplicativo
+
+Capturas da versão 0.1.47. Toque em uma imagem para ampliar. As ações dos botões são exemplos que podem ser personalizados.
+
+<table>
+  <tr><th>Conectar</th><th>Ajustes do menu</th><th>Comandos personalizados</th></tr>
+  <tr>
+    <td><a href="docs/images/app-connect.png"><img src="docs/images/app-connect.png" width="240" alt="Tela de conexão do Rota Auto"></a></td>
+    <td><a href="docs/images/app-menu-settings.png"><img src="docs/images/app-menu-settings.png" width="240" alt="Modo menu e ajuste do tempo de exibição"></a></td>
+    <td><a href="docs/images/app-controls.png"><img src="docs/images/app-controls.png" width="240" alt="Configuração das ações dos botões da moto"></a></td>
+  </tr>
+</table>
+
 ## Recursos
 
 - Busca e reconexão ao Wi-Fi da moto, com prévia interativa no celular.

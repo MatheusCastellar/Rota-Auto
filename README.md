@@ -10,6 +10,31 @@ Created by **Matheus Castellar**. A free, community project developed for riders
 
 Rota Auto receives Android Auto video on the phone and streams it over the motorcycle's Wi-Fi connection to the Tripper Dash. Maps and compatible media apps run through Android Auto; Rota Auto handles the connection, display adaptation and motorcycle controls. This is the main Android Auto project, not a standalone Google Maps SDK app.
 
+## On the motorcycle
+
+Real photos of Rota Auto running on a Guerrilla 450. The **Guerrilla logo, information widget and display layout are optional customizations**, not the default appearance.
+
+<table>
+  <tr><th>Spotify</th><th>Maps and music together</th></tr>
+  <tr>
+    <td><a href="docs/images/dashboard-spotify.jpg"><img src="docs/images/dashboard-spotify.jpg" height="360" alt="Spotify playing on the Tripper Dash, with an optional Guerrilla logo and information widget"></a></td>
+    <td><a href="docs/images/dashboard-maps-music.jpg"><img src="docs/images/dashboard-maps-music.jpg" height="360" alt="Android Auto split view with Google Maps and Spotify on the motorcycle"></a></td>
+  </tr>
+</table>
+
+## In the app
+
+Screenshots of version 0.1.47. Tap an image to view it at full size. Button assignments shown here are customizable examples.
+
+<table>
+  <tr><th>Connect</th><th>Menu settings</th><th>Custom controls</th></tr>
+  <tr>
+    <td><a href="docs/images/app-connect.png"><img src="docs/images/app-connect.png" width="240" alt="Rota Auto connection screen"></a></td>
+    <td><a href="docs/images/app-menu-settings.png"><img src="docs/images/app-menu-settings.png" width="240" alt="Menu mode and timeout settings"></a></td>
+    <td><a href="docs/images/app-controls.png"><img src="docs/images/app-controls.png" width="240" alt="Customizable motorcycle button assignments"></a></td>
+  </tr>
+</table>
+
 ## Features
 
 - Wi-Fi discovery and reconnection for the motorcycle, plus a touch-enabled phone preview.
