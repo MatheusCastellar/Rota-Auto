@@ -6,6 +6,13 @@ Português (Brasil) · [English](README.md)
 
 **[Baixar o APK](https://github.com/MatheusCastellar/Rota-Auto/releases/latest)**
 
+## Prévia funcionando e simulador do painel
+
+Capturas reais do aplicativo com o Android Auto funcionando. Toque para ampliar.
+
+<a href="docs/images/app-connect-live.png"><img src="docs/images/app-connect-live.png" width="300" alt="Android Auto live phone preview"></a>
+<a href="docs/images/app-widget-live.png"><img src="docs/images/app-widget-live.png" width="300" alt="Live display simulator with Spotify, logo and widget"></a>
+
 Feito por **Matheus Castellar**. Projeto gratuito, da comunidade e sem fins lucrativos, desenvolvido para motociclistas, sem exigir conta no Rota Auto. Versão atual do código: **0.1.47**.
 
 O Rota Auto recebe o vídeo do Android Auto no celular e o transmite pela rede Wi-Fi da moto para o Tripper Dash. Mapas e aplicativos de mídia compatíveis funcionam pelo Android Auto; o Rota Auto cuida da conexão, da adaptação da imagem e dos comandos da moto. Este é o projeto principal com Android Auto, não um aplicativo independente do SDK do Google Maps.
@@ -16,7 +23,7 @@ O Rota Auto recebe o vídeo do Android Auto no celular e o transmite pela rede W
 
 Escolha o idioma do aplicativo pelo **botão de bandeira ao lado de Ajustes**. A documentação do projeto está disponível em português e inglês.
 
-<a href="docs/images/app-languages.png"><img src="docs/images/app-languages.png" width="260" alt="Seletor de idiomas do Rota Auto: português brasileiro, inglês, espanhol e hindi"></a>
+<a href="docs/images/app-languages-live.png"><img src="docs/images/app-languages-live.png" width="260" alt="Seletor de idiomas do Rota Auto: português brasileiro, inglês, espanhol e hindi"></a>
 
 ## Na moto
 
@@ -37,7 +44,7 @@ Capturas novas, feitas diretamente no celular em **17/11/2026**, com a versão *
 <table>
   <tr><th>Conectar</th><th>Perfis e modos de controle</th><th>Comandos personalizados</th></tr>
   <tr>
-    <td><a href="docs/images/app-connect.png"><img src="docs/images/app-connect.png" width="240" alt="Tela atual de conexão do Rota Auto"></a></td>
+    <td><a href="docs/images/app-connect-live.png"><img src="docs/images/app-connect-live.png" width="240" alt="Tela atual de conexão do Rota Auto"></a></td>
     <td><a href="docs/images/app-menu-settings.png"><img src="docs/images/app-menu-settings.png" width="240" alt="Modo tradicional, modo menu e perfis renomeáveis"></a></td>
     <td><a href="docs/images/app-controls.png"><img src="docs/images/app-controls.png" width="240" alt="Ações atuais dos botões e opções da prévia dos comandos"></a></td>
   </tr>
@@ -57,16 +64,16 @@ Ajuste enquadramento, distorção, tamanho e posição da imagem, logo da moto e
 <table>
   <tr><th>Enquadramento e distorção</th><th>Logo da moto</th><th>Widget de informações</th></tr>
   <tr>
-    <td><a href="docs/images/app-geometry.png"><img src="docs/images/app-geometry.png" width="240" alt="Ajustes de distorção, largura, altura e posição da imagem"></a></td>
-    <td><a href="docs/images/app-logo.png"><img src="docs/images/app-logo.png" width="240" alt="Seleção de logo Himalayan, Guerrilla, Bear ou nenhuma; tamanho e posição"></a></td>
-    <td><a href="docs/images/app-widget.png"><img src="docs/images/app-widget.png" width="240" alt="Widget opcional com formato linear ou quadrado e ajustes de tamanho e altura"></a></td>
+    <td><a href="docs/images/app-geometry-live.png"><img src="docs/images/app-geometry-live.png" width="240" alt="Ajustes de distorção, largura, altura e posição da imagem"></a></td>
+    <td><a href="docs/images/app-logo-live.png"><img src="docs/images/app-logo-live.png" width="240" alt="Seleção de logo Himalayan, Guerrilla, Bear ou nenhuma; tamanho e posição"></a></td>
+    <td><a href="docs/images/app-widget-live.png"><img src="docs/images/app-widget-live.png" width="240" alt="Widget opcional com formato linear ou quadrado e ajustes de tamanho e altura"></a></td>
   </tr>
 </table>
 
 <details>
 <summary>Ver opções da barra e modos de imagem</summary>
 
-<a href="docs/images/app-customization.png"><img src="docs/images/app-customization.png" width="280" alt="Visibilidade da barra, tempo de exibição e modos de imagem"></a>
+<a href="docs/images/app-customization-live.png"><img src="docs/images/app-customization-live.png" width="280" alt="Visibilidade da barra, tempo de exibição e modos de imagem"></a>
 
 </details>
 

@@ -6,6 +6,13 @@
 
 **[Download the APK](https://github.com/MatheusCastellar/Rota-Auto/releases/latest)**
 
+## Live preview and display simulator
+
+Actual app screenshots with Android Auto running. Click to enlarge.
+
+<a href="docs/images/app-connect-live.png"><img src="docs/images/app-connect-live.png" width="300" alt="Android Auto live phone preview"></a>
+<a href="docs/images/app-widget-live.png"><img src="docs/images/app-widget-live.png" width="300" alt="Live display simulator with Spotify, logo and widget"></a>
+
 Created by **Matheus Castellar**. A free, community project developed for riders, with no Rota Auto account required. Current source version: **0.1.47**.
 
 Rota Auto receives Android Auto video on the phone and streams it over the motorcycle's Wi-Fi connection to the Tripper Dash. Maps and compatible media apps run through Android Auto; Rota Auto handles the connection, display adaptation and motorcycle controls. This is the main Android Auto project, not a standalone Google Maps SDK app.
@@ -16,7 +23,7 @@ Rota Auto receives Android Auto video on the phone and streams it over the motor
 
 Choose the interface language from the flag button beside Settings. The app includes a language selector; the project documentation is available in English and Portuguese.
 
-<a href="docs/images/app-languages.png"><img src="docs/images/app-languages.png" width="260" alt="Rota Auto language selector: Brazilian Portuguese, English, Spanish and Hindi"></a>
+<a href="docs/images/app-languages-live.png"><img src="docs/images/app-languages-live.png" width="260" alt="Rota Auto language selector: Brazilian Portuguese, English, Spanish and Hindi"></a>
 
 ## On the motorcycle
 
@@ -37,7 +44,7 @@ Screenshots captured directly on the phone on **November 17, 2026**, running **0
 <table>
   <tr><th>Connect</th><th>Profiles and control modes</th><th>Custom controls</th></tr>
   <tr>
-    <td><a href="docs/images/app-connect.png"><img src="docs/images/app-connect.png" width="240" alt="Current Rota Auto connection screen"></a></td>
+    <td><a href="docs/images/app-connect-live.png"><img src="docs/images/app-connect-live.png" width="240" alt="Current Rota Auto connection screen"></a></td>
     <td><a href="docs/images/app-menu-settings.png"><img src="docs/images/app-menu-settings.png" width="240" alt="Traditional mode, menu mode and renameable profiles"></a></td>
     <td><a href="docs/images/app-controls.png"><img src="docs/images/app-controls.png" width="240" alt="Button actions and control preview options"></a></td>
   </tr>
@@ -57,16 +64,16 @@ Adjust image fitting, distortion, size and position, the motorcycle logo and the
 <table>
   <tr><th>Image fitting and distortion</th><th>Motorcycle logo</th><th>Information widget</th></tr>
   <tr>
-    <td><a href="docs/images/app-geometry.png"><img src="docs/images/app-geometry.png" width="240" alt="Image distortion, width, height and position settings"></a></td>
-    <td><a href="docs/images/app-logo.png"><img src="docs/images/app-logo.png" width="240" alt="Optional Himalayan, Guerrilla or Bear logo with size and position settings"></a></td>
-    <td><a href="docs/images/app-widget.png"><img src="docs/images/app-widget.png" width="240" alt="Optional linear or square widget with size and height controls"></a></td>
+    <td><a href="docs/images/app-geometry-live.png"><img src="docs/images/app-geometry-live.png" width="240" alt="Image distortion, width, height and position settings"></a></td>
+    <td><a href="docs/images/app-logo-live.png"><img src="docs/images/app-logo-live.png" width="240" alt="Optional Himalayan, Guerrilla or Bear logo with size and position settings"></a></td>
+    <td><a href="docs/images/app-widget-live.png"><img src="docs/images/app-widget-live.png" width="240" alt="Optional linear or square widget with size and height controls"></a></td>
   </tr>
 </table>
 
 <details>
 <summary>View taskbar options and image modes</summary>
 
-<a href="docs/images/app-customization.png"><img src="docs/images/app-customization.png" width="280" alt="Taskbar visibility, display duration and image modes"></a>
+<a href="docs/images/app-customization-live.png"><img src="docs/images/app-customization-live.png" width="280" alt="Taskbar visibility, display duration and image modes"></a>
 
 </details>
 
