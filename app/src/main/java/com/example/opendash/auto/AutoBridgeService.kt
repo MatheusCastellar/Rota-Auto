@@ -87,7 +87,10 @@ class AutoBridgeService:Service() {
     private val controlPreferences by lazy { getSharedPreferences("auto-controls-options",MODE_PRIVATE) }
     private val menuSession by lazy { MenuSession(idleMs=MenuControls.duration(controlPreferences)) }
     private var menuExpiry:Job?=null
+    private val profileIdle=ProfileIdleReturn()
+    private var profileIdleJob:Job?=null
     private val controlPreferenceListener=SharedPreferences.OnSharedPreferenceChangeListener { _,key ->
+        if(key in listOf(ProfileIdleReturn.KEY,BikeControlLayout.PROFILE,MenuControls.ENABLED,"enabled")) scheduleProfileReturn()
         if(key=="video-fps" || key==VideoProfile.BITRATE || key==VideoProfile.MANUAL) bridge?.setProfile(VideoProfile.fromPreferences(controlPreferences))
         if(key==TemporaryBar.SECONDS || key==TemporaryBar.TOGGLE) bridge?.setBarOptions(controlPreferences.getInt(TemporaryBar.SECONDS,5),controlPreferences.getBoolean(TemporaryBar.TOGGLE,false))
         if(key=="clean-projection") dash.cleanProjection=controlPreferences.getBoolean("clean-projection",true)
@@ -173,6 +176,7 @@ class AutoBridgeService:Service() {
             while(isActive) { aa?.setNight(MapDayNight.current(controlPreferences)); delay(30_000) }
         }
         updateControlLabel()
+        scheduleProfileReturn()
         val powerFilter=IntentFilter().apply { addAction(Intent.ACTION_SCREEN_OFF); addAction(Intent.ACTION_SCREEN_ON); addAction(Intent.ACTION_USER_PRESENT) }
         if(Build.VERSION.SDK_INT>=33) registerReceiver(powerReceiver,powerFilter,RECEIVER_NOT_EXPORTED) else registerReceiver(powerReceiver,powerFilter)
         contentResolver.registerContentObserver(android.provider.Settings.Global.getUriFor(android.provider.Settings.Global.ADB_ENABLED),false,debuggingObserver)
@@ -401,6 +405,7 @@ class AutoBridgeService:Service() {
             return
         }
         val intercom=BikeControlLayout.active(controlPreferences)
+        scheduleProfileReturn()
         fun command(double:Boolean)=BikeControlLayout.binding(controlPreferences,intercom,action,double)
         val now=SystemClock.elapsedRealtime()
         val previousDeadline=gestures.deadline
@@ -426,6 +431,20 @@ class AutoBridgeService:Service() {
     private fun syncMenuProfile() {
         if(controlPreferences.getInt(MenuControls.ACTIVE,1)!=menuSession.profile)
             controlPreferences.edit().putInt(MenuControls.ACTIVE,menuSession.profile).apply()
+    }
+    private fun scheduleProfileReturn() {
+        profileIdleJob?.cancel(); profileIdleJob=null
+        profileIdle.reset(SystemClock.elapsedRealtime(),
+            controlPreferences.getBoolean(ProfileIdleReturn.KEY,false) && controlPreferences.getBoolean("enabled",true),
+            controlPreferences.getBoolean(MenuControls.ENABLED,false),BikeControlLayout.active(controlPreferences))
+        val deadline=profileIdle.deadline ?: return
+        profileIdleJob=scope.launch {
+            delay((deadline-SystemClock.elapsedRealtime()).coerceAtLeast(0))
+            if(!ending && profileIdle.expired(SystemClock.elapsedRealtime()) && !BikeInputCapture.blocksActions) {
+                cancelButtonGesture()
+                controlPreferences.edit().putInt(BikeControlLayout.PROFILE,1).apply()
+            }
+        }
     }
     private fun closeMenu() { menuSession.close(); menuExpiry?.cancel(); menuExpiry=null; bridge?.showProfilePopup(null); syncMenuProfile() }
     private fun renderMenu() {
@@ -559,7 +578,8 @@ class AutoBridgeService:Service() {
     }
     private fun updateControlLabel() {
         labelJob?.cancel()
-        panelText("Android Auto")
+        labelJob=null
+        panelText(latestNavigation.panelTitle)
     }
     private fun panelText(label:String) {
         // Update the outside projection label and the inside media strip together.
@@ -653,6 +673,7 @@ class AutoBridgeService:Service() {
         val (distance,unit)=AaNavigationStatus.distance(nav.distanceMeters)
         val (remaining,remainingUnit)=AaNavigationStatus.destinationDistance(nav.destinationMeters,nav.active)
         dash.setProjectionGuidance(nav.active,nav.glyph,distance,unit,remaining,remainingUnit)
+        if(labelJob?.isActive!=true) updateControlLabel()
     }
     private fun foreground() {
         getSystemService(NotificationManager::class.java).createNotificationChannel(NotificationChannel("auto","Android Auto no painel",NotificationManager.IMPORTANCE_LOW))

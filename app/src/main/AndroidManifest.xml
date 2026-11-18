@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -28,6 +29,10 @@
         <intent><action android:name="androidx.car.app.messaging.action.HANDLE_CAR_MESSAGING" /></intent>
     </queries>
     <application android:label="Rota Auto" android:theme="@style/AppTheme" android:icon="@drawable/ic_route" android:allowBackup="false" android:dataExtractionRules="@xml/data_extraction_rules" android:supportsRtl="true">
+        <activity android:name=".auto.UpdateActivity" android:exported="false" />
+        <provider android:name=".auto.UpdateFileProvider" android:authorities="${applicationId}.updates" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/update_paths" />
+        </provider>
         <activity android:name=".MainActivity" android:exported="false" />
         <activity android:name=".auto.BlackScreenActivity" android:exported="false" />
         <activity android:name=".auto.DiagnosticActivity" android:exported="false" />

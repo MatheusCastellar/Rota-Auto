@@ -11,6 +11,23 @@ import java.time.Duration
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk=[35])
 class ProfileSwitchTest {
+    @Test fun idleReturnRunsInServiceResetsOnInputAndDoesNotChangeBindings() {
+        val p=RuntimeEnvironment.getApplication().getSharedPreferences("auto-controls-options",Context.MODE_PRIVATE)
+        p.edit().putInt(BikeControlLayout.PROFILE,2).putBoolean(ProfileIdleReturn.KEY,true)
+            .putString(BikeControlLayout.key(2,TripperControls.Action.SELECT,false),"NONE").commit()
+        val service=Robolectric.buildService(AutoBridgeService::class.java).create()
+        val main=Shadows.shadowOf(Looper.getMainLooper())
+        try {
+            main.idleFor(Duration.ofSeconds(14)); assertEquals(2,BikeControlLayout.active(p))
+            AutoBridgeService.testControl(TripperControls.Action.SELECT); main.idle()
+            main.idleFor(Duration.ofSeconds(14)); assertEquals(2,BikeControlLayout.active(p))
+            main.idleFor(Duration.ofSeconds(1)); assertEquals(1,BikeControlLayout.active(p))
+            assertEquals("NONE",p.getString(BikeControlLayout.key(2,TripperControls.Action.SELECT,false),null))
+            assertEquals(true,SettingsImport.parse(SettingsExport.create(RuntimeEnvironment.getApplication(),false)).options[ProfileIdleReturn.KEY])
+            p.edit().putBoolean(ProfileIdleReturn.KEY,false).putInt(BikeControlLayout.PROFILE,3).commit(); main.idle()
+            main.idleFor(Duration.ofSeconds(16)); assertEquals(3,BikeControlLayout.active(p))
+        } finally { service.destroy() }
+    }
     @Test fun gpsBubbleBindingTogglesSavedVisibilityAndLiveDashWithoutChangingProfile() {
         val app=RuntimeEnvironment.getApplication()
         val p=app.getSharedPreferences("auto-controls-options",Context.MODE_PRIVATE)

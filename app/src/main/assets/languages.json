@@ -1673,35 +1673,90 @@
     "Burbuja visible",
     "बबल दिखाई दे रहा है"
   ],
-  ["Mapa: dia e noite", "Map: day and night", "Mapa: día y noche", "मैप: दिन और रात"],
-  ["Automático", "Automatic", "Automático", "स्वचालित"],
-  ["Dia", "Day", "Día", "दिन"],
-  ["Noite", "Night", "Noche", "रात"],
+  [
+    "Mapa: dia e noite",
+    "Map: day and night",
+    "Mapa: día y noche",
+    "मैप: दिन और रात"
+  ],
+  [
+    "Automático",
+    "Automatic",
+    "Automático",
+    "स्वचालित"
+  ],
+  [
+    "Dia",
+    "Day",
+    "Día",
+    "दिन"
+  ],
+  [
+    "Noite",
+    "Night",
+    "Noche",
+    "रात"
+  ],
   [
     "Automático: dia das 6h às 18h; noite nos demais horários. Usa o horário do celular e muda só o mapa do Android Auto.",
     "Automatic: day from 6 am to 6 pm; night otherwise. Uses your phone's local time and changes only the Android Auto map.",
     "Automático: día de 6 a 18 h; noche el resto del tiempo. Usa la hora del teléfono y cambia solo el mapa de Android Auto.",
     "स्वचालित: सुबह 6 से शाम 6 तक दिन, बाकी समय रात। फ़ोन के स्थानीय समय का उपयोग करता है और केवल Android Auto मैप बदलता है।"
   ],
-  ["Voltar à configuração anterior", "Return to previous settings", "Volver a la configuración anterior", "पिछली सेटिंग पर वापस जाएँ"],
+  [
+    "Voltar à configuração anterior",
+    "Return to previous settings",
+    "Volver a la configuración anterior",
+    "पिछली सेटिंग पर वापस जाएँ"
+  ],
   [
     "Guardamos uma cópia antes de importar configurações ou restaurar vídeo e perfis. Ela fica somente neste celular.",
     "We save a copy before importing settings or resetting video and profiles. It stays only on this phone.",
     "Guardamos una copia antes de importar ajustes o restablecer vídeo y perfiles. Se guarda solo en este teléfono.",
     "सेटिंग आयात करने या वीडियो और प्रोफ़ाइल रीसेट करने से पहले एक कॉपी सहेजते हैं। यह केवल इस फ़ोन पर रहती है।"
   ],
-  ["Cópia salva em", "Copy saved on", "Copia guardada el", "कॉपी सहेजी गई:"],
-  ["Antes de:", "Before:", "Antes de:", "इससे पहले:"],
-  ["Restaurar", "Restore", "Restaurar", "बहाल करें"],
+  [
+    "Cópia salva em",
+    "Copy saved on",
+    "Copia guardada el",
+    "कॉपी सहेजी गई:"
+  ],
+  [
+    "Antes de:",
+    "Before:",
+    "Antes de:",
+    "इससे पहले:"
+  ],
+  [
+    "Restaurar",
+    "Restore",
+    "Restaurar",
+    "बहाल करें"
+  ],
   [
     "Restaura os ajustes e os três perfis. A conexão será parada. A configuração atual será guardada para você poder voltar a ela.",
     "Restores settings and all three profiles. The connection will stop. Your current settings will be saved so you can return to them.",
     "Restaura los ajustes y los tres perfiles. La conexión se detendrá. Se guardarán los ajustes actuales para poder volver a ellos.",
     "सेटिंग और तीनों प्रोफ़ाइल बहाल करता है। कनेक्शन रुक जाएगा। वर्तमान सेटिंग सहेजी जाएगी ताकि आप उस पर वापस जा सकें।"
   ],
-  ["Ainda não há uma configuração anterior salva.", "No previous settings have been saved yet.", "Aún no hay una configuración anterior guardada.", "अभी कोई पिछली सेटिंग सहेजी नहीं गई है।"],
-  ["Não foi possível ler a configuração anterior.", "Could not read the previous settings.", "No se pudo leer la configuración anterior.", "पिछली सेटिंग पढ़ी नहीं जा सकी।"],
-  ["Não foi possível restaurar a configuração anterior.", "Could not restore the previous settings.", "No se pudo restaurar la configuración anterior.", "पिछली सेटिंग बहाल नहीं हो सकी।"],
+  [
+    "Ainda não há uma configuração anterior salva.",
+    "No previous settings have been saved yet.",
+    "Aún no hay una configuración anterior guardada.",
+    "अभी कोई पिछली सेटिंग सहेजी नहीं गई है।"
+  ],
+  [
+    "Não foi possível ler a configuração anterior.",
+    "Could not read the previous settings.",
+    "No se pudo leer la configuración anterior.",
+    "पिछली सेटिंग पढ़ी नहीं जा सकी।"
+  ],
+  [
+    "Não foi possível restaurar a configuração anterior.",
+    "Could not restore the previous settings.",
+    "No se pudo restaurar la configuración anterior.",
+    "पिछली सेटिंग बहाल नहीं हो सकी।"
+  ],
   [
     "Não foi possível guardar a configuração anterior. Nada foi alterado.",
     "Could not save the previous settings. Nothing was changed.",
@@ -1714,52 +1769,370 @@
     "Configuración anterior restaurada. Ya puedes iniciar Android Auto.",
     "पिछली सेटिंग बहाल हो गई। अब आप Android Auto शुरू कर सकते हैं।"
   ],
-  ["Abrir aplicativo: Outro", "Open app: Other", "Abrir aplicación: Otra", "ऐप खोलें: अन्य"],
-  ["Mostrar comandos ao trocar perfil", "Show controls when switching profiles", "Mostrar controles al cambiar de perfil", "प्रोफ़ाइल बदलने पर नियंत्रण दिखाएँ"],
-  ["Círculo por 5 segundos com os comandos de dentro. 2× indica dois toques.", "Show inside controls for 5 seconds. 2× means double press.", "Muestra los controles de dentro durante 5 segundos. 2× indica doble pulsación.", "अंदर के नियंत्रण 5 सेकंड दिखते हैं। 2× का मतलब दो बार दबाना है।"],
-  ["Prévia dos comandos", "Controls preview", "Vista previa de controles", "नियंत्रण पूर्वावलोकन"],
-  ["Comandos de dentro. 2× indica dois toques.", "Inside controls. 2× means double press.", "Controles de dentro. 2× indica doble pulsación.", "अंदर के नियंत्रण। 2× का मतलब दो बार दबाना है।"],
-  ["Tempo dos comandos", "Controls display time", "Duración de controles", "नियंत्रण दिखाने का समय"],
-  ["Aplicativo:", "App:", "Aplicación:", "ऐप:"],
-  ["Escolher aplicativo", "Choose app", "Elegir aplicación", "ऐप चुनें"],
-  ["Não instalado · escolher outro", "Not installed · choose another", "No instalada · elegir otra", "इंस्टॉल नहीं है · दूसरा चुनें"],
-  ["Nenhum aplicativo compatível com Android Auto encontrado.", "No Android Auto compatible apps found.", "No se encontraron aplicaciones compatibles con Android Auto.", "Android Auto के अनुकूल कोई ऐप नहीं मिला।"],
-  ["Escolha o aplicativo em Controles da moto.", "Choose the app under Bike controls.", "Elige la aplicación en Controles de la moto.", "मोटरसाइकिल नियंत्रण में ऐप चुनें।"],
-  ["Inicie o Android Auto para testar o aplicativo.", "Start Android Auto to test the app.", "Inicia Android Auto para probar la aplicación.", "ऐप का परीक्षण करने के लिए Android Auto शुरू करें।"],
-  ["Aplicativo não instalado ou incompatível com Android Auto", "App not installed or incompatible with Android Auto", "Aplicación no instalada o incompatible con Android Auto", "ऐप इंस्टॉल नहीं है या Android Auto के अनुकूल नहीं है"],
-  ["Não foi possível reconhecer o ícone do aplicativo", "Could not recognize the app icon", "No se pudo reconocer el icono de la aplicación", "ऐप का आइकन पहचाना नहीं जा सका"],
+  [
+    "Abrir aplicativo: Outro",
+    "Open app: Other",
+    "Abrir aplicación: Otra",
+    "ऐप खोलें: अन्य"
+  ],
+  [
+    "Mostrar comandos ao trocar perfil",
+    "Show controls when switching profiles",
+    "Mostrar controles al cambiar de perfil",
+    "प्रोफ़ाइल बदलने पर नियंत्रण दिखाएँ"
+  ],
+  [
+    "Círculo por 5 segundos com os comandos de dentro. 2× indica dois toques.",
+    "Show inside controls for 5 seconds. 2× means double press.",
+    "Muestra los controles de dentro durante 5 segundos. 2× indica doble pulsación.",
+    "अंदर के नियंत्रण 5 सेकंड दिखते हैं। 2× का मतलब दो बार दबाना है।"
+  ],
+  [
+    "Prévia dos comandos",
+    "Controls preview",
+    "Vista previa de controles",
+    "नियंत्रण पूर्वावलोकन"
+  ],
+  [
+    "Comandos de dentro. 2× indica dois toques.",
+    "Inside controls. 2× means double press.",
+    "Controles de dentro. 2× indica doble pulsación.",
+    "अंदर के नियंत्रण। 2× का मतलब दो बार दबाना है।"
+  ],
+  [
+    "Tempo dos comandos",
+    "Controls display time",
+    "Duración de controles",
+    "नियंत्रण दिखाने का समय"
+  ],
+  [
+    "Aplicativo:",
+    "App:",
+    "Aplicación:",
+    "ऐप:"
+  ],
+  [
+    "Escolher aplicativo",
+    "Choose app",
+    "Elegir aplicación",
+    "ऐप चुनें"
+  ],
+  [
+    "Não instalado · escolher outro",
+    "Not installed · choose another",
+    "No instalada · elegir otra",
+    "इंस्टॉल नहीं है · दूसरा चुनें"
+  ],
+  [
+    "Nenhum aplicativo compatível com Android Auto encontrado.",
+    "No Android Auto compatible apps found.",
+    "No se encontraron aplicaciones compatibles con Android Auto.",
+    "Android Auto के अनुकूल कोई ऐप नहीं मिला।"
+  ],
+  [
+    "Escolha o aplicativo em Controles da moto.",
+    "Choose the app under Bike controls.",
+    "Elige la aplicación en Controles de la moto.",
+    "मोटरसाइकिल नियंत्रण में ऐप चुनें।"
+  ],
+  [
+    "Inicie o Android Auto para testar o aplicativo.",
+    "Start Android Auto to test the app.",
+    "Inicia Android Auto para probar la aplicación.",
+    "ऐप का परीक्षण करने के लिए Android Auto शुरू करें।"
+  ],
+  [
+    "Aplicativo não instalado ou incompatível com Android Auto",
+    "App not installed or incompatible with Android Auto",
+    "Aplicación no instalada o incompatible con Android Auto",
+    "ऐप इंस्टॉल नहीं है या Android Auto के अनुकूल नहीं है"
+  ],
+  [
+    "Não foi possível reconhecer o ícone do aplicativo",
+    "Could not recognize the app icon",
+    "No se pudo reconocer el icono de la aplicación",
+    "ऐप का आइकन पहचाना नहीं जा सका"
+  ],
   [
     "Aplicativo não encontrado. Confira se ele está visível no menu do Android Auto.",
     "App not found. Check that it is visible in the Android Auto menu.",
     "Aplicación no encontrada. Comprueba que esté visible en el menú de Android Auto.",
     "ऐप नहीं मिला। जाँचें कि वह Android Auto मेनू में दिखाई दे रहा है।"
+  ],
+  [
+    "Tradicional",
+    "Traditional",
+    "Tradicional",
+    "पारंपरिक"
+  ],
+  [
+    "Modo menu",
+    "Menu mode",
+    "Modo menú",
+    "मेनू मोड"
+  ],
+  [
+    "Menu fechado",
+    "Menu closed",
+    "Menú cerrado",
+    "मेनू बंद"
+  ],
+  [
+    "Menu aberto",
+    "Menu open",
+    "Menú abierto",
+    "मेनू खुला"
+  ],
+  [
+    "Abrir menu",
+    "Open menu",
+    "Abrir menú",
+    "मेनू खोलें"
+  ],
+  [
+    "Abrir menu com",
+    "Open menu with",
+    "Abrir menú con",
+    "मेनू खोलने का बटन"
+  ],
+  [
+    "Trocar perfil com",
+    "Switch profile with",
+    "Cambiar perfil con",
+    "प्रोफ़ाइल बदलने का बटन"
+  ],
+  [
+    "Voltar aos ajustes",
+    "Back to settings",
+    "Volver a ajustes",
+    "सेटिंग में वापस जाएँ"
+  ],
+  [
+    "Selecione um botão",
+    "Select a button",
+    "Selecciona un botón",
+    "एक बटन चुनें"
+  ],
+  [
+    "Centro",
+    "Center",
+    "Centro",
+    "बीच"
+  ],
+  [
+    "Ação",
+    "Action",
+    "Acción",
+    "क्रिया"
+  ],
+  [
+    "Um toque executa. O menu fecha após 5 segundos sem interação.",
+    "One press runs an action. The menu closes after 5 seconds without input.",
+    "Un toque ejecuta una acción. El menú se cierra tras 5 segundos sin interacción.",
+    "एक बार दबाने पर क्रिया चलेगी। 5 सेकंड तक कोई बटन न दबाने पर मेनू बंद होगा।"
+  ],
+  [
+    "Quatro perfis do menu. Trocar perfil mantém o círculo aberto.",
+    "Four menu profiles. Switching profiles keeps the circle open.",
+    "Cuatro perfiles del menú. Cambiar de perfil mantiene el círculo abierto.",
+    "मेनू की चार प्रोफ़ाइल। प्रोफ़ाइल बदलने पर वृत्त खुला रहता है।"
+  ],
+  [
+    "Comandos únicos: não mudam ao trocar de perfil.",
+    "Shared controls: unchanged when switching profiles.",
+    "Controles comunes: no cambian al cambiar de perfil.",
+    "साझा नियंत्रण: प्रोफ़ाइल बदलने पर नहीं बदलते।"
+  ],
+  [
+    "Reservado para trocar entre os quatro perfis.",
+    "Reserved for switching between the four profiles.",
+    "Reservado para cambiar entre los cuatro perfiles.",
+    "चार प्रोफ़ाइल के बीच बदलने के लिए आरक्षित।"
+  ],
+  [
+    "Reservado para abrir o menu. O primeiro toque não executa a opção de dentro.",
+    "Reserved for opening the menu. The first press does not run the action inside.",
+    "Reservado para abrir el menú. El primer toque no ejecuta la acción de dentro.",
+    "मेनू खोलने के लिए आरक्षित। पहले दबाने पर अंदर की क्रिया नहीं चलती।"
+  ],
+  [
+    "Testar usa o estado atual do menu na moto.",
+    "Test uses the current menu state on the bike.",
+    "Probar usa el estado actual del menú en la moto.",
+    "परीक्षण बाइक पर मेनू की वर्तमान स्थिति का उपयोग करता है।"
+  ],
+  [
+    "Menu fechado: comandos únicos. Menu aberto: quatro perfis. Sem dois toques.",
+    "Menu closed: shared controls. Menu open: four profiles. No double presses.",
+    "Menú cerrado: controles comunes. Menú abierto: cuatro perfiles. Sin doble toque.",
+    "मेनू बंद: साझा नियंत्रण। मेनू खुला: चार प्रोफ़ाइल। दोहरे दबाव नहीं।"
+  ],
+  [
+    "Três perfis tradicionais com um ou dois toques. Suas configurações são preservadas.",
+    "Three traditional profiles with single or double presses. Your settings are preserved.",
+    "Tres perfiles tradicionales con uno o dos toques. Se conservan tus ajustes.",
+    "एक या दो बार दबाने वाली तीन पारंपरिक प्रोफ़ाइल। आपकी सेटिंग सुरक्षित रहती हैं।"
+  ],
+  [
+    "Somente o perfil tradicional atual",
+    "Current traditional profile only",
+    "Solo el perfil tradicional actual",
+    "केवल वर्तमान पारंपरिक प्रोफ़ाइल"
+  ],
+  [
+    "Ao fechar, volta ao Perfil 1. Cada toque reinicia o tempo.",
+    "Closing returns to Profile 1. Each press resets the timer.",
+    "Al cerrar, vuelve al Perfil 1. Cada toque reinicia el tiempo.",
+    "बंद होने पर प्रोफ़ाइल 1 पर लौटता है। हर बार दबाने से समय फिर शुरू होता है।"
+  ],
+  [
+    "Tempo do menu",
+    "Menu timeout",
+    "Tiempo del menú",
+    "मेनू का समय"
+  ],
+  [
+    "Três perfis do menu. Trocar perfil mantém o círculo aberto.",
+    "Three menu profiles. Switching profiles keeps the circle open.",
+    "Tres perfiles del menú. Cambiar de perfil mantiene el círculo abierto.",
+    "मेनू की तीन प्रोफ़ाइल। प्रोफ़ाइल बदलने पर वृत्त खुला रहता है।"
+  ],
+  [
+    "Reservado para trocar entre os três perfis.",
+    "Reserved for switching between the three profiles.",
+    "Reservado para cambiar entre los tres perfiles.",
+    "तीन प्रोफ़ाइल के बीच बदलने के लिए आरक्षित।"
+  ],
+  [
+    "Menu fechado: comandos únicos. Menu aberto: três perfis. Sem dois toques.",
+    "Menu closed: shared controls. Menu open: three profiles. No double presses.",
+    "Menú cerrado: controles comunes. Menú abierto: tres perfiles. Sin doble toque.",
+    "मेनू बंद: साझा नियंत्रण। मेनू खुला: तीन प्रोफ़ाइल। दोहरे दबाव नहीं।"
+  ],
+  [
+    "Nome do perfil",
+    "Profile name",
+    "Nombre del perfil",
+    "प्रोफ़ाइल का नाम"
+  ],
+  [
+    "Renomear perfil",
+    "Rename profile",
+    "Renombrar perfil",
+    "प्रोफ़ाइल का नाम बदलें"
+  ],
+  [
+    "Até 20 caracteres. Deixe vazio para usar o nome padrão.",
+    "Up to 20 characters. Leave blank for the default name.",
+    "Hasta 20 caracteres. Deja vacío para usar el nombre predeterminado.",
+    "अधिकतम 20 अक्षर। डिफ़ॉल्ट नाम के लिए खाली छोड़ें।"
+  ],
+  [
+    "Atualizações",
+    "Updates",
+    "Actualizaciones",
+    "अपडेट"
+  ],
+  [
+    "Verifica novas versões no GitHub. O Android pede confirmação para instalar. Suas configurações são mantidas.",
+    "Checks GitHub for new versions. Android asks you to confirm installation. Your settings are kept.",
+    "Busca nuevas versiones en GitHub. Android solicita confirmar la instalación. Se conservan tus ajustes.",
+    "GitHub पर नए संस्करण खोजता है। इंस्टॉल करने के लिए Android आपकी पुष्टि माँगता है। आपकी सेटिंग्स सुरक्षित रहती हैं।"
+  ],
+  [
+    "Buscar atualizações automaticamente",
+    "Check for updates automatically",
+    "Buscar actualizaciones automáticamente",
+    "अपडेट अपने आप खोजें"
+  ],
+  [
+    "Verificando atualização…",
+    "Checking for updates…",
+    "Buscando actualizaciones…",
+    "अपडेट खोज रहे हैं…"
+  ],
+  [
+    "Verificar agora",
+    "Check now",
+    "Buscar ahora",
+    "अभी जाँचें"
+  ],
+  [
+    "Atualização disponível",
+    "Update available",
+    "Actualización disponible",
+    "अपडेट उपलब्ध है"
+  ],
+  [
+    "Você está na versão mais recente.",
+    "You have the latest version.",
+    "Tienes la última versión.",
+    "आपके पास नवीनतम संस्करण है।"
+  ],
+  [
+    "Baixar atualização",
+    "Download update",
+    "Descargar actualización",
+    "अपडेट डाउनलोड करें"
+  ],
+  [
+    "Baixando atualização",
+    "Downloading update",
+    "Descargando actualización",
+    "अपडेट डाउनलोड हो रहा है"
+  ],
+  [
+    "Atualização pronta para instalar",
+    "Update ready to install",
+    "Actualización lista para instalar",
+    "अपडेट इंस्टॉल करने के लिए तैयार है"
+  ],
+  [
+    "Instalar atualização",
+    "Install update",
+    "Instalar actualización",
+    "अपडेट इंस्टॉल करें"
+  ],
+  [
+    "Não foi possível verificar. Confira a internet e tente novamente.",
+    "Could not check. Check your internet connection and try again.",
+    "No se pudo comprobar. Revisa internet e inténtalo de nuevo.",
+    "जाँच नहीं हो सकी। इंटरनेट कनेक्शन जाँचें और फिर कोशिश करें।"
+  ],
+  [
+    "Não foi possível validar ou baixar a atualização. Tente novamente.",
+    "Could not verify or download the update. Try again.",
+    "No se pudo verificar o descargar la actualización. Inténtalo de nuevo.",
+    "अपडेट की पुष्टि या डाउनलोड नहीं हो सका। फिर कोशिश करें।"
+  ],
+  [
+    "Permita instalar pelo Rota Auto e volte para tocar em Instalar atualização.",
+    "Allow installs from Rota Auto, then return and tap Install update.",
+    "Permite instalaciones desde Rota Auto, vuelve y pulsa Instalar actualización.",
+    "Rota Auto से इंस्टॉल करने की अनुमति दें, फिर वापस आकर अपडेट इंस्टॉल करें पर टैप करें।"
+  ],
+  [
+    "Não foi possível abrir o instalador da atualização.",
+    "Could not open the update installer.",
+    "No se pudo abrir el instalador.",
+    "अपडेट इंस्टॉलर नहीं खुल सका।"
+  ],
+  [
+    "Voltar ao Perfil 1 após 15 segundos sem comandos",
+    "Return to Profile 1 after 15 seconds without input",
+    "Volver al Perfil 1 tras 15 segundos sin comandos",
+    "15 सेकंड तक कोई कमांड न मिलने पर प्रोफ़ाइल 1 पर लौटें"
+  ],
+  [
+    "Fluidez + desempenho · recomendado · 12 fps / 200 kb/s",
+    "Smoothness + performance · recommended · 12 fps / 200 kb/s",
+    "Fluidez + rendimiento · recomendado · 12 fps / 200 kb/s",
+    "सहजता + प्रदर्शन · अनुशंसित · 12 fps / 200 kb/s"
+  ],
+  [
+    "Taxa variável conforme a imagem. Média sugerida: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 200 kb/s. Não mede a qualidade do Wi-Fi.",
+    "Variable bitrate based on the image. Suggested average: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 200 kb/s. Does not measure Wi-Fi quality.",
+    "Tasa variable según la imagen. Media sugerida: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 200 kb/s. No mide la calidad del Wi-Fi.",
+    "चित्र के अनुसार बदलती बिटरेट। सुझाया औसत: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 200 kb/s। Wi-Fi की गुणवत्ता नहीं मापता।"
   ]
-  , ["Tradicional", "Traditional", "Tradicional", "पारंपरिक"]
-  , ["Modo menu", "Menu mode", "Modo menú", "मेनू मोड"]
-  , ["Menu fechado", "Menu closed", "Menú cerrado", "मेनू बंद"]
-  , ["Menu aberto", "Menu open", "Menú abierto", "मेनू खुला"]
-  , ["Abrir menu", "Open menu", "Abrir menú", "मेनू खोलें"]
-  , ["Abrir menu com", "Open menu with", "Abrir menú con", "मेनू खोलने का बटन"]
-  , ["Trocar perfil com", "Switch profile with", "Cambiar perfil con", "प्रोफ़ाइल बदलने का बटन"]
-  , ["Voltar aos ajustes", "Back to settings", "Volver a ajustes", "सेटिंग में वापस जाएँ"]
-  , ["Selecione um botão", "Select a button", "Selecciona un botón", "एक बटन चुनें"]
-  , ["Centro", "Center", "Centro", "बीच"]
-  , ["Ação", "Action", "Acción", "क्रिया"]
-  , ["Um toque executa. O menu fecha após 5 segundos sem interação.", "One press runs an action. The menu closes after 5 seconds without input.", "Un toque ejecuta una acción. El menú se cierra tras 5 segundos sin interacción.", "एक बार दबाने पर क्रिया चलेगी। 5 सेकंड तक कोई बटन न दबाने पर मेनू बंद होगा।"]
-  , ["Quatro perfis do menu. Trocar perfil mantém o círculo aberto.", "Four menu profiles. Switching profiles keeps the circle open.", "Cuatro perfiles del menú. Cambiar de perfil mantiene el círculo abierto.", "मेनू की चार प्रोफ़ाइल। प्रोफ़ाइल बदलने पर वृत्त खुला रहता है।"]
-  , ["Comandos únicos: não mudam ao trocar de perfil.", "Shared controls: unchanged when switching profiles.", "Controles comunes: no cambian al cambiar de perfil.", "साझा नियंत्रण: प्रोफ़ाइल बदलने पर नहीं बदलते।"]
-  , ["Reservado para trocar entre os quatro perfis.", "Reserved for switching between the four profiles.", "Reservado para cambiar entre los cuatro perfiles.", "चार प्रोफ़ाइल के बीच बदलने के लिए आरक्षित।"]
-  , ["Reservado para abrir o menu. O primeiro toque não executa a opção de dentro.", "Reserved for opening the menu. The first press does not run the action inside.", "Reservado para abrir el menú. El primer toque no ejecuta la acción de dentro.", "मेनू खोलने के लिए आरक्षित। पहले दबाने पर अंदर की क्रिया नहीं चलती।"]
-  , ["Testar usa o estado atual do menu na moto.", "Test uses the current menu state on the bike.", "Probar usa el estado actual del menú en la moto.", "परीक्षण बाइक पर मेनू की वर्तमान स्थिति का उपयोग करता है।"]
-  , ["Menu fechado: comandos únicos. Menu aberto: quatro perfis. Sem dois toques.", "Menu closed: shared controls. Menu open: four profiles. No double presses.", "Menú cerrado: controles comunes. Menú abierto: cuatro perfiles. Sin doble toque.", "मेनू बंद: साझा नियंत्रण। मेनू खुला: चार प्रोफ़ाइल। दोहरे दबाव नहीं।"]
-  , ["Três perfis tradicionais com um ou dois toques. Suas configurações são preservadas.", "Three traditional profiles with single or double presses. Your settings are preserved.", "Tres perfiles tradicionales con uno o dos toques. Se conservan tus ajustes.", "एक या दो बार दबाने वाली तीन पारंपरिक प्रोफ़ाइल। आपकी सेटिंग सुरक्षित रहती हैं।"]
-  , ["Somente o perfil tradicional atual", "Current traditional profile only", "Solo el perfil tradicional actual", "केवल वर्तमान पारंपरिक प्रोफ़ाइल"]
-  , ["Ao fechar, volta ao Perfil 1. Cada toque reinicia o tempo.", "Closing returns to Profile 1. Each press resets the timer.", "Al cerrar, vuelve al Perfil 1. Cada toque reinicia el tiempo.", "बंद होने पर प्रोफ़ाइल 1 पर लौटता है। हर बार दबाने से समय फिर शुरू होता है।"]
-  , ["Tempo do menu", "Menu timeout", "Tiempo del menú", "मेनू का समय"]
-  , ["Três perfis do menu. Trocar perfil mantém o círculo aberto.", "Three menu profiles. Switching profiles keeps the circle open.", "Tres perfiles del menú. Cambiar de perfil mantiene el círculo abierto.", "मेनू की तीन प्रोफ़ाइल। प्रोफ़ाइल बदलने पर वृत्त खुला रहता है।"]
-  , ["Reservado para trocar entre os três perfis.", "Reserved for switching between the three profiles.", "Reservado para cambiar entre los tres perfiles.", "तीन प्रोफ़ाइल के बीच बदलने के लिए आरक्षित।"]
-  , ["Menu fechado: comandos únicos. Menu aberto: três perfis. Sem dois toques.", "Menu closed: shared controls. Menu open: three profiles. No double presses.", "Menú cerrado: controles comunes. Menú abierto: tres perfiles. Sin doble toque.", "मेनू बंद: साझा नियंत्रण। मेनू खुला: तीन प्रोफ़ाइल। दोहरे दबाव नहीं।"]
-  , ["Nome do perfil", "Profile name", "Nombre del perfil", "प्रोफ़ाइल का नाम"]
-  , ["Renomear perfil", "Rename profile", "Renombrar perfil", "प्रोफ़ाइल का नाम बदलें"]
-  , ["Até 20 caracteres. Deixe vazio para usar o nome padrão.", "Up to 20 characters. Leave blank for the default name.", "Hasta 20 caracteres. Deja vacío para usar el nombre predeterminado.", "अधिकतम 20 अक्षर। डिफ़ॉल्ट नाम के लिए खाली छोड़ें।"]
 ]

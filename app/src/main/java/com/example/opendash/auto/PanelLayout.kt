@@ -133,6 +133,10 @@ object PanelGeometry {
         val top=HEIGHT-50f*progress.coerceIn(0f,1f)
         appendBand(it,top,top+50,400f,480f,4f,522f)
     }.toFloatArray()
+    fun barBackgroundMesh(progress:Float):FloatArray = ArrayList<Float>().also {
+        val top=HEIGHT-50f*progress.coerceIn(0f,1f)
+        appendBand(it,top,top+50,400f,480f,0f,WIDTH)
+    }.toFloatArray()
 }
 
 /** GPU-thread owner. Repeated presses extend visibility, including while sliding out. */

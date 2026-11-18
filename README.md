@@ -13,7 +13,7 @@ Actual app screenshots with Android Auto running. Click to enlarge.
 <a href="docs/images/app-connect-live.png"><img src="docs/images/app-connect-live.png" width="300" alt="Android Auto live phone preview"></a>
 <a href="docs/images/app-widget-live.png"><img src="docs/images/app-widget-live.png" width="300" alt="Live display simulator with Spotify, logo and widget"></a>
 
-Created by **Matheus Castellar**. A free, community project developed for riders, with no Rota Auto account required. Current source version: **0.1.47**.
+Created by **Matheus Castellar**. A free, community project developed for riders, with no Rota Auto account required. Current source version: **0.1.48**.
 
 Rota Auto receives Android Auto video on the phone and streams it over the motorcycle's Wi-Fi connection to the Tripper Dash. Maps and compatible media apps run through Android Auto; Rota Auto handles the connection, display adaptation and motorcycle controls. This is the main Android Auto project, not a standalone Google Maps SDK app.
 
@@ -77,6 +77,12 @@ Adjust image fitting, distortion, size and position, the motorcycle logo and the
 
 </details>
 
+## Updates
+
+Open **Settings → Updates** to check, download and install releases from this repository. Automatic checks are enabled by default when opening the app, at most once every six hours; they can be disabled. Downloads are started by the user. Android asks you to allow installs from Rota Auto and confirm installation. The updater checks the APK checksum, package, newer version and matching signing certificate before installation. Settings are kept.
+
+Version **0.1.48** adds a full-width black taskbar background, optional return to traditional Profile 1 after 15 seconds without input, and the current street in the native title during navigation when Android Auto supplies it. Missing street data falls back to “Android Auto”; the next-turn street is never substituted. **Smoothness + performance** is the recommended 12 fps / 200 kb/s factory preset.
+
 ## Features
 
 - Wi-Fi discovery and reconnection for the motorcycle, plus a touch-enabled phone preview.
@@ -107,7 +113,7 @@ Menu wording can vary by language/version. The server setting belongs to **Andro
 
 - This is an **unofficial receiver**, not a Google- or Royal Enfield-certified product. Compatibility can change after updates.
 - Hiding the native navigation circle can prevent the dashboard from sending some map controls. This is a dashboard behavior, not just a visual setting.
-- Video delay and smoothness depend on encoding settings, Wi-Fi conditions and dashboard processing. The default is **4 fps**.
+- Video delay and smoothness depend on encoding settings, Wi-Fi conditions and dashboard processing. The recommended factory default is **12 fps with a 200 kb/s variable bitrate target**. Existing saved settings are preserved.
 - Some app-opening shortcuts depend on the Android Auto interface layout. Not every app exposes the same behavior.
 - Screen-off operation, intercom routing and reconnection should be checked on your own phone and motorcycle. Configure and test while parked.
 

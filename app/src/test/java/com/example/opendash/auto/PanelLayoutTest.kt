@@ -4,6 +4,15 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class PanelLayoutTest {
+    @Test fun taskbarBlackBackgroundReachesBothEdgesDuringAnimationWithoutMovingIcons() {
+        for(progress in listOf(.1f,.5f,1f)) {
+            val background=PanelGeometry.bounds(PanelGeometry.barBackgroundMesh(progress))
+            val icons=PanelGeometry.bounds(PanelGeometry.barMesh(progress))
+            assertEquals(0f,background.left,.001f); assertEquals(526f,background.width,.001f)
+            assertEquals(icons.top,background.top,.001f); assertEquals(icons.height,background.height,.001f)
+            assertTrue(icons.left>background.left); assertTrue(icons.width<background.width)
+        }
+    }
     @Test fun allDistortionStylesRemainInsideArcAtDefaultScaleAndPreserveSourceCoordinates() {
         for(style in CurveStyle.entries) for(amount in listOf(0,30,100)) {
             val vertices=PanelGeometry.mesh(PanelLayout.CURVED,amount,style=style).toList().chunked(4)

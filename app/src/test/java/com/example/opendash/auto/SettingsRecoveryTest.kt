@@ -42,7 +42,7 @@ class SettingsRecoveryTest {
         prefs.edit().putInt("video-fps",12).putBoolean(VideoProfile.MANUAL,true).putInt(VideoProfile.BITRATE,900).commit()
         SettingsRecovery.save(app,"Restaurar vídeo de fábrica")
         VideoProfile.restore(prefs)
-        assertEquals(4,prefs.getInt("video-fps",0))
+        assertEquals(12,prefs.getInt("video-fps",0))
         SettingsRecovery.restore(app,SettingsRecovery.read(app)!!)
         assertEquals(12,prefs.getInt("video-fps",0))
         assertEquals(900,prefs.getInt(VideoProfile.BITRATE,0))

@@ -3,7 +3,9 @@ package com.example.opendash.auto
 import com.google.protobuf.CodedInputStream
 import com.example.opendash.dash.protocol.DashCommands
 
-data class AaNavigation(val active:Boolean=false,val glyph:Int=0xFF,val distanceMeters:Int?=null,val destinationMeters:Int?=null)
+data class AaNavigation(val active:Boolean=false,val glyph:Int=0xFF,val distanceMeters:Int?=null,val destinationMeters:Int?=null,val currentRoad:String?=null) {
+    val panelTitle:String get()=currentRoad?.takeIf { active && it.isNotBlank() } ?: "Android Auto"
+}
 
 /** Decodes AA navigation status/turn/distance metadata; never reads or modifies GPS. */
 internal class AaNavigationStatus {
@@ -14,6 +16,7 @@ internal class AaNavigationStatus {
         val input=CodedInputStream.newInstance(data)
         var status:Int?=null; var direction=0; var maneuver=0; var exit=0; var meters:Int?=null
         var destinationMeters:Int?=null; var destinationSeen=false
+        var road:String?=null
         var firstStep:ByteArray?=null
         while(!input.isAtEnd) {
             val tag=input.readTag()
@@ -34,6 +37,9 @@ internal class AaNavigationStatus {
                     if(!destinationSeen) destinationMeters=wrappedDistance(destination)
                     destinationSeen=true
                 }
+                // NavigationCurrentPosition.currentRoad -> NavigationText.text.
+                // Legacy turn.road_name and step road_info describe the NEXT road.
+                type==0x8007 && tag==26 -> road=roadText(input.readByteArray())
                 !input.skipField(tag) -> break
             }
         }
@@ -48,7 +54,7 @@ internal class AaNavigationStatus {
                 distanceMeters=if(lastTurn?.contentEquals(data)==true) current.distanceMeters else null) else current
             0x8006 -> if(current.active) current.copy(glyph=firstStep?.let(::stepGlyph) ?: 0xff,
                 distanceMeters=if(firstStep!=null && lastTurn?.contentEquals(firstStep)==true) current.distanceMeters else null) else current
-            0x8007 -> if(current.active) current.copy(distanceMeters=meters,destinationMeters=destinationMeters) else current
+            0x8007 -> if(current.active) current.copy(distanceMeters=meters,destinationMeters=destinationMeters,currentRoad=road) else current
             else -> if(current.active) current.copy(distanceMeters=meters) else current
         }
         if(type==0x8004 && current.active) lastTurn=data.copyOf()
@@ -57,6 +63,16 @@ internal class AaNavigationStatus {
         if(next==current) return null
         current=next
         return next
+    }
+    private fun roadText(data:ByteArray):String? {
+        val text=CodedInputStream.newInstance(data)
+        while(!text.isAtEnd) {
+            val tag=text.readTag()
+            if(tag==10) return text.readStringRequireUtf8().replace(Regex("[\\p{Cc}\\p{Cf}]")," ")
+                .replace(Regex("\\s+")," ").trim().take(120).takeIf { it.isNotEmpty() }
+            if(!text.skipField(tag)) break
+        }
+        return null
     }
     private fun stepGlyph(data:ByteArray):Int {
         val step=CodedInputStream.newInstance(data)

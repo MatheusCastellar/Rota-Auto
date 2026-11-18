@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicLong
  * The EGL pbuffer belongs to the service; neither the Activity nor a lit screen is required.
  */
 class AaVideoBridge(private val encoded:(ByteArray,Long)->Unit,private val info:(String)->Unit,private val failed:(String)->Unit,
-    private var profile:VideoProfile=VideoProfile.forFps(4).copy(automatic=true),initialLayout:PanelLayout=PanelLayout.ORIGINAL):AutoCloseable {
+    private var profile:VideoProfile=VideoProfile.forFps(VideoProfile.DEFAULT_FPS).copy(automatic=true),initialLayout:PanelLayout=PanelLayout.ORIGINAL):AutoCloseable {
     private data class Chunk(val data:ByteArray,val pts:Long,val config:Boolean,val arrived:Long)
     // Apply back-pressure, never discard interdependent compressed P frames.
     private val queue=ArrayBlockingQueue<Chunk>(3)
@@ -289,7 +289,7 @@ class AaVideoBridge(private val encoded:(ByteArray,Long)->Unit,private val info:
         current(parking)
         program=GLES20.glCreateProgram()
         GLES20.glAttachShader(program,shader(GLES20.GL_VERTEX_SHADER,"attribute vec2 aPos; attribute vec2 aUv; uniform mat4 uMatrix; varying vec2 vUv; varying vec2 vPanel; void main(){gl_Position=vec4(aPos,0.,1.); vUv=(uMatrix*vec4(aUv,0.,1.)).xy; vPanel=vec2((aPos.x+1.)*263.,(1.-aPos.y)*150.);}"))
-        GLES20.glAttachShader(program,shader(GLES20.GL_FRAGMENT_SHADER,"#extension GL_OES_EGL_image_external : require\nprecision mediump float; varying vec2 vUv; varying vec2 vPanel; uniform samplerExternalOES sTexture; uniform float uMask; uniform float uBackground; uniform float uBlur; uniform float uBlurTop; uniform float uBlurBottom; uniform float uBlurArea; void main(){vec2 p=(vPanel-vec2(263.,263.))/263.; if(uBackground>0.5){gl_FragColor=dot(p,p)>1.?vec4(16./255.,20./255.,17./255.,1.):vec4(0.,0.,0.,1.);return;} if(uMask>0.5 && dot(p,p)>1.) discard; if(uBlur>0.5){if(uBlurArea<2.5 && vPanel.y<uBlurTop) discard; if(uBlurArea<1.5 && vPanel.y>uBlurBottom) discard; vec4 c=vec4(0.); for(int x=-4;x<=4;x++){for(int y=-4;y<=4;y++){float w=(5.-abs(float(x)))*(5.-abs(float(y))); vec2 uv=clamp(vUv+vec2(float(x)*0.0025,float(y)*0.004167),vec2(0.),vec2(1.)); c+=texture2D(sTexture,uv)*w;}} gl_FragColor=vec4(c.rgb/625.*0.65,1.);return;} gl_FragColor=texture2D(sTexture,vUv);}"))
+        GLES20.glAttachShader(program,shader(GLES20.GL_FRAGMENT_SHADER,"#extension GL_OES_EGL_image_external : require\nprecision mediump float; varying vec2 vUv; varying vec2 vPanel; uniform samplerExternalOES sTexture; uniform float uMask; uniform float uBlack; uniform float uBackground; uniform float uBlur; uniform float uBlurTop; uniform float uBlurBottom; uniform float uBlurArea; void main(){vec2 p=(vPanel-vec2(263.,263.))/263.; if(uBackground>0.5){gl_FragColor=dot(p,p)>1.?vec4(16./255.,20./255.,17./255.,1.):vec4(0.,0.,0.,1.);return;} if(uMask>0.5 && dot(p,p)>1.) discard; if(uBlack>0.5){gl_FragColor=vec4(0.,0.,0.,1.);return;} if(uBlur>0.5){if(uBlurArea<2.5 && vPanel.y<uBlurTop) discard; if(uBlurArea<1.5 && vPanel.y>uBlurBottom) discard; vec4 c=vec4(0.); for(int x=-4;x<=4;x++){for(int y=-4;y<=4;y++){float w=(5.-abs(float(x)))*(5.-abs(float(y))); vec2 uv=clamp(vUv+vec2(float(x)*0.0025,float(y)*0.004167),vec2(0.),vec2(1.)); c+=texture2D(sTexture,uv)*w;}} gl_FragColor=vec4(c.rgb/625.*0.65,1.);return;} gl_FragColor=texture2D(sTexture,vUv);}"))
         GLES20.glLinkProgram(program); val linked=IntArray(1); GLES20.glGetProgramiv(program,GLES20.GL_LINK_STATUS,linked,0); check(linked[0]!=0)
         statusProgram=GLES20.glCreateProgram()
         GLES20.glAttachShader(statusProgram,shader(GLES20.GL_VERTEX_SHADER,"attribute vec2 aPos; attribute vec2 aUv; varying vec2 vUv; varying vec2 vPanel; void main(){gl_Position=vec4(aPos,0.,1.);vUv=vec2(aUv.x,1.-aUv.y);vPanel=vec2((aPos.x+1.)*263.,(1.-aPos.y)*150.);}"))
@@ -450,6 +450,11 @@ class AaVideoBridge(private val encoded:(ByteArray,Long)->Unit,private val info:
             GLES20.glUniform1f(blur,0f)
             drawMesh(meshes.getValue(if(panel) layout else PanelLayout.ORIGINAL))
             if(panel && barProgress>0f) {
+                val black=GLES20.glGetUniformLocation(program,"uBlack")
+                GLES20.glUniform1f(black,1f)
+                barVertices.position(0); barVertices.put(PanelGeometry.barBackgroundMesh(barProgress)); barVertices.position(0)
+                drawMesh(barVertices)
+                GLES20.glUniform1f(black,0f)
                 barVertices.position(0); barVertices.put(PanelGeometry.barMesh(barProgress)); barVertices.position(0)
                 drawMesh(barVertices)
             }

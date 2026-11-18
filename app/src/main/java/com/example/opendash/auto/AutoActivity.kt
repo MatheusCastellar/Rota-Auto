@@ -30,6 +30,8 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
     private var routeJob:Job?=null
     private var surface:Surface?=null
     private var observer:Job?=null
+    private var updateCheck:Job?=null
+    private lateinit var updateNotice:Button
     private var pendingBike=false
     private var pendingNewBike=false
     private var touching=false
@@ -67,6 +69,11 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
         root.addView(text("por Matheus Castellar",13f))
         root.addView(text("Seu caminho, no painel da moto.",15f))
         status=text("Prepare o Android Auto para começar",17f); root.addView(status)
+        updateNotice=Button(this).apply {
+            visibility=View.GONE; isAllCaps=false
+            setOnClickListener { startActivity(Intent(this@AutoActivity,UpdateActivity::class.java)) }
+        }
+        root.addView(updateNotice)
         preview=TextureView(this).apply { surfaceTextureListener=this@AutoActivity; layoutParams=LinearLayout.LayoutParams(-1,dp(190)); isOpaque=true }
         preview.setOnTouchListener { v,event ->
             if(simulatePreview) return@setOnTouchListener true
@@ -364,8 +371,8 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
         var refreshVideoControls:()->Unit={}
         val fpsGroup=RadioGroup(this).apply {
             for(fps in listOf(12,8,4)) addView(RadioButton(this@AutoActivity).apply {
-                id=View.generateViewId(); tag=fps; text=when(fps) { 12 -> "12 fps · mais fluido"; 8 -> "8 fps · intermediário"; else -> "4 fps · compatibilidade" }
-                setTextColor(Color.WHITE); isChecked=preferences.getInt("video-fps",4)==fps
+                id=View.generateViewId(); tag=fps; text=when(fps) { 12 -> "Fluidez + desempenho · recomendado · 12 fps / 200 kb/s"; 8 -> "8 fps · intermediário"; else -> "4 fps · compatibilidade" }
+                setTextColor(Color.WHITE); isChecked=preferences.getInt("video-fps",VideoProfile.DEFAULT_FPS)==fps
             })
             setOnCheckedChangeListener { group,id ->
                 VideoProfile.selectFps(preferences,group.findViewById<RadioButton>(id).tag as Int)
@@ -374,28 +381,33 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
         }; root.addView(fpsGroup)
         val manualRate=Switch(this).apply { text="Ajustar kb/s manualmente"; setTextColor(Color.WHITE); isChecked=VideoProfile.manual(preferences) }
         root.addView(manualRate)
-        val rateSlider=imageSlider("Taxa de vídeo",VideoProfile.BITRATE,100,2000,VideoProfile.forFps(preferences.getInt("video-fps",4)).bitrate/1000," kb/s")
+        val rateSlider=imageSlider("Taxa de vídeo",VideoProfile.BITRATE,100,2000,VideoProfile.forFps(preferences.getInt("video-fps",VideoProfile.DEFAULT_FPS)).bitrate/1000," kb/s")
         val rateLabel=root.getChildAt(root.indexOfChild(rateSlider)-1)
         val rateHelp=text("",13f); root.addView(rateHelp)
         refreshVideoControls={
             val manual=VideoProfile.manual(preferences)
             rateSlider.progress=VideoProfile.fromPreferences(preferences).bitrate/1000-100
             rateSlider.isEnabled=manual; rateSlider.alpha=if(manual) 1f else .35f; rateLabel.alpha=rateSlider.alpha
-            rateHelp.text=L(if(manual) "Taxa variável: o valor é uma média desejada. Trocar o FPS carrega a média sugerida; depois você pode ajustá-la." else "Taxa variável conforme a imagem. Média sugerida: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 600 kb/s. Não mede a qualidade do Wi-Fi.")
+            rateHelp.text=L(if(manual) "Taxa variável: o valor é uma média desejada. Trocar o FPS carrega a média sugerida; depois você pode ajustá-la." else "Taxa variável conforme a imagem. Média sugerida: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 200 kb/s. Não mede a qualidade do Wi-Fi.")
         }
         manualRate.setOnCheckedChangeListener { _,manual -> preferences.edit().putBoolean(VideoProfile.MANUAL,manual).apply(); refreshVideoControls() }
         root.addView(Button(this).apply { text="Restaurar vídeo de fábrica"; setOnClickListener {
             if(!savePreviousSettings("Restaurar vídeo de fábrica")) return@setOnClickListener
             VideoProfile.restore(preferences)
             manualRate.isChecked=false
-            (0 until fpsGroup.childCount).map { fpsGroup.getChildAt(it) as RadioButton }.single { it.tag==4 }.isChecked=true
-            rateSlider.progress=VideoProfile.forFps(4).bitrate/1000-100
+            (0 until fpsGroup.childCount).map { fpsGroup.getChildAt(it) as RadioButton }.single { it.tag==VideoProfile.DEFAULT_FPS }.isChecked=true
+            rateSlider.progress=VideoProfile.forFps(VideoProfile.DEFAULT_FPS).bitrate/1000-100
             refreshVideoControls()
         } },LinearLayout.LayoutParams(-1,dp(BUTTON_HEIGHT)))
         refreshVideoControls()
         val mainSettings=root
         val traditional=LinearLayout(this).apply { orientation=LinearLayout.VERTICAL }
         root=traditional
+        root.addView(Switch(this).apply {
+            text="Voltar ao Perfil 1 após 15 segundos sem comandos"; setTextColor(Color.WHITE)
+            isChecked=preferences.getBoolean(ProfileIdleReturn.KEY,false)
+            setOnCheckedChangeListener { _,value -> preferences.edit().putBoolean(ProfileIdleReturn.KEY,value).apply() }
+        })
         controls.visibility=View.VISIBLE
         buildControlEditor(controls,preferences)
         root.addView(controls)
@@ -473,6 +485,7 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
                     AlertDialog.Builder(this).setTitle(L("Licenças")).setView(ScrollView(this).apply { addView(content) }).setPositiveButton(L("Fechar"),null).show()
                 }.show()
         }
+        button("Atualizações") { startActivity(Intent(this,UpdateActivity::class.java)) }
         button("Ajustes de bateria do aplicativo") {
             startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,android.net.Uri.parse("package:$packageName")))
         }
@@ -522,6 +535,7 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
     }
     override fun onStart() {
         super.onStart(); visible=true
+        checkAppUpdate()
         AutoBridgeService.simulatePreview(simulatePreview)
         surface?.let { AutoBridgeService.preview(it,preview.width,preview.height) }
         observer=scope.launch { AutoBridgeService.state.collect { s ->
@@ -531,6 +545,28 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
         serverSettings.visibility=if(s.error.contains("servidor do Android Auto",ignoreCase=true)) View.VISIBLE else View.GONE
     } } }
     override fun onStop() { visible=false; AutoBridgeService.detachPreview(surface); observer?.cancel(); super.onStop() }
+    private fun checkAppUpdate() {
+        val p=GitHubUpdates.preferences(this)
+        if(!p.getBoolean(GitHubUpdates.AUTO,true)) { updateNotice.visibility=View.GONE; return }
+        val cached=p.getString("available-version",null)
+        if(cached!=null && GitHubUpdates.newer(cached,com.example.opendash.BuildConfig.VERSION_NAME)) {
+            updateNotice.text=L("Atualização disponível")+": "+cached; updateNotice.visibility=View.VISIBLE
+        } else updateNotice.visibility=View.GONE
+        if(updateCheck?.isActive==true) return
+        val elapsed=System.currentTimeMillis()-p.getLong("last-check",0)
+        if(elapsed in 0 until GitHubUpdates.INTERVAL) return
+        // Throttle failures too; opening settings repeatedly must not flood the API.
+        p.edit().putLong("last-check",System.currentTimeMillis()).apply()
+        updateCheck=scope.launch {
+            val result=withContext(Dispatchers.IO) { runCatching { GitHubUpdates.latest(this@AutoActivity) } }
+            if(result.isSuccess) {
+                val found=result.getOrNull()
+                p.edit().putString("available-version",found?.version).apply()
+                updateNotice.visibility=if(found==null) View.GONE else View.VISIBLE
+                if(found!=null) updateNotice.text=L("Atualização disponível")+": "+found.version
+            }
+        }
+    }
     override fun onDestroy() {
         controlEditorListener?.let { editorPreferences?.unregisterOnSharedPreferenceChangeListener(it) }
         val old=surface; surface=null

@@ -34,7 +34,7 @@ class AutoActivityTest {
             assertEquals(100,slider.progress)
             tree.filterIsInstance<Button>().single { it.text=="Restaurar vídeo de fábrica" }.performClick()
             assertFalse(slider.isEnabled); assertFalse(toggle.isChecked)
-            assertEquals(VideoProfile(4,200000,true),VideoProfile.fromPreferences(p))
+            assertEquals(VideoProfile(12,200000,true),VideoProfile.fromPreferences(p))
             assertEquals(120,p.getInt(PanelLogo.SIZE,0))
         } finally { c.pause().stop().destroy() }
     }

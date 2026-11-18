@@ -69,7 +69,7 @@ internal object GuidedDiagnostics {
         BikeInputCapture.stop("Substituída pelo diagnóstico guiado")
         BikeInputCapture.setBlockActions(true); BikeInputCapture.start()
         val prefs=context.getSharedPreferences("auto-controls-options",Context.MODE_PRIVATE)
-        event("START fps=${prefs.getInt("video-fps",4)} bitrate=${VideoProfile.fromPreferences(prefs)} ocultar=${prefs.getBoolean("clean-projection",true)} perfil=${BikeControlLayout.active(prefs)}")
+        event("START fps=${prefs.getInt("video-fps",VideoProfile.DEFAULT_FPS)} bitrate=${VideoProfile.fromPreferences(prefs)} ocultar=${prefs.getBoolean("clean-projection",true)} perfil=${BikeControlLayout.active(prefs)}")
     }
     fun beginStep() {
         if(!active || measuring) return

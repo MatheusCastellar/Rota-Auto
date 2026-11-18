@@ -8,6 +8,19 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class AaNavigationTest {
+    @Test fun currentStreetIsSeparateFromNextTurnAndClearsWithoutNavigation() {
+        val parser=AaNavigationStatus()
+        parser.receive(0x8003,proto(1 to 1))
+        val turn=nested(1 to "Next street".toByteArray())+proto(2 to 1,3 to 4)
+        assertEquals("Android Auto",parser.receive(0x8004,turn)!!.panelTitle)
+        val current=nested(3 to nested(1 to "Rua Atual".toByteArray()),1 to nested(1 to proto(1 to 200)))
+        val nav=parser.receive(0x8007,current)!!
+        assertEquals("Rua Atual",nav.panelTitle); assertEquals(200,nav.distanceMeters)
+        assertNull(parser.receive(0x8007,current))
+        assertEquals("Android Auto",parser.receive(0x8007,nested(1 to nested(1 to proto(1 to 180))))!!.panelTitle)
+        parser.receive(0x8007,current)
+        assertEquals("Android Auto",parser.receive(0x8003,proto(1 to 2))!!.panelTitle)
+    }
     @Test fun explicitDisplayUnitsCanSupplyMissingRawMetresWithoutParsingInstructionText() {
         assertEquals(250,AaNavigationStatus.displayMeters("250",1))
         assertEquals(1500,AaNavigationStatus.displayMeters("1,5",3))

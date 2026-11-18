@@ -5,7 +5,7 @@ import org.json.JSONObject
 
 internal object SettingsImport {
     const val MAX_BYTES=131072
-    private val booleans=setOf(MenuControls.ENABLED,ProfilePopup.ENABLED,VideoProfile.MANUAL,PhoneAudio.INPUT,PhoneAudio.OUTPUT,"intercom-mic","enabled","clean-projection","hide-aa-bar","panel-blur",TemporaryBar.TOGGLE,PanelWidget.ENABLED,PanelWidget.FRONT)
+    private val booleans=setOf(ProfileIdleReturn.KEY,MenuControls.ENABLED,ProfilePopup.ENABLED,VideoProfile.MANUAL,PhoneAudio.INPUT,PhoneAudio.OUTPUT,"intercom-mic","enabled","clean-projection","hide-aa-bar","panel-blur",TemporaryBar.TOGGLE,PanelWidget.ENABLED,PanelWidget.FRONT)
     private val ranges=mapOf(MenuControls.SECONDS to 3..15,MenuControls.ACTIVE to 1..3,ProfilePopup.DURATION to 1..20,PanelWidget.HEIGHT to 75..200,TemporaryBar.SECONDS to 1..30,VideoProfile.BITRATE to 100..2000,PanelWidget.SIZE to 25..200,
         PanelWidget.X to -526..526,PanelWidget.Y to -300..300,VoiceGain.PREFERENCE to 100..250, PanelLayout.DISTORTION to 0..100,
         PanelLayout.POSITION_X to -526..526,PanelLayout.POSITION_Y to -300..300,

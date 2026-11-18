@@ -6,8 +6,9 @@ android {
         applicationId = "br.com.matheus.rotalivre.auto"
         minSdk = 29
         targetSdk = 35
-        versionCode = 48
-        versionName = "0.1.47"
+        versionCode = 49
+        versionName = "0.1.48"
+        testInstrumentationRunner = "com.example.opendash.auto.UpdateSmokeInstrumentation"
     }
     buildFeatures { buildConfig = true }
     testOptions { unitTests.isIncludeAndroidResources = true }
@@ -22,6 +23,7 @@ android {
     }
 }
 dependencies {
+    implementation("androidx.core:core:1.16.0")
     implementation("com.google.protobuf:protobuf-java:3.25.5")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
     implementation("androidx.security:security-crypto:1.1.0")

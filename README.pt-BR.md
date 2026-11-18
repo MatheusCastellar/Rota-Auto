@@ -13,7 +13,7 @@ Capturas reais do aplicativo com o Android Auto funcionando. Toque para ampliar.
 <a href="docs/images/app-connect-live.png"><img src="docs/images/app-connect-live.png" width="300" alt="Android Auto live phone preview"></a>
 <a href="docs/images/app-widget-live.png"><img src="docs/images/app-widget-live.png" width="300" alt="Live display simulator with Spotify, logo and widget"></a>
 
-Feito por **Matheus Castellar**. Projeto gratuito, da comunidade e sem fins lucrativos, desenvolvido para motociclistas, sem exigir conta no Rota Auto. Versão atual do código: **0.1.47**.
+Feito por **Matheus Castellar**. Projeto gratuito, da comunidade e sem fins lucrativos, desenvolvido para motociclistas, sem exigir conta no Rota Auto. Versão atual do código: **0.1.48**.
 
 O Rota Auto recebe o vídeo do Android Auto no celular e o transmite pela rede Wi-Fi da moto para o Tripper Dash. Mapas e aplicativos de mídia compatíveis funcionam pelo Android Auto; o Rota Auto cuida da conexão, da adaptação da imagem e dos comandos da moto. Este é o projeto principal com Android Auto, não um aplicativo independente do SDK do Google Maps.
 
@@ -77,6 +77,12 @@ Ajuste enquadramento, distorção, tamanho e posição da imagem, logo da moto e
 
 </details>
 
+## Atualizações
+
+Abra **Ajustes → Atualizações** para verificar, baixar e instalar releases deste repositório. A busca automática vem ligada e acontece ao abrir o aplicativo, no máximo uma vez a cada seis horas; pode ser desativada. O download começa quando você solicita. O Android pede permissão para instalar pelo Rota Auto e confirmação da instalação. O atualizador verifica a integridade do APK, o pacote, a versão mais nova e a mesma assinatura antes de instalar. Suas configurações são mantidas.
+
+A versão **0.1.48** acrescenta fundo preto da barra até as bordas, retorno opcional ao Perfil 1 tradicional após 15 segundos sem comandos e a rua atual no título nativo durante a navegação, quando informada pelo Android Auto. Sem esse dado, volta a “Android Auto”; a rua da próxima conversão não é usada como rua atual. **Fluidez + desempenho** é o padrão de fábrica recomendado de 12 fps / 200 kb/s.
+
 ## Recursos
 
 
@@ -108,7 +114,7 @@ Os nomes dos menus podem variar conforme idioma e versão. A opção do servidor
 
 - É um receptor **não oficial**, sem certificação do Google ou da Royal Enfield. Atualizações podem alterar a compatibilidade.
 - Ocultar o círculo nativo de navegação pode impedir o envio de alguns comandos do mapa pelo painel. Não é apenas uma mudança visual.
-- Atraso e fluidez dependem da codificação, do Wi-Fi e do processamento do painel. O padrão é **4 fps**.
+- Atraso e fluidez dependem da codificação, do Wi-Fi e do processamento do painel. O padrão de fábrica recomendado é **12 fps com meta variável de 200 kb/s**. As configurações já salvas são preservadas.
 - Alguns atalhos para abrir aplicativos dependem do layout do Android Auto. Nem todos os aplicativos oferecem o mesmo comportamento.
 - Confira funcionamento com tela apagada, intercomunicador e reconexão no seu conjunto de celular e moto. Faça configurações e testes com a moto parada.
 
