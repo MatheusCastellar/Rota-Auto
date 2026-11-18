@@ -52,7 +52,7 @@ Screenshots captured directly on the phone on **November 17, 2026**, running **0
 
 ## Display customization
 
-Adjust image fitting, distortion, size and position, the motorcycle logo and the information widget. The logo and widget are optional. Projection is stopped in these screenshots, so the preview area is empty and reveals no location.
+Adjust image fitting, distortion, size and position, the motorcycle logo and the information widget. The logo and widget are optional. These screenshots show the live phone preview and display simulator with Spotify, without exposing a location. The Guerrilla logo and widget shown are optional customizations.
 
 <table>
   <tr><th>Image fitting and distortion</th><th>Motorcycle logo</th><th>Information widget</th></tr>

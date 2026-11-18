@@ -52,7 +52,7 @@ Capturas novas, feitas diretamente no celular em **17/11/2026**, com a versão *
 
 ## Personalização do painel
 
-Ajuste enquadramento, distorção, tamanho e posição da imagem, logo da moto e widget de informações. Logo e widget são opcionais. Nestas capturas, a projeção está parada: a área de prévia aparece vazia, sem divulgar localização.
+Ajuste enquadramento, distorção, tamanho e posição da imagem, logo da moto e widget de informações. Logo e widget são opcionais. As capturas mostram a prévia funcionando e o simulador do painel com o Spotify, sem divulgar localização. A logo Guerrilla e o widget exibidos são personalizações opcionais.
 
 <table>
   <tr><th>Enquadramento e distorção</th><th>Logo da moto</th><th>Widget de informações</th></tr>
