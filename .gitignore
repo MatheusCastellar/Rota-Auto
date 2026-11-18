@@ -1,0 +1,21 @@
+# Local Android/Gradle state
+.gradle/
+.kotlin/
+**/build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+# Signing keys and local credentials
+*.jks
+*.keystore
+.env
+.env.*
+secrets.properties
+key.properties
+# Generated packages and private diagnostics
+*.apk
+*.aab
+*.log
+captures/
+diagnostics/

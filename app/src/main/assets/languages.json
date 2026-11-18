@@ -1,0 +1,1765 @@
+[
+  [
+    "Conectar",
+    "Connect",
+    "Conectar",
+    "कनेक्ट करें"
+  ],
+  [
+    "Navegar",
+    "Navigate",
+    "Navegar",
+    "नेविगेशन"
+  ],
+  [
+    "Ajustes",
+    "Settings",
+    "Ajustes",
+    "सेटिंग"
+  ],
+  [
+    "Configurações simples",
+    "Basic settings",
+    "Ajustes básicos",
+    "सामान्य सेटिंग"
+  ],
+  [
+    "Opções avançadas",
+    "Advanced options",
+    "Opciones avanzadas",
+    "उन्नत विकल्प"
+  ],
+  [
+    "Personalizar painel",
+    "Customize display",
+    "Personalizar pantalla",
+    "डिस्प्ले सजाएँ"
+  ],
+  [
+    "Idioma / Language",
+    "Language",
+    "Idioma",
+    "भाषा"
+  ],
+  [
+    "Ligar Android Auto",
+    "Start Android Auto",
+    "Iniciar Android Auto",
+    "Android Auto चालू करें"
+  ],
+  [
+    "Parar",
+    "Stop",
+    "Detener",
+    "बंद करें"
+  ],
+  [
+    "Reconectar Moto",
+    "Reconnect bike",
+    "Reconectar moto",
+    "बाइक फिर जोड़ें"
+  ],
+  [
+    "Iniciar nova conexão",
+    "New connection",
+    "Nueva conexión",
+    "नया कनेक्शन"
+  ],
+  [
+    "Tela preta",
+    "Black screen",
+    "Pantalla negra",
+    "काली स्क्रीन"
+  ],
+  [
+    "Tutorial",
+    "Setup guide",
+    "Tutorial",
+    "शुरुआती गाइड"
+  ],
+  [
+    "PRÉVIA NO CELULAR",
+    "PHONE PREVIEW",
+    "VISTA PREVIA EN EL MÓVIL",
+    "फ़ोन पर पूर्वावलोकन"
+  ],
+  [
+    "SIMULAÇÃO DO PAINEL · SEM TOQUE",
+    "DISPLAY SIMULATION · NO TOUCH",
+    "SIMULACIÓN DEL PANEL · SIN TOQUE",
+    "डिस्प्ले सिमुलेशन · बिना टच"
+  ],
+  [
+    "Voltar no Android Auto",
+    "Back in Android Auto",
+    "Volver en Android Auto",
+    "Android Auto में वापस"
+  ],
+  [
+    "Falar com o assistente",
+    "Talk to assistant",
+    "Hablar con el asistente",
+    "असिस्टेंट से बात करें"
+  ],
+  [
+    "Voltar aos ajustes",
+    "Back to settings",
+    "Volver a ajustes",
+    "सेटिंग पर वापस"
+  ],
+  [
+    "Mostrar barra",
+    "Show taskbar",
+    "Mostrar barra",
+    "टास्कबार दिखाएँ"
+  ],
+  [
+    "Mostrar / ocultar barra",
+    "Show / hide taskbar",
+    "Mostrar / ocultar barra",
+    "टास्कबार दिखाएँ / छिपाएँ"
+  ],
+  [
+    "Configurações do Android Auto",
+    "Android Auto settings",
+    "Ajustes de Android Auto",
+    "Android Auto सेटिंग"
+  ],
+  [
+    "Abrir configurações do Android Auto",
+    "Open Android Auto settings",
+    "Abrir ajustes de Android Auto",
+    "Android Auto सेटिंग खोलें"
+  ],
+  [
+    "Abrir configuração do servidor",
+    "Open server settings",
+    "Abrir ajustes del servidor",
+    "सर्वर सेटिंग खोलें"
+  ],
+  [
+    "Participe do nosso grupo",
+    "Join our group",
+    "Únete a nuestro grupo",
+    "हमारे समूह से जुड़ें"
+  ],
+  [
+    "Meu canal",
+    "My channel",
+    "Mi canal",
+    "मेरा चैनल"
+  ],
+  [
+    "100% Gratuito",
+    "100% free",
+    "100% gratuito",
+    "100% मुफ़्त"
+  ],
+  [
+    "e sem fins lucrativos.",
+    "and non-profit.",
+    "y sin fines de lucro.",
+    "और गैर-लाभकारी।"
+  ],
+  [
+    "Feito por Matheus Castellar",
+    "Made by Matheus Castellar",
+    "Hecho por Matheus Castellar",
+    "Matheus Castellar द्वारा बनाया गया"
+  ],
+  [
+    "Para onde vamos?",
+    "Where to?",
+    "¿A dónde vamos?",
+    "कहाँ जाना है?"
+  ],
+  [
+    "Destino",
+    "Destination",
+    "Destino",
+    "गंतव्य"
+  ],
+  [
+    "Destino ou link do Google Maps",
+    "Destination or Google Maps link",
+    "Destino o enlace de Google Maps",
+    "गंतव्य या Google Maps लिंक"
+  ],
+  [
+    "Traçar rota",
+    "Plan route",
+    "Trazar ruta",
+    "रास्ता बनाएँ"
+  ],
+  [
+    "Abrir Google Maps",
+    "Open Google Maps",
+    "Abrir Google Maps",
+    "Google Maps खोलें"
+  ],
+  [
+    "Abrir Spotify",
+    "Open Spotify",
+    "Abrir Spotify",
+    "Spotify खोलें"
+  ],
+  [
+    "Rotas de moto. Você também pode definir a rota no Google Maps.",
+    "Motorcycle routes. You can also plan your route in Google Maps.",
+    "Rutas en moto. También puedes definir la ruta en Google Maps.",
+    "बाइक के रास्ते। आप Google Maps में भी रास्ता बना सकते हैं।"
+  ],
+  [
+    "Moto parada",
+    "Bike parked",
+    "Moto estacionada",
+    "बाइक खड़ी है"
+  ],
+  [
+    "Libera a personalização do Android Auto. Desative antes de sair. Não altera o GPS.",
+    "Unlocks Android Auto customization. Turn off before riding. Does not change GPS.",
+    "Permite personalizar Android Auto. Desactívalo antes de salir. No cambia el GPS.",
+    "Android Auto अनुकूलन खोलता है। चलने से पहले बंद करें। GPS नहीं बदलता।"
+  ],
+  [
+    "Áudio",
+    "Audio",
+    "Audio",
+    "ऑडियो"
+  ],
+  [
+    "Som direto no celular",
+    "Sound directly on phone",
+    "Sonido directo en el móvil",
+    "आवाज़ सीधे फ़ोन पर"
+  ],
+  [
+    "Microfone gerenciado pelo Android Auto",
+    "Microphone managed by Android Auto",
+    "Micrófono gestionado por Android Auto",
+    "माइक्रोफ़ोन Android Auto के नियंत्रण में"
+  ],
+  [
+    "Microfone do intercomunicador quando conectado",
+    "Use intercom microphone when connected",
+    "Micrófono del intercomunicador al conectarlo",
+    "जुड़ने पर इंटरकॉम माइक्रोफ़ोन इस्तेमाल करें"
+  ],
+  [
+    "Durante uma ligação, os comandos de volume ajustam a chamada. Fora dela, ajustam a mídia.",
+    "Volume buttons adjust call volume during calls, and media volume otherwise.",
+    "Durante una llamada, los botones ajustan su volumen. Fuera de ella, ajustan la música.",
+    "कॉल के दौरान बटन कॉल की आवाज़ बदलते हैं। बाकी समय मीडिया की आवाज़ बदलते हैं।"
+  ],
+  [
+    "Ganho da voz",
+    "Voice gain",
+    "Ganancia de voz",
+    "आवाज़ का गेन"
+  ],
+  [
+    "Voz no nível original · 100%",
+    "Original voice level · 100%",
+    "Nivel de voz original · 100%",
+    "मूल आवाज़ स्तर · 100%"
+  ],
+  [
+    "O ganho só funciona com a voz passando pela ponte. Não altera a música nem o microfone.",
+    "Gain applies only to voice routed through the bridge. It does not change music or microphone levels.",
+    "La ganancia solo afecta la voz que pasa por el puente. No cambia la música ni el micrófono.",
+    "गेन केवल ब्रिज से आने वाली आवाज़ पर लागू होता है। संगीत या माइक्रोफ़ोन नहीं बदलता।"
+  ],
+  [
+    "Imagem no painel",
+    "Display image",
+    "Imagen del panel",
+    "डिस्प्ले की तस्वीर"
+  ],
+  [
+    "Alternar barra pelo botão",
+    "Toggle taskbar with button",
+    "Alternar barra con el botón",
+    "बटन से टास्कबार दिखाएँ / छिपाएँ"
+  ],
+  [
+    "Desligado: barra temporária. Ligado: um toque mostra e outro esconde.",
+    "Off: temporary taskbar. On: one press shows it, the next hides it.",
+    "Desactivado: barra temporal. Activado: un toque la muestra y otro la oculta.",
+    "बंद: टास्कबार थोड़ी देर दिखता है। चालू: एक बार दबाकर दिखाएँ, फिर दबाकर छिपाएँ।"
+  ],
+  [
+    "Tempo da barra",
+    "Taskbar duration",
+    "Duración de la barra",
+    "टास्कबार की अवधि"
+  ],
+  [
+    "A · Com barra",
+    "A · With taskbar",
+    "A · Con barra",
+    "A · टास्कबार के साथ"
+  ],
+  [
+    "B · Sem barra, sem deformar",
+    "B · No taskbar, no distortion",
+    "B · Sin barra, sin deformar",
+    "B · बिना टास्कबार, बिना विकृति"
+  ],
+  [
+    "C · Sem barra, preencher",
+    "C · No taskbar, fill",
+    "C · Sin barra, rellenar",
+    "C · बिना टास्कबार, पूरा भरें"
+  ],
+  [
+    "D · Sem barra, adaptar à curva",
+    "D · No taskbar, fit curve",
+    "D · Sin barra, adaptar a la curva",
+    "D · बिना टास्कबार, वक्र में फिट"
+  ],
+  [
+    "Formato da distorção · modo D",
+    "Distortion shape · mode D",
+    "Forma de distorsión · modo D",
+    "विकृति का आकार · मोड D"
+  ],
+  [
+    "Distorção",
+    "Distortion",
+    "Distorsión",
+    "विकृति"
+  ],
+  [
+    "Distorção do painel",
+    "Display distortion",
+    "Distorsión del panel",
+    "डिस्प्ले की विकृति"
+  ],
+  [
+    "Modo D: 0% proporcional · 100% ocupa a curva.",
+    "Mode D: 0% proportional · 100% fills the curve.",
+    "Modo D: 0% proporcional · 100% ocupa la curva.",
+    "मोड D: 0% मूल अनुपात · 100% वक्र भरता है।"
+  ],
+  [
+    "Largura X",
+    "Width X",
+    "Ancho X",
+    "चौड़ाई X"
+  ],
+  [
+    "Altura Y",
+    "Height Y",
+    "Alto Y",
+    "ऊँचाई Y"
+  ],
+  [
+    "Posição X",
+    "Position X",
+    "Posición X",
+    "स्थिति X"
+  ],
+  [
+    "Posição Y",
+    "Position Y",
+    "Posición Y",
+    "स्थिति Y"
+  ],
+  [
+    "Esquerda",
+    "Left",
+    "Izquierda",
+    "बायाँ"
+  ],
+  [
+    "Direita",
+    "Right",
+    "Derecha",
+    "दायाँ"
+  ],
+  [
+    "Centro",
+    "Center",
+    "Centro",
+    "बीच"
+  ],
+  [
+    "Topo",
+    "Top",
+    "Arriba",
+    "ऊपर"
+  ],
+  [
+    "Baixo",
+    "Down",
+    "Abajo",
+    "नीचे"
+  ],
+  [
+    "Cima",
+    "Up",
+    "Arriba",
+    "ऊपर"
+  ],
+  [
+    "Logo · modos B e D",
+    "Logo · modes B and D",
+    "Logo · modos B y D",
+    "लोगो · मोड B और D"
+  ],
+  [
+    "Sem nada",
+    "None",
+    "Ninguno",
+    "कोई नहीं"
+  ],
+  [
+    "Tamanho do logo",
+    "Logo size",
+    "Tamaño del logo",
+    "लोगो का आकार"
+  ],
+  [
+    "Logo X",
+    "Logo X",
+    "Logo X",
+    "लोगो X"
+  ],
+  [
+    "Logo Y",
+    "Logo Y",
+    "Logo Y",
+    "लोगो Y"
+  ],
+  [
+    "Fundo da logo",
+    "Logo background",
+    "Fondo del logo",
+    "लोगो की पृष्ठभूमि"
+  ],
+  [
+    "Transparente",
+    "Transparent",
+    "Transparente",
+    "पारदर्शी"
+  ],
+  [
+    "Preto · cantos arredondados",
+    "Black · rounded corners",
+    "Negro · esquinas redondeadas",
+    "काला · गोल कोने"
+  ],
+  [
+    "Preto · cantos retos",
+    "Black · square corners",
+    "Negro · esquinas rectas",
+    "काला · चौकोर कोने"
+  ],
+  [
+    "Widget de informações",
+    "Status widget",
+    "Widget de información",
+    "जानकारी विजेट"
+  ],
+  [
+    "Mostrar widget",
+    "Show widget",
+    "Mostrar widget",
+    "विजेट दिखाएँ"
+  ],
+  [
+    "Data, hora, bateria e conexão do celular. Independente da logo.",
+    "Phone date, time, battery and connection. Independent of the logo.",
+    "Fecha, hora, batería y conexión del móvil. Independiente del logo.",
+    "फ़ोन की तारीख, समय, बैटरी और कनेक्शन। लोगो से अलग।"
+  ],
+  [
+    "Tamanho do widget",
+    "Widget size",
+    "Tamaño del widget",
+    "विजेट का आकार"
+  ],
+  [
+    "Widget X",
+    "Widget X",
+    "Widget X",
+    "विजेट X"
+  ],
+  [
+    "Widget Y",
+    "Widget Y",
+    "Widget Y",
+    "विजेट Y"
+  ],
+  [
+    "Fundo do widget",
+    "Widget background",
+    "Fondo del widget",
+    "विजेट की पृष्ठभूमि"
+  ],
+  [
+    "Widget à frente da logo",
+    "Widget in front of logo",
+    "Widget delante del logo",
+    "विजेट लोगो के आगे"
+  ],
+  [
+    "Desligado: a logo fica à frente do widget.",
+    "Off: the logo is in front of the widget.",
+    "Desactivado: el logo queda delante del widget.",
+    "बंद: लोगो विजेट के आगे रहता है।"
+  ],
+  [
+    "Fundo desfocado · modos B e D",
+    "Blurred background · modes B and D",
+    "Fondo desenfocado · modos B y D",
+    "धुँधली पृष्ठभूमि · मोड B और D"
+  ],
+  [
+    "Desligado",
+    "Off",
+    "Desactivado",
+    "बंद"
+  ],
+  [
+    "Só laterais",
+    "Sides only",
+    "Solo laterales",
+    "केवल किनारे"
+  ],
+  [
+    "Laterais e embaixo",
+    "Sides and bottom",
+    "Laterales y abajo",
+    "किनारे और नीचे"
+  ],
+  [
+    "Todo o fundo",
+    "Entire background",
+    "Todo el fondo",
+    "पूरी पृष्ठभूमि"
+  ],
+  [
+    "Fluidez do painel",
+    "Display smoothness",
+    "Fluidez del panel",
+    "डिस्प्ले की सुगमता"
+  ],
+  [
+    "12 fps · mais fluido",
+    "12 fps · smoother",
+    "12 fps · más fluido",
+    "12 fps · अधिक सहज"
+  ],
+  [
+    "8 fps · intermediário",
+    "8 fps · balanced",
+    "8 fps · intermedio",
+    "8 fps · संतुलित"
+  ],
+  [
+    "4 fps · compatibilidade",
+    "4 fps · compatibility",
+    "4 fps · compatibilidad",
+    "4 fps · अनुकूलता"
+  ],
+  [
+    "Taxa de vídeo",
+    "Video bitrate",
+    "Tasa de vídeo",
+    "वीडियो बिटरेट"
+  ],
+  [
+    "Mais taxa melhora a imagem e aumenta o tráfego. FPS e taxa mudam durante a projeção.",
+    "Higher bitrate improves the image and increases traffic. FPS and bitrate change during projection.",
+    "Más tasa mejora la imagen y aumenta el tráfico. FPS y tasa cambian durante la proyección.",
+    "अधिक बिटरेट तस्वीर सुधारता है और डेटा बढ़ाता है। FPS और बिटरेट प्रोजेक्शन के दौरान बदलते हैं।"
+  ],
+  [
+    "Controles da moto",
+    "Bike controls",
+    "Controles de la moto",
+    "बाइक के कंट्रोल"
+  ],
+  [
+    "Joystick aguardando comandos",
+    "Waiting for joystick input",
+    "Esperando comandos del joystick",
+    "जॉयस्टिक इनपुट की प्रतीक्षा"
+  ],
+  [
+    "Usar joystick da moto",
+    "Use bike joystick",
+    "Usar joystick de la moto",
+    "बाइक जॉयस्टिक इस्तेमाल करें"
+  ],
+  [
+    "Perfil",
+    "Profile",
+    "Perfil",
+    "प्रोफ़ाइल"
+  ],
+  [
+    "Trocar perfil",
+    "Switch profile",
+    "Cambiar perfil",
+    "प्रोफ़ाइल बदलें"
+  ],
+  [
+    "Dois toques: solte e pressione de novo, em até 3 s. Com ação dupla, o toque simples espera esse prazo.",
+    "Double press: release and press again within 3 seconds. A configured double press delays the single action.",
+    "Doble toque: suelta y pulsa otra vez en 3 segundos. La acción simple espera si hay una doble configurada.",
+    "दो बार दबाएँ: छोड़ें और 3 सेकंड में फिर दबाएँ। दोहरे इनपुट पर एकल कार्रवाई उतनी देर इंतज़ार करती है।"
+  ],
+  [
+    "Fora · mapa",
+    "Outside · map",
+    "Fuera · mapa",
+    "बाहर · नक्शा"
+  ],
+  [
+    "Dentro · controles de mídia",
+    "Inside · media controls",
+    "Dentro · controles multimedia",
+    "अंदर · मीडिया कंट्रोल"
+  ],
+  [
+    "Com a bola nativa oculta, alguns painéis não enviam os comandos de fora.",
+    "Some displays do not send outside commands when the native direction circle is hidden.",
+    "Algunos paneles no envían comandos de fuera al ocultar el círculo nativo.",
+    "दिशा का मूल घेरा छिपा होने पर कुछ डिस्प्ले बाहर के कमांड नहीं भेजते।"
+  ],
+  [
+    "O centro de fora também abre os controles do próprio painel. Essa função nativa continua acontecendo.",
+    "Outside center also opens the display's own media controls. This native action still happens.",
+    "El centro de fuera también abre los controles del panel. Esa función nativa sigue activa.",
+    "बाहर का बीच वाला बटन डिस्प्ले के मीडिया कंट्रोल भी खोलता है। यह मूल काम जारी रहता है।"
+  ],
+  [
+    "Compartilhado",
+    "Shared",
+    "Compartido",
+    "साझा"
+  ],
+  [
+    "Sem ação",
+    "No action",
+    "Sin acción",
+    "कोई कार्रवाई नहीं"
+  ],
+  [
+    "Voz",
+    "Voice",
+    "Voz",
+    "आवाज़"
+  ],
+  [
+    "Play / pause",
+    "Play / pause",
+    "Reproducir / pausar",
+    "चलाएँ / रोकें"
+  ],
+  [
+    "Faixa anterior",
+    "Previous track",
+    "Pista anterior",
+    "पिछला गाना"
+  ],
+  [
+    "Próxima faixa",
+    "Next track",
+    "Siguiente pista",
+    "अगला गाना"
+  ],
+  [
+    "Volume +",
+    "Volume +",
+    "Volumen +",
+    "वॉल्यूम +"
+  ],
+  [
+    "Volume −",
+    "Volume −",
+    "Volumen −",
+    "वॉल्यूम −"
+  ],
+  [
+    "Voltar",
+    "Back",
+    "Volver",
+    "वापस"
+  ],
+  [
+    "Confirmar",
+    "Confirm",
+    "Confirmar",
+    "पुष्टि"
+  ],
+  [
+    "Enter",
+    "Enter",
+    "Intro",
+    "एंटर"
+  ],
+  [
+    "Início",
+    "Home",
+    "Inicio",
+    "होम"
+  ],
+  [
+    "Aplicativos",
+    "Apps",
+    "Aplicaciones",
+    "ऐप"
+  ],
+  [
+    "Painel / lista · ícone à esquerda",
+    "Dashboard / apps · left icon",
+    "Panel / lista · icono izquierdo",
+    "डैशबोर्ड / ऐप · बायाँ आइकन"
+  ],
+  [
+    "Painel / lista · ícone à direita",
+    "Dashboard / apps · right icon",
+    "Panel / lista · icono derecho",
+    "डैशबोर्ड / ऐप · दायाँ आइकन"
+  ],
+  [
+    "Item anterior",
+    "Previous item",
+    "Elemento anterior",
+    "पिछला आइटम"
+  ],
+  [
+    "Próximo item",
+    "Next item",
+    "Siguiente elemento",
+    "अगला आइटम"
+  ],
+  [
+    "Voz + mostrar barra",
+    "Voice + show taskbar",
+    "Voz + mostrar barra",
+    "आवाज़ + टास्कबार दिखाएँ"
+  ],
+  [
+    "1 toque",
+    "1 press",
+    "1 toque",
+    "1 बार"
+  ],
+  [
+    "2 toques",
+    "2 presses",
+    "2 toques",
+    "2 बार"
+  ],
+  [
+    "Testar",
+    "Test",
+    "Probar",
+    "टेस्ट"
+  ],
+  [
+    "Restaurar este perfil",
+    "Reset this profile",
+    "Restaurar este perfil",
+    "यह प्रोफ़ाइल रीसेट करें"
+  ],
+  [
+    "Maps e Spotify abrem o último app de navegação ou música usado no Android Auto.",
+    "Maps and Spotify shortcuts open the last navigation or music app used in Android Auto.",
+    "Los accesos de Maps y Spotify abren la última app de navegación o música usada en Android Auto.",
+    "Maps और Spotify शॉर्टकट Android Auto में आखिरी इस्तेमाल किया गया नेविगेशन या संगीत ऐप खोलते हैं।"
+  ],
+  [
+    "Ocultar bola de direções da Royal",
+    "Hide Royal direction circle",
+    "Ocultar círculo de dirección de Royal",
+    "Royal का दिशा घेरा छिपाएँ"
+  ],
+  [
+    "Modo de vídeo sem o cartão nativo da Royal. A remoção da bola depende do firmware; o Google Maps mantém suas próprias instruções.",
+    "Video without Royal's native card. Hiding the circle depends on firmware; Google Maps keeps its own directions.",
+    "Vídeo sin la tarjeta nativa de Royal. Ocultar el círculo depende del firmware; Google Maps conserva sus indicaciones.",
+    "Royal के मूल कार्ड के बिना वीडियो। घेरा छिपना फ़र्मवेयर पर निर्भर है; Google Maps के निर्देश बने रहते हैं।"
+  ],
+  [
+    "Detalhes da conexão",
+    "Connection details",
+    "Detalles de conexión",
+    "कनेक्शन विवरण"
+  ],
+  [
+    "Exportar configurações",
+    "Export settings",
+    "Exportar ajustes",
+    "सेटिंग निर्यात करें"
+  ],
+  [
+    "Importar configurações",
+    "Import settings",
+    "Importar ajustes",
+    "सेटिंग आयात करें"
+  ],
+  [
+    "Todas as configurações e perfis",
+    "All settings and profiles",
+    "Todos los ajustes y perfiles",
+    "सभी सेटिंग और प्रोफ़ाइल"
+  ],
+  [
+    "Somente o perfil atual",
+    "Current profile only",
+    "Solo el perfil actual",
+    "केवल मौजूदा प्रोफ़ाइल"
+  ],
+  [
+    "Créditos",
+    "Credits",
+    "Créditos",
+    "श्रेय"
+  ],
+  [
+    "Fechar",
+    "Close",
+    "Cerrar",
+    "बंद करें"
+  ],
+  [
+    "Licenças",
+    "Licenses",
+    "Licencias",
+    "लाइसेंस"
+  ],
+  [
+    "Cancelar",
+    "Cancel",
+    "Cancelar",
+    "रद्द करें"
+  ],
+  [
+    "Importar",
+    "Import",
+    "Importar",
+    "आयात करें"
+  ],
+  [
+    "Importar para qual perfil?",
+    "Import into which profile?",
+    "¿A qué perfil importar?",
+    "किस प्रोफ़ाइल में आयात करें?"
+  ],
+  [
+    "Ajustes de bateria do aplicativo",
+    "App battery settings",
+    "Ajustes de batería de la app",
+    "ऐप की बैटरी सेटिंग"
+  ],
+  [
+    "Prepare o Android Auto para começar",
+    "Prepare Android Auto to begin",
+    "Prepara Android Auto para empezar",
+    "शुरू करने के लिए Android Auto तैयार करें"
+  ],
+  [
+    "Android Auto parado",
+    "Android Auto stopped",
+    "Android Auto detenido",
+    "Android Auto बंद है"
+  ],
+  [
+    "Android Auto desconectado",
+    "Android Auto disconnected",
+    "Android Auto desconectado",
+    "Android Auto डिस्कनेक्ट है"
+  ],
+  [
+    "Android Auto iniciou o vídeo",
+    "Android Auto video started",
+    "Android Auto inició el vídeo",
+    "Android Auto वीडियो चालू है"
+  ],
+  [
+    "Moto desconectada",
+    "Bike disconnected",
+    "Moto desconectada",
+    "बाइक डिस्कनेक्ट है"
+  ],
+  [
+    "Preparando vídeo…",
+    "Preparing video…",
+    "Preparando vídeo…",
+    "वीडियो तैयार हो रहा है…"
+  ],
+  [
+    "Escolha sua rede RE_ na lista do Android",
+    "Choose your RE_ network in Android's list",
+    "Elige tu red RE_ en la lista de Android",
+    "Android की सूची में अपना RE_ नेटवर्क चुनें"
+  ],
+  [
+    "Reconectando a moto salva…",
+    "Reconnecting to saved bike…",
+    "Reconectando la moto guardada…",
+    "सहेजी गई बाइक से फिर जुड़ रहे हैं…"
+  ],
+  [
+    "Recuperando comunicação com o painel",
+    "Restoring display connection",
+    "Restableciendo conexión con el panel",
+    "डिस्प्ले कनेक्शन बहाल हो रहा है"
+  ],
+  [
+    "Wi-Fi conectado · aguardando imagem do Android Auto",
+    "Wi-Fi connected · waiting for Android Auto video",
+    "Wi-Fi conectado · esperando vídeo de Android Auto",
+    "Wi-Fi जुड़ा है · Android Auto वीडियो की प्रतीक्षा"
+  ],
+  [
+    "Wi-Fi conectado · autenticando painel",
+    "Wi-Fi connected · authenticating display",
+    "Wi-Fi conectado · autenticando panel",
+    "Wi-Fi जुड़ा है · डिस्प्ले प्रमाणीकरण"
+  ],
+  [
+    "Enviando vídeo · confira a imagem no painel",
+    "Sending video · check the display",
+    "Enviando vídeo · comprueba el panel",
+    "वीडियो भेज रहे हैं · डिस्प्ले जाँचें"
+  ],
+  [
+    "Não foi possível conectar ao Wi-Fi da moto",
+    "Could not connect to bike Wi-Fi",
+    "No se pudo conectar al Wi-Fi de la moto",
+    "बाइक के Wi-Fi से नहीं जुड़ सके"
+  ],
+  [
+    "Conexão perdida · reconectando a moto…",
+    "Connection lost · reconnecting bike…",
+    "Conexión perdida · reconectando moto…",
+    "कनेक्शन टूट गया · बाइक फिर जुड़ रही है…"
+  ],
+  [
+    "Procurando novamente a moto salva…",
+    "Looking for saved bike again…",
+    "Buscando de nuevo la moto guardada…",
+    "सहेजी गई बाइक फिर खोज रहे हैं…"
+  ],
+  [
+    "Móvel",
+    "Mobile",
+    "Móvil",
+    "मोबाइल"
+  ],
+  [
+    "Seu caminho, no painel da moto.",
+    "Your route, on the bike's display.",
+    "Tu ruta, en el panel de la moto.",
+    "आपका रास्ता, बाइक की स्क्रीन पर।"
+  ],
+  [
+    "Instale ou ative o Google Maps.",
+    "Install or enable Google Maps.",
+    "Instala o activa Google Maps.",
+    "Google Maps इंस्टॉल या चालू करें।"
+  ],
+  [
+    "Permita o microfone ao iniciar o Android Auto para usar o assistente.",
+    "Allow microphone access when starting Android Auto to use the assistant.",
+    "Permite el micrófono al iniciar Android Auto para usar el asistente.",
+    "सहायक के लिए Android Auto शुरू करते समय माइक्रोफ़ोन की अनुमति दें।"
+  ],
+  [
+    "Pare e inicie a projeção para aplicar o áudio.",
+    "Restart projection to apply the audio settings.",
+    "Reinicia la proyección para aplicar el audio.",
+    "ऑडियो सेटिंग लागू करने के लिए प्रोजेक्शन फिर शुरू करें।"
+  ],
+  [
+    "Pare e inicie a projeção para aplicar o microfone.",
+    "Restart projection to apply the microphone settings.",
+    "Reinicia la proyección para aplicar el micrófono.",
+    "माइक्रोफ़ोन सेटिंग लागू करने के लिए प्रोजेक्शन फिर शुरू करें।"
+  ],
+  [
+    "Som direto: GPS, assistente e música usam a saída do telefone. Microfone gerenciado: o Android Auto escolhe a captura; desligado, o Rota Auto fornece o microfone. Mudanças exigem reiniciar a projeção.",
+    "Direct sound: navigation, assistant and music use the phone's audio output. Managed microphone: Android Auto chooses the input; when off, Rota Auto supplies it. Restart projection after changes.",
+    "Sonido directo: GPS, asistente y música usan la salida del teléfono. Micrófono gestionado: Android Auto elige la entrada; desactivado, Rota Auto la proporciona. Reinicia la proyección tras los cambios.",
+    "सीधा ऑडियो: नेविगेशन, सहायक और संगीत फ़ोन के ऑडियो आउटपुट का उपयोग करते हैं। प्रबंधित माइक्रोफ़ोन: Android Auto इनपुट चुनता है; बंद होने पर Rota Auto देता है। बदलाव के बाद प्रोजेक्शन फिर शुरू करें।"
+  ],
+  [
+    "Modo de imagem do painel",
+    "Display image mode",
+    "Modo de imagen del panel",
+    "पैनल चित्र मोड"
+  ],
+  [
+    "Muda na hora na moto. B preserva proporções; C pode cortar os cantos; D usa uma curva aproximada. A prévia normal mantém o toque.",
+    "Changes apply instantly on the bike. B keeps proportions; C may crop corners; D uses an approximate curve. Normal preview remains touch-enabled.",
+    "Los cambios se aplican al instante en la moto. B conserva las proporciones; C puede recortar las esquinas; D usa una curva aproximada. La vista normal permite tocar.",
+    "बदलाव बाइक पर तुरंत लागू होते हैं। B अनुपात रखता है; C कोने काट सकता है; D अनुमानित वक्र देता है। सामान्य प्रीव्यू में टच चलता है।"
+  ],
+  [
+    "Formato da distorção",
+    "Distortion shape",
+    "Forma de distorsión",
+    "विकृति का आकार"
+  ],
+  [
+    "Logo no painel",
+    "Display logo",
+    "Logo en el panel",
+    "पैनल पर लोगो"
+  ],
+  [
+    "Área do desfoque",
+    "Blur area",
+    "Área de desenfoque",
+    "धुंधले प्रभाव का क्षेत्र"
+  ],
+  [
+    "Fluidez aplicada durante a projeção. Se o painel engasgar, experimente 8 ou 4 fps.",
+    "Frame rate applied during projection. If the display stutters, try 8 or 4 fps.",
+    "FPS aplicados durante la proyección. Si el panel se traba, prueba 8 o 4 fps.",
+    "प्रोजेक्शन के दौरान फ़्रेम दर लागू होती है। स्क्रीन अटके तो 8 या 4 fps आज़माएँ।"
+  ],
+  [
+    "Aplicado na próxima conexão. Pare e conecte novamente. Se o painel não mostrar vídeo, desative esta opção e reconecte.",
+    "Applies on the next connection. Stop and reconnect. If no video appears, disable this option and reconnect.",
+    "Se aplica en la próxima conexión. Detén y reconecta. Si no aparece vídeo, desactiva esta opción y reconecta.",
+    "अगली कनेक्शन पर लागू होगा। रोककर फिर जोड़ें। वीडियो न आए तो इसे बंद करके फिर जोड़ें।"
+  ],
+  [
+    "Tela preta (sem bloquear)",
+    "Black screen (unlocked)",
+    "Pantalla negra (sin bloquear)",
+    "काली स्क्रीन (बिना लॉक)"
+  ],
+  [
+    "Inicie a conexão antes de escurecer a tela.",
+    "Connect before dimming the screen.",
+    "Conecta antes de oscurecer la pantalla.",
+    "स्क्रीन अँधेरी करने से पहले कनेक्ट करें।"
+  ],
+  [
+    "Opção de fundo preto e brilho mínimo, mantendo o celular desbloqueado. Toque duas vezes para voltar. Para bloquear normalmente, use o botão físico.",
+    "Black background and minimum brightness, keeping the phone unlocked. Double-tap to return. Use the physical button to lock normally.",
+    "Fondo negro y brillo mínimo, con el teléfono desbloqueado. Toca dos veces para volver. Usa el botón físico para bloquear.",
+    "फ़ोन अनलॉक रखते हुए काला बैकग्राउंड और न्यूनतम चमक। लौटने के लिए दो बार टैप करें। लॉक करने के लिए फ़ोन का बटन दबाएँ।"
+  ],
+  [
+    "Não foi possível abrir o seletor de arquivos.",
+    "Could not open the file picker.",
+    "No se pudo abrir el selector de archivos.",
+    "फ़ाइल चुनने की स्क्रीन नहीं खुल सकी।"
+  ],
+  [
+    "Use um endereço ou link do Google Maps.",
+    "Use an address or Google Maps link.",
+    "Usa una dirección o enlace de Google Maps.",
+    "पता या Google Maps का लिंक दें।"
+  ],
+  [
+    "Use um endereço ou link do Google Maps",
+    "Use an address or Google Maps link",
+    "Usa una dirección o enlace de Google Maps",
+    "पता या Google Maps का लिंक दें"
+  ],
+  [
+    "Destino recebido. Toque em Traçar rota.",
+    "Destination received. Tap Plan route.",
+    "Destino recibido. Toca Trazar ruta.",
+    "गंतव्य मिला। रास्ता बनाएँ पर टैप करें।"
+  ],
+  [
+    "Digite o destino",
+    "Enter a destination",
+    "Introduce el destino",
+    "गंतव्य दर्ज करें"
+  ],
+  [
+    "Preparando rota de moto…",
+    "Preparing motorcycle route…",
+    "Preparando ruta en moto…",
+    "बाइक का रास्ता तैयार हो रहा है…"
+  ],
+  [
+    "Não consegui identificar o destino desse link. Use o endereço ou defina a rota no Google Maps.",
+    "Could not identify this link's destination. Enter the address or plan the route in Google Maps.",
+    "No se pudo identificar el destino. Usa la dirección o crea la ruta en Google Maps.",
+    "लिंक का गंतव्य नहीं मिला। पता दें या Google Maps में रास्ता बनाएँ।"
+  ],
+  [
+    "Destino pronto. Toque em Traçar rota.",
+    "Destination ready. Tap Plan route.",
+    "Destino listo. Toca Trazar ruta.",
+    "गंतव्य तैयार है। रास्ता बनाएँ पर टैप करें।"
+  ],
+  [
+    "Rota de moto enviada ao Google Maps.",
+    "Motorcycle route sent to Google Maps.",
+    "Ruta en moto enviada a Google Maps.",
+    "बाइक का रास्ता Google Maps को भेजा गया।"
+  ],
+  [
+    "Instale ou ative o Google Maps para traçar a rota.",
+    "Install or enable Google Maps to plan the route.",
+    "Instala o activa Google Maps para trazar la ruta.",
+    "रास्ता बनाने के लिए Google Maps इंस्टॉल या चालू करें।"
+  ],
+  [
+    "Para escolher a moto, permita localização precisa e dispositivos próximos.",
+    "Allow precise location and nearby devices to choose the bike.",
+    "Permite ubicación precisa y dispositivos cercanos para elegir la moto.",
+    "बाइक चुनने के लिए सटीक स्थान और पास के डिवाइस की अनुमति दें।"
+  ],
+  [
+    "Conexão iniciada sem microfone. Permita o acesso e reinicie a ponte para falar com o assistente.",
+    "Connected without a microphone. Allow access and restart projection to use the assistant.",
+    "Conectado sin micrófono. Permite el acceso y reinicia para usar el asistente.",
+    "माइक्रोफ़ोन के बिना कनेक्शन शुरू हुआ। सहायक के लिए अनुमति दें और प्रोजेक्शन फिर शुरू करें।"
+  ],
+  [
+    "Grade de controles da moto",
+    "Bike control grid",
+    "Cuadrícula de controles de la moto",
+    "बाइक नियंत्रण ग्रिड"
+  ],
+  [
+    "Perfis de controles",
+    "Control profiles",
+    "Perfiles de controles",
+    "नियंत्रण प्रोफ़ाइल"
+  ],
+  [
+    "Instale um navegador para abrir este link.",
+    "Install a browser to open this link.",
+    "Instala un navegador para abrir este enlace.",
+    "लिंक खोलने के लिए ब्राउज़र इंस्टॉल करें।"
+  ],
+  [
+    "Participar do grupo de testers no WhatsApp",
+    "Join the WhatsApp testing group",
+    "Unirse al grupo de pruebas en WhatsApp",
+    "WhatsApp परीक्षण समूह में जुड़ें"
+  ],
+  [
+    "Abrir canal Castellar450 no YouTube",
+    "Open Castellar450 on YouTube",
+    "Abrir Castellar450 en YouTube",
+    "YouTube पर Castellar450 खोलें"
+  ],
+  [
+    "Tela preta sem bloquear o celular",
+    "Black screen without locking the phone",
+    "Pantalla negra sin bloquear el teléfono",
+    "फ़ोन लॉक किए बिना काली स्क्रीन"
+  ],
+  [
+    "Simulação do painel sem toque",
+    "Display simulation without touch input",
+    "Simulación del panel sin entrada táctil",
+    "बिना टच वाला पैनल प्रीव्यू"
+  ],
+  [
+    "Arquivo grande demais.",
+    "File too large.",
+    "Archivo demasiado grande.",
+    "फ़ाइल बहुत बड़ी है।"
+  ],
+  [
+    "Substituir configurações e todos os perfis? A conexão atual será parada para aplicar o backup.",
+    "Replace settings and all profiles? The current connection will stop to apply the backup.",
+    "¿Reemplazar los ajustes y todos los perfiles? La conexión se detendrá para aplicar la copia.",
+    "सेटिंग और सभी प्रोफ़ाइल बदलें? बैकअप लागू करने के लिए मौजूदा कनेक्शन बंद होगा।"
+  ],
+  [
+    "Configurações importadas. Você já pode ligar o Android Auto.",
+    "Settings imported. You can start Android Auto.",
+    "Ajustes importados. Ya puedes iniciar Android Auto.",
+    "सेटिंग आयात हो गईं। Android Auto शुरू कर सकते हैं।"
+  ],
+  [
+    "Não foi possível salvar as configurações.",
+    "Could not save settings.",
+    "No se pudieron guardar los ajustes.",
+    "सेटिंग सहेजी नहीं जा सकीं।"
+  ],
+  [
+    "Arquivo inválido ou incompatível. Nenhuma configuração foi alterada.",
+    "Invalid or incompatible file. No settings were changed.",
+    "Archivo inválido o incompatible. No se cambió ningún ajuste.",
+    "अमान्य या असंगत फ़ाइल। कोई सेटिंग नहीं बदली गई।"
+  ],
+  [
+    "Configurações exportadas.",
+    "Settings exported.",
+    "Ajustes exportados.",
+    "सेटिंग निर्यात हो गईं।"
+  ],
+  [
+    "Não foi possível salvar o arquivo.",
+    "Could not save the file.",
+    "No se pudo guardar el archivo.",
+    "फ़ाइल सहेजी नहीं जा सकी।"
+  ],
+  [
+    "Painel não confirmou a conexão",
+    "Display did not confirm the connection",
+    "El panel no confirmó la conexión",
+    "पैनल ने कनेक्शन की पुष्टि नहीं की"
+  ],
+  [
+    "C · Sem barra, preencher altura",
+    "C · No bar, fill height",
+    "C · Sin barra, llenar altura",
+    "C · बिना बार, पूरी ऊँचाई"
+  ],
+  [
+    "D · Sem barra, personalizado",
+    "D · No bar, custom",
+    "D · Sin barra, personalizado",
+    "D · बिना बार, कस्टम"
+  ],
+  [
+    "Lateral",
+    "Sides",
+    "Lateral",
+    "किनारे"
+  ],
+  [
+    "Arco vertical",
+    "Vertical arc",
+    "Arco vertical",
+    "लंबवत चाप"
+  ],
+  [
+    "Equilibrada",
+    "Balanced",
+    "Equilibrada",
+    "संतुलित"
+  ],
+  [
+    "Toque duas vezes para voltar",
+    "Double-tap to return",
+    "Toca dos veces para volver",
+    "लौटने के लिए दो बार टैप करें"
+  ],
+  [
+    "celular desbloqueado",
+    "phone unlocked",
+    "teléfono desbloqueado",
+    "फ़ोन अनलॉक है"
+  ],
+  [
+    "Por Matheus Castellar.",
+    "By Matheus Castellar.",
+    "Por Matheus Castellar.",
+    "Matheus Castellar द्वारा।"
+  ],
+  [
+    "Código aberto · AGPL-3.0.",
+    "Open source · AGPL-3.0.",
+    "Código abierto · AGPL-3.0.",
+    "खुला स्रोत · AGPL-3.0।"
+  ],
+  [
+    "Sem vínculo com Google ou Royal Enfield.",
+    "Not affiliated with Google or Royal Enfield.",
+    "Sin relación con Google ni Royal Enfield.",
+    "Google या Royal Enfield से संबद्ध नहीं।"
+  ],
+  [
+    "Baseado em Open Headunit, OpenDash, NorthStar e better-dash. Referências: WayFindr e Dash Bridge.",
+    "Based on Open Headunit, OpenDash, NorthStar and better-dash. References: WayFindr and Dash Bridge.",
+    "Basado en Open Headunit, OpenDash, NorthStar y better-dash. Referencias: WayFindr y Dash Bridge.",
+    "Open Headunit, OpenDash, NorthStar और better-dash पर आधारित। संदर्भ: WayFindr और Dash Bridge।"
+  ],
+  [
+    "1. Abra as configurações do Android Auto no seu celular. Toque 10 vezes em \"Versão\" para liberar o menu de desenvolvedor do Android Auto.\n\n2. No menu (⋮) da tela principal do Android Auto, escolha Iniciar servidor da unidade principal.\n\n3. Vá no aplicativo Rota Auto, ligue o Android Auto e conecte na moto (ou reconecte caso tenha se conectado antes).\n\nCaso ao bloquear a tela do celular o painel perca a ligação, basta ativar a Depuração USB nas opções de desenvolvedor do Android (cada celular é em um lugar diferente. Basta pesquisar no Google como ativar o modo de desenvolvedor no modelo do seu celular).",
+    "1. Open Android Auto settings on your phone. Tap \"Version\" 10 times to enable the Android Auto developer menu.\n\n2. In the main Android Auto screen menu (⋮), select Start head unit server.\n\n3. Open Rota Auto, start Android Auto and connect to the bike (or reconnect if already paired).\n\nIf projection disconnects when you lock the phone, enable USB debugging in Android developer options. The steps vary by phone; search for instructions for your model.",
+    "1. Abre los ajustes de Android Auto en el teléfono. Toca \"Versión\" 10 veces para activar el menú de desarrollador de Android Auto.\n\n2. En el menú (⋮) de la pantalla principal de Android Auto, elige Iniciar servidor de la unidad principal.\n\n3. Abre Rota Auto, inicia Android Auto y conecta la moto (o reconecta si ya estaba vinculada).\n\nSi se desconecta al bloquear el teléfono, activa Depuración USB en las opciones de desarrollador de Android. Los pasos varían según el teléfono; busca las instrucciones para tu modelo.",
+    "1. फ़ोन पर Android Auto की सेटिंग खोलें। डेवलपर मेन्यू चालू करने के लिए \"वर्शन\" पर 10 बार टैप करें।\n\n2. Android Auto की मुख्य स्क्रीन के मेन्यू (⋮) में हेड यूनिट सर्वर शुरू करें चुनें।\n\n3. Rota Auto खोलें, Android Auto शुरू करें और बाइक से कनेक्ट करें (पहले जुड़ी हो तो फिर कनेक्ट करें)।\n\nफ़ोन लॉक करने पर कनेक्शन टूटे तो Android की डेवलपर सेटिंग में USB डीबगिंग चालू करें। हर फ़ोन में तरीका अलग है; अपने मॉडल के लिए निर्देश खोजें।"
+  ],
+  [
+    "Permita localização precisa e dispositivos próximos para identificar a moto.",
+    "Allow precise location and nearby devices to identify the bike.",
+    "Permite ubicación precisa y dispositivos cercanos para identificar la moto.",
+    "बाइक पहचानने के लिए सटीक स्थान और पास के डिवाइस की अनुमति दें।"
+  ],
+  [
+    "Data, hora, bateria e rede móvel do celular. Independente do Wi-Fi da moto e da logo.",
+    "Date, time, battery and the phone's mobile network. Independent of bike Wi-Fi and the logo.",
+    "Fecha, hora, batería y red móvil del teléfono. Independiente del Wi-Fi de la moto y del logo.",
+    "तारीख, समय, बैटरी और फ़ोन की मोबाइल नेटवर्क। बाइक के Wi-Fi और लोगो से अलग।"
+  ],
+  [
+    "Formato do widget",
+    "Widget layout",
+    "Formato del widget",
+    "विजेट का प्रारूप"
+  ],
+  [
+    "Linear",
+    "Linear",
+    "Lineal",
+    "रेखीय"
+  ],
+  [
+    "Quadrado",
+    "Square",
+    "Cuadrado",
+    "चौकोर"
+  ],
+  [
+    "Recuperando comunicação com o painel…",
+    "Restoring display communication…",
+    "Recuperando comunicación con el panel…",
+    "पैनल का संचार बहाल कर रहे हैं…"
+  ],
+  [
+    "Altura do widget",
+    "Widget height",
+    "Altura del widget",
+    "विजेट की ऊँचाई"
+  ],
+  [
+    "Visualização da bola atualizada",
+    "Turn bubble display updated",
+    "Visualización del indicador actualizada",
+    "दिशा संकेत का दृश्य अपडेट किया गया"
+  ],
+  [
+    "Oculta o símbolo e mantém a navegação nativa ativa. Desative para mostrar as orientações recebidas do Android Auto. Os comandos de fora dependem do firmware.",
+    "Hides the symbol while keeping native navigation active. Turn off to show directions received from Android Auto. Outside controls depend on the firmware.",
+    "Oculta el símbolo y mantiene activa la navegación nativa. Desactiva para mostrar las indicaciones de Android Auto. Los controles externos dependen del firmware.",
+    "चिह्न छिपाता है और मूल नेविगेशन चालू रखता है। Android Auto के दिशा निर्देश दिखाने के लिए बंद करें। बाहरी नियंत्रण फ़र्मवेयर पर निर्भर हैं।"
+  ],
+  [
+    "A navegação nativa permanece ativa com a bola oculta. Confirme os comandos de fora no seu painel.",
+    "Native navigation stays active with the turn bubble hidden. Check outside controls on your dash.",
+    "La navegación nativa permanece activa con el indicador oculto. Comprueba los controles externos en tu panel.",
+    "दिशा संकेत छिपा होने पर मूल नेविगेशन चालू रहता है। अपने डैश पर बाहरी नियंत्रण जाँचें।"
+  ],
+  [
+    "Abrir WhatsApp",
+    "Open WhatsApp",
+    "Abrir WhatsApp",
+    "WhatsApp खोलें"
+  ],
+  [
+    "Alternar Maps/Spotify",
+    "Switch Maps/Spotify",
+    "Alternar Maps/Spotify",
+    "Maps/Spotify बदलें"
+  ],
+  [
+    "WhatsApp não instalado ou ícone indisponível",
+    "WhatsApp is not installed or its icon is unavailable",
+    "WhatsApp no está instalado o su icono no está disponible",
+    "WhatsApp इंस्टॉल नहीं है या उसका आइकन उपलब्ध नहीं है"
+  ],
+  [
+    "WhatsApp selecionado no Android Auto",
+    "WhatsApp selected in Android Auto",
+    "WhatsApp seleccionado en Android Auto",
+    "Android Auto में WhatsApp चुना गया"
+  ],
+  [
+    "WhatsApp não encontrado na tela do Android Auto",
+    "WhatsApp was not found on the Android Auto screen",
+    "No se encontró WhatsApp en la pantalla de Android Auto",
+    "Android Auto स्क्रीन पर WhatsApp नहीं मिला"
+  ],
+  [
+    "Desenvolvedor",
+    "Developer",
+    "Desarrollador",
+    "डेवलपर"
+  ],
+  [
+    "Desenvolvedor · inputs da moto",
+    "Developer · motorcycle inputs",
+    "Desarrollador · entradas de la moto",
+    "डेवलपर · बाइक इनपुट"
+  ],
+  [
+    "Registra botões recebidos da moto. Os comandos continuam funcionando. Uma nova captura substitui a anterior.",
+    "Records buttons received from the bike. Controls keep working. A new capture replaces the previous one.",
+    "Registra botones recibidos de la moto. Los controles siguen funcionando. Una captura nueva sustituye la anterior.",
+    "बाइक के बटन रिकॉर्ड करता है। नियंत्रण काम करते रहते हैं। नई रिकॉर्डिंग पिछली को बदलती है।"
+  ],
+  [
+    "Iniciar captura",
+    "Start capture",
+    "Iniciar captura",
+    "रिकॉर्डिंग शुरू करें"
+  ],
+  [
+    "Parar captura",
+    "Stop capture",
+    "Detener captura",
+    "रिकॉर्डिंग रोकें"
+  ],
+  [
+    "Salvar log",
+    "Save log",
+    "Guardar registro",
+    "लॉग सहेजें"
+  ],
+  [
+    "Capturando",
+    "Recording",
+    "Capturando",
+    "रिकॉर्ड हो रहा है"
+  ],
+  [
+    "Captura parada",
+    "Capture stopped",
+    "Captura detenida",
+    "रिकॉर्डिंग बंद"
+  ],
+  [
+    "Log anterior disponível",
+    "Previous log available",
+    "Registro anterior disponible",
+    "पिछला लॉग उपलब्ध"
+  ],
+  [
+    "Mantém as últimas 2.000 linhas. Fechar esta janela não para a captura. Parar o Rota Auto encerra a captura.",
+    "Keeps the latest 2,000 lines. Closing this window does not stop capture. Stopping Rota Auto ends capture.",
+    "Conserva las últimas 2.000 líneas. Cerrar esta ventana no detiene la captura. Detener Rota Auto termina la captura.",
+    "आखिरी 2,000 पंक्तियाँ रखता है। यह विंडो बंद करने से रिकॉर्डिंग नहीं रुकती। Rota Auto रोकने से रिकॉर्डिंग बंद होती है।"
+  ],
+  [
+    "Não foi possível atualizar o log no celular. Use Salvar log.",
+    "Could not update the local log. Use Save log.",
+    "No se pudo actualizar el registro local. Usa Guardar registro.",
+    "स्थानीय लॉग अपडेट नहीं हुआ। लॉग सहेजें चुनें।"
+  ],
+  [
+    "Log de inputs salvo.",
+    "Input log saved.",
+    "Registro de entradas guardado.",
+    "इनपुट लॉग सहेजा गया।"
+  ],
+  [
+    "Bloquear ações durante a captura",
+    "Block actions during capture",
+    "Bloquear acciones durante la captura",
+    "रिकॉर्डिंग के दौरान क्रियाएँ रोकें"
+  ],
+  [
+    "Registra botões recebidos da moto. Uma nova captura substitui a anterior.",
+    "Records buttons received from the bike. A new capture replaces the previous one.",
+    "Registra botones recibidos de la moto. Una captura nueva sustituye la anterior.",
+    "बाइक के बटन रिकॉर्ड करता है। नई रिकॉर्डिंग पिछली को बदलती है।"
+  ],
+  [
+    "Mantém as últimas 2.000 linhas. Fechar esta janela não para a captura. Parar a captura libera os atalhos. Comandos internos do painel podem continuar.",
+    "Keeps the last 2,000 lines. Closing this window keeps capture running. Stopping capture releases shortcuts. Internal dashboard commands may still work.",
+    "Conserva las últimas 2.000 líneas. Cerrar esta ventana no detiene la captura. Detenerla libera los atajos. Los comandos internos del panel pueden seguir activos.",
+    "आखिरी 2,000 पंक्तियाँ रखता है। विंडो बंद करने पर रिकॉर्डिंग जारी रहती है। रिकॉर्डिंग रोकने पर शॉर्टकट फिर काम करते हैं। डैशबोर्ड के अपने आदेश चल सकते हैं।"
+  ],
+  [
+    "Registra todos os pacotes recebidos pelo app, inclusive desconhecidos. Uma nova captura substitui a anterior.",
+    "Records every packet received by the app, including unknown packets. A new capture replaces the previous one.",
+    "Registra todos los paquetes recibidos por la app, incluso desconocidos. Una captura nueva sustituye la anterior.",
+    "ऐप को मिले सभी पैकेट रिकॉर्ड करता है, अज्ञात पैकेट भी। नया रिकॉर्ड पुराने को बदलता है।"
+  ],
+  [
+    "Teste das bolinhas · 0 a 255",
+    "Bubble test · 0 to 255",
+    "Prueba de burbujas · 0 a 255",
+    "बबल परीक्षण · 0 से 255"
+  ],
+  [
+    "Com a moto parada e conectada: inicie a captura, escolha um número e aperte os botões do guidão. Invisível no catálogo não garante comandos funcionando no seu painel.",
+    "With the bike parked and connected: start capture, choose a number and press the handlebar buttons. Hidden in the catalog does not guarantee working controls on your dash.",
+    "Con la moto parada y conectada: inicia la captura, elige un número y pulsa los botones del manillar. Invisible en el catálogo no garantiza mandos funcionales en tu panel.",
+    "बाइक खड़ी और कनेक्ट हो: रिकॉर्ड शुरू करें, नंबर चुनें और हैंडलबार बटन दबाएँ। कैटलॉग में अदृश्य होने से आपके पैनल के बटन काम करने की गारंटी नहीं है।"
+  ],
+  [
+    "Escolher símbolo",
+    "Choose symbol",
+    "Elegir símbolo",
+    "चिह्न चुनें"
+  ],
+  [
+    "Anterior",
+    "Previous",
+    "Anterior",
+    "पिछला"
+  ],
+  [
+    "Próximo",
+    "Next",
+    "Siguiente",
+    "अगला"
+  ],
+  [
+    "Seta · 9",
+    "Arrow · 9",
+    "Flecha · 9",
+    "तीर · 9"
+  ],
+  [
+    "Oculto · 90",
+    "Hidden · 90",
+    "Oculto · 90",
+    "अदृश्य · 90"
+  ],
+  [
+    "Oculto · 255",
+    "Hidden · 255",
+    "Oculto · 255",
+    "अदृश्य · 255"
+  ],
+  [
+    "Restaurar símbolo normal",
+    "Restore normal symbol",
+    "Restaurar símbolo normal",
+    "सामान्य चिह्न बहाल करें"
+  ],
+  [
+    "Testando: Fora",
+    "Testing: Outside",
+    "Probando: Fuera",
+    "परीक्षण: बाहर"
+  ],
+  [
+    "Testando: Dentro",
+    "Testing: Inside",
+    "Probando: Dentro",
+    "परीक्षण: अंदर"
+  ],
+  [
+    "Anotar resultado",
+    "Record result",
+    "Anotar resultado",
+    "परिणाम लिखें"
+  ],
+  [
+    "Bolinha oculta",
+    "Bubble hidden",
+    "Burbuja oculta",
+    "बबल छिपा है"
+  ],
+  [
+    "Bolinha visível",
+    "Bubble visible",
+    "Burbuja visible",
+    "बबल दिख रहा है"
+  ],
+  [
+    "Comandos recebidos",
+    "Inputs received",
+    "Mandos recibidos",
+    "इनपुट मिले"
+  ],
+  [
+    "Apertei e não chegou comando",
+    "Pressed, no input received",
+    "Pulsé y no llegó ningún mando",
+    "बटन दबाया पर इनपुट नहीं मिला"
+  ],
+  [
+    "Teste temporário: Parar captura restaura o símbolo normal e libera os atalhos. Fechar a janela mantém o teste. O bloqueio não impede ações internas da moto. Log limitado a 2.000 registros e 2 milhões de caracteres, sem cortar pacotes retidos.",
+    "Temporary test: Stop capture restores the normal symbol and shortcuts. Closing this window keeps the test running. Blocking does not prevent native bike actions. Log limited to 2,000 records and 2 million characters; retained packets are complete.",
+    "Prueba temporal: Parar captura restaura el símbolo normal y los atajos. Cerrar la ventana mantiene la prueba. El bloqueo no impide acciones nativas de la moto. Límite: 2.000 registros y 2 millones de caracteres; paquetes retenidos completos.",
+    "अस्थायी परीक्षण: रिकॉर्ड रोकने पर सामान्य चिह्न और शॉर्टकट लौटते हैं। विंडो बंद करने पर परीक्षण चलता रहेगा। बाइक की अपनी क्रियाएँ नहीं रुकतीं। सीमा: 2,000 रिकॉर्ड और 20 लाख अक्षर; रखे गए पैकेट पूरे हैं।"
+  ],
+  [
+    "pacotes",
+    "packets",
+    "paquetes",
+    "पैकेट"
+  ],
+  [
+    "Botões recebidos neste teste",
+    "Button events in this test",
+    "Botones recibidos en esta prueba",
+    "इस परीक्षण में मिले बटन"
+  ],
+  [
+    "Invisível no catálogo",
+    "Hidden in catalog",
+    "Invisible en el catálogo",
+    "कैटलॉग में अदृश्य"
+  ],
+  [
+    "Bolinha vazia",
+    "Empty bubble",
+    "Burbuja vacía",
+    "खाली बबल"
+  ],
+  [
+    "Seguir em frente",
+    "Continue straight",
+    "Seguir recto",
+    "सीधे जाएँ"
+  ],
+  [
+    "Virar à esquerda",
+    "Turn left",
+    "Girar a la izquierda",
+    "बाएँ मुड़ें"
+  ],
+  [
+    "Virar à direita",
+    "Turn right",
+    "Girar a la derecha",
+    "दाएँ मुड़ें"
+  ],
+  [
+    "Recalculando",
+    "Rerouting",
+    "Recalculando",
+    "मार्ग फिर बना रहे हैं"
+  ],
+  [
+    "Símbolo visível",
+    "Visible symbol",
+    "Símbolo visible",
+    "दिखने वाला चिह्न"
+  ],
+  [
+    "Ocultar a bolinha pode bloquear os comandos de fora no painel. Desative para usar as orientações; em Desenvolvedor você pode comparar outros símbolos.",
+    "Hiding the bubble may block outside controls on the dash. Turn this off for guidance; compare other symbols under Developer.",
+    "Ocultar la burbuja puede bloquear los mandos de fuera. Desactívalo para ver indicaciones; compara otros símbolos en Desarrollador.",
+    "बबल छिपाने से पैनल के बाहरी बटन रुक सकते हैं। दिशा निर्देश के लिए बंद करें; डेवलपर में दूसरे चिह्न जाँचें।"
+  ],
+  [
+    "Os comandos de fora podem parar com a bolinha do mapa oculta.",
+    "Outside controls may stop with the map bubble hidden.",
+    "Los mandos de fuera pueden dejar de funcionar con la burbuja del mapa oculta.",
+    "मैप बबल छिपा होने पर बाहरी बटन रुक सकते हैं।"
+  ],
+  [
+    "Ajustar kb/s manualmente",
+    "Set kb/s manually",
+    "Ajustar kb/s manualmente",
+    "kb/s मैन्युअल रूप से सेट करें"
+  ],
+  [
+    "Restaurar vídeo de fábrica",
+    "Restore video defaults",
+    "Restaurar vídeo de fábrica",
+    "वीडियो डिफ़ॉल्ट बहाल करें"
+  ],
+  [
+    "Automático: o celular varia a taxa conforme a imagem, com uma referência baseada no FPS. Não mede a qualidade do Wi-Fi.",
+    "Automatic: the phone varies bitrate with the picture, using an FPS-based target. It does not measure Wi-Fi quality.",
+    "Automático: el móvil varía la tasa según la imagen, con una referencia basada en FPS. No mide la calidad del Wi-Fi.",
+    "स्वचालित: फ़ोन चित्र के अनुसार दर बदलता है, FPS के आधार पर लक्ष्य रखता है। यह Wi-Fi की गुणवत्ता नहीं मापता।"
+  ],
+  [
+    "Mostrar/ocultar bolinha do GPS",
+    "Show/hide GPS bubble",
+    "Mostrar/ocultar burbuja del GPS",
+    "GPS बबल दिखाएँ/छिपाएँ"
+  ],
+  [
+    "Bolinha oculta",
+    "Bubble hidden",
+    "Burbuja oculta",
+    "बबल छिपा हुआ"
+  ],
+  [
+    "Bolinha visível",
+    "Bubble visible",
+    "Burbuja visible",
+    "बबल दिखाई दे रहा है"
+  ],
+  ["Mapa: dia e noite", "Map: day and night", "Mapa: día y noche", "मैप: दिन और रात"],
+  ["Automático", "Automatic", "Automático", "स्वचालित"],
+  ["Dia", "Day", "Día", "दिन"],
+  ["Noite", "Night", "Noche", "रात"],
+  [
+    "Automático: dia das 6h às 18h; noite nos demais horários. Usa o horário do celular e muda só o mapa do Android Auto.",
+    "Automatic: day from 6 am to 6 pm; night otherwise. Uses your phone's local time and changes only the Android Auto map.",
+    "Automático: día de 6 a 18 h; noche el resto del tiempo. Usa la hora del teléfono y cambia solo el mapa de Android Auto.",
+    "स्वचालित: सुबह 6 से शाम 6 तक दिन, बाकी समय रात। फ़ोन के स्थानीय समय का उपयोग करता है और केवल Android Auto मैप बदलता है।"
+  ],
+  ["Voltar à configuração anterior", "Return to previous settings", "Volver a la configuración anterior", "पिछली सेटिंग पर वापस जाएँ"],
+  [
+    "Guardamos uma cópia antes de importar configurações ou restaurar vídeo e perfis. Ela fica somente neste celular.",
+    "We save a copy before importing settings or resetting video and profiles. It stays only on this phone.",
+    "Guardamos una copia antes de importar ajustes o restablecer vídeo y perfiles. Se guarda solo en este teléfono.",
+    "सेटिंग आयात करने या वीडियो और प्रोफ़ाइल रीसेट करने से पहले एक कॉपी सहेजते हैं। यह केवल इस फ़ोन पर रहती है।"
+  ],
+  ["Cópia salva em", "Copy saved on", "Copia guardada el", "कॉपी सहेजी गई:"],
+  ["Antes de:", "Before:", "Antes de:", "इससे पहले:"],
+  ["Restaurar", "Restore", "Restaurar", "बहाल करें"],
+  [
+    "Restaura os ajustes e os três perfis. A conexão será parada. A configuração atual será guardada para você poder voltar a ela.",
+    "Restores settings and all three profiles. The connection will stop. Your current settings will be saved so you can return to them.",
+    "Restaura los ajustes y los tres perfiles. La conexión se detendrá. Se guardarán los ajustes actuales para poder volver a ellos.",
+    "सेटिंग और तीनों प्रोफ़ाइल बहाल करता है। कनेक्शन रुक जाएगा। वर्तमान सेटिंग सहेजी जाएगी ताकि आप उस पर वापस जा सकें।"
+  ],
+  ["Ainda não há uma configuração anterior salva.", "No previous settings have been saved yet.", "Aún no hay una configuración anterior guardada.", "अभी कोई पिछली सेटिंग सहेजी नहीं गई है।"],
+  ["Não foi possível ler a configuração anterior.", "Could not read the previous settings.", "No se pudo leer la configuración anterior.", "पिछली सेटिंग पढ़ी नहीं जा सकी।"],
+  ["Não foi possível restaurar a configuração anterior.", "Could not restore the previous settings.", "No se pudo restaurar la configuración anterior.", "पिछली सेटिंग बहाल नहीं हो सकी।"],
+  [
+    "Não foi possível guardar a configuração anterior. Nada foi alterado.",
+    "Could not save the previous settings. Nothing was changed.",
+    "No se pudo guardar la configuración anterior. No se cambió nada.",
+    "पिछली सेटिंग सहेजी नहीं जा सकी। कुछ नहीं बदला गया।"
+  ],
+  [
+    "Configuração anterior restaurada. Você já pode ligar o Android Auto.",
+    "Previous settings restored. You can now start Android Auto.",
+    "Configuración anterior restaurada. Ya puedes iniciar Android Auto.",
+    "पिछली सेटिंग बहाल हो गई। अब आप Android Auto शुरू कर सकते हैं।"
+  ],
+  ["Abrir aplicativo: Outro", "Open app: Other", "Abrir aplicación: Otra", "ऐप खोलें: अन्य"],
+  ["Mostrar comandos ao trocar perfil", "Show controls when switching profiles", "Mostrar controles al cambiar de perfil", "प्रोफ़ाइल बदलने पर नियंत्रण दिखाएँ"],
+  ["Círculo por 5 segundos com os comandos de dentro. 2× indica dois toques.", "Show inside controls for 5 seconds. 2× means double press.", "Muestra los controles de dentro durante 5 segundos. 2× indica doble pulsación.", "अंदर के नियंत्रण 5 सेकंड दिखते हैं। 2× का मतलब दो बार दबाना है।"],
+  ["Prévia dos comandos", "Controls preview", "Vista previa de controles", "नियंत्रण पूर्वावलोकन"],
+  ["Comandos de dentro. 2× indica dois toques.", "Inside controls. 2× means double press.", "Controles de dentro. 2× indica doble pulsación.", "अंदर के नियंत्रण। 2× का मतलब दो बार दबाना है।"],
+  ["Tempo dos comandos", "Controls display time", "Duración de controles", "नियंत्रण दिखाने का समय"],
+  ["Aplicativo:", "App:", "Aplicación:", "ऐप:"],
+  ["Escolher aplicativo", "Choose app", "Elegir aplicación", "ऐप चुनें"],
+  ["Não instalado · escolher outro", "Not installed · choose another", "No instalada · elegir otra", "इंस्टॉल नहीं है · दूसरा चुनें"],
+  ["Nenhum aplicativo compatível com Android Auto encontrado.", "No Android Auto compatible apps found.", "No se encontraron aplicaciones compatibles con Android Auto.", "Android Auto के अनुकूल कोई ऐप नहीं मिला।"],
+  ["Escolha o aplicativo em Controles da moto.", "Choose the app under Bike controls.", "Elige la aplicación en Controles de la moto.", "मोटरसाइकिल नियंत्रण में ऐप चुनें।"],
+  ["Inicie o Android Auto para testar o aplicativo.", "Start Android Auto to test the app.", "Inicia Android Auto para probar la aplicación.", "ऐप का परीक्षण करने के लिए Android Auto शुरू करें।"],
+  ["Aplicativo não instalado ou incompatível com Android Auto", "App not installed or incompatible with Android Auto", "Aplicación no instalada o incompatible con Android Auto", "ऐप इंस्टॉल नहीं है या Android Auto के अनुकूल नहीं है"],
+  ["Não foi possível reconhecer o ícone do aplicativo", "Could not recognize the app icon", "No se pudo reconocer el icono de la aplicación", "ऐप का आइकन पहचाना नहीं जा सका"],
+  [
+    "Aplicativo não encontrado. Confira se ele está visível no menu do Android Auto.",
+    "App not found. Check that it is visible in the Android Auto menu.",
+    "Aplicación no encontrada. Comprueba que esté visible en el menú de Android Auto.",
+    "ऐप नहीं मिला। जाँचें कि वह Android Auto मेनू में दिखाई दे रहा है।"
+  ]
+  , ["Tradicional", "Traditional", "Tradicional", "पारंपरिक"]
+  , ["Modo menu", "Menu mode", "Modo menú", "मेनू मोड"]
+  , ["Menu fechado", "Menu closed", "Menú cerrado", "मेनू बंद"]
+  , ["Menu aberto", "Menu open", "Menú abierto", "मेनू खुला"]
+  , ["Abrir menu", "Open menu", "Abrir menú", "मेनू खोलें"]
+  , ["Abrir menu com", "Open menu with", "Abrir menú con", "मेनू खोलने का बटन"]
+  , ["Trocar perfil com", "Switch profile with", "Cambiar perfil con", "प्रोफ़ाइल बदलने का बटन"]
+  , ["Voltar aos ajustes", "Back to settings", "Volver a ajustes", "सेटिंग में वापस जाएँ"]
+  , ["Selecione um botão", "Select a button", "Selecciona un botón", "एक बटन चुनें"]
+  , ["Centro", "Center", "Centro", "बीच"]
+  , ["Ação", "Action", "Acción", "क्रिया"]
+  , ["Um toque executa. O menu fecha após 5 segundos sem interação.", "One press runs an action. The menu closes after 5 seconds without input.", "Un toque ejecuta una acción. El menú se cierra tras 5 segundos sin interacción.", "एक बार दबाने पर क्रिया चलेगी। 5 सेकंड तक कोई बटन न दबाने पर मेनू बंद होगा।"]
+  , ["Quatro perfis do menu. Trocar perfil mantém o círculo aberto.", "Four menu profiles. Switching profiles keeps the circle open.", "Cuatro perfiles del menú. Cambiar de perfil mantiene el círculo abierto.", "मेनू की चार प्रोफ़ाइल। प्रोफ़ाइल बदलने पर वृत्त खुला रहता है।"]
+  , ["Comandos únicos: não mudam ao trocar de perfil.", "Shared controls: unchanged when switching profiles.", "Controles comunes: no cambian al cambiar de perfil.", "साझा नियंत्रण: प्रोफ़ाइल बदलने पर नहीं बदलते।"]
+  , ["Reservado para trocar entre os quatro perfis.", "Reserved for switching between the four profiles.", "Reservado para cambiar entre los cuatro perfiles.", "चार प्रोफ़ाइल के बीच बदलने के लिए आरक्षित।"]
+  , ["Reservado para abrir o menu. O primeiro toque não executa a opção de dentro.", "Reserved for opening the menu. The first press does not run the action inside.", "Reservado para abrir el menú. El primer toque no ejecuta la acción de dentro.", "मेनू खोलने के लिए आरक्षित। पहले दबाने पर अंदर की क्रिया नहीं चलती।"]
+  , ["Testar usa o estado atual do menu na moto.", "Test uses the current menu state on the bike.", "Probar usa el estado actual del menú en la moto.", "परीक्षण बाइक पर मेनू की वर्तमान स्थिति का उपयोग करता है।"]
+  , ["Menu fechado: comandos únicos. Menu aberto: quatro perfis. Sem dois toques.", "Menu closed: shared controls. Menu open: four profiles. No double presses.", "Menú cerrado: controles comunes. Menú abierto: cuatro perfiles. Sin doble toque.", "मेनू बंद: साझा नियंत्रण। मेनू खुला: चार प्रोफ़ाइल। दोहरे दबाव नहीं।"]
+  , ["Três perfis tradicionais com um ou dois toques. Suas configurações são preservadas.", "Three traditional profiles with single or double presses. Your settings are preserved.", "Tres perfiles tradicionales con uno o dos toques. Se conservan tus ajustes.", "एक या दो बार दबाने वाली तीन पारंपरिक प्रोफ़ाइल। आपकी सेटिंग सुरक्षित रहती हैं।"]
+  , ["Somente o perfil tradicional atual", "Current traditional profile only", "Solo el perfil tradicional actual", "केवल वर्तमान पारंपरिक प्रोफ़ाइल"]
+  , ["Ao fechar, volta ao Perfil 1. Cada toque reinicia o tempo.", "Closing returns to Profile 1. Each press resets the timer.", "Al cerrar, vuelve al Perfil 1. Cada toque reinicia el tiempo.", "बंद होने पर प्रोफ़ाइल 1 पर लौटता है। हर बार दबाने से समय फिर शुरू होता है।"]
+  , ["Tempo do menu", "Menu timeout", "Tiempo del menú", "मेनू का समय"]
+  , ["Três perfis do menu. Trocar perfil mantém o círculo aberto.", "Three menu profiles. Switching profiles keeps the circle open.", "Tres perfiles del menú. Cambiar de perfil mantiene el círculo abierto.", "मेनू की तीन प्रोफ़ाइल। प्रोफ़ाइल बदलने पर वृत्त खुला रहता है।"]
+  , ["Reservado para trocar entre os três perfis.", "Reserved for switching between the three profiles.", "Reservado para cambiar entre los tres perfiles.", "तीन प्रोफ़ाइल के बीच बदलने के लिए आरक्षित।"]
+  , ["Menu fechado: comandos únicos. Menu aberto: três perfis. Sem dois toques.", "Menu closed: shared controls. Menu open: three profiles. No double presses.", "Menú cerrado: controles comunes. Menú abierto: tres perfiles. Sin doble toque.", "मेनू बंद: साझा नियंत्रण। मेनू खुला: तीन प्रोफ़ाइल। दोहरे दबाव नहीं।"]
+  , ["Nome do perfil", "Profile name", "Nombre del perfil", "प्रोफ़ाइल का नाम"]
+  , ["Renomear perfil", "Rename profile", "Renombrar perfil", "प्रोफ़ाइल का नाम बदलें"]
+  , ["Até 20 caracteres. Deixe vazio para usar o nome padrão.", "Up to 20 characters. Leave blank for the default name.", "Hasta 20 caracteres. Deja vacío para usar el nombre predeterminado.", "अधिकतम 20 अक्षर। डिफ़ॉल्ट नाम के लिए खाली छोड़ें।"]
+]

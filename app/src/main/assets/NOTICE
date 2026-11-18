@@ -1,0 +1,94 @@
+OpenDash
+Copyright 2026 Subtle Sayak and contributors
+
+This project is an independent, unofficial open-source project.
+
+Portions of the dash protocol, streaming, authentication, socket, RTP,
+H.264/NAL processing, Wi-Fi connection, and session sequencing code are
+derived from or adapted from:
+
+NorthStar
+Copyright 2026 Aditya Dasika
+https://github.com/adityadasika21/NorthStar
+Licensed under the Apache License, Version 2.0.
+
+NorthStar itself credits:
+better-dash
+https://github.com/norbertFeron/better-dash
+Licensed under the Apache License, Version 2.0.
+
+OpenDash changes include UI, theming, wallpaper mode, expenses, vehicles,
+media/call handling changes, storage, release/signing changes, and other
+application-specific modifications.
+
+Royal Enfield, Eicher Motors, Himalayan, Tripper, and related names,
+logos, product names, and marks are trademarks or registered trademarks
+of their respective owners. They are used only descriptively to identify
+compatible hardware.
+
+OpenDash is not affiliated with, endorsed by, sponsored by, or approved by
+Royal Enfield, Eicher Motors, or any related entity.
+
+No Royal Enfield source code, proprietary assets, private API keys,
+certificates, logos, or confidential material should be included in this repository.
+
+Rota Livre — independent personal beta for Matheus, November 2026.
+Selected protocol/navigation components from Nukeio/open-dash commit a33d83085d3585d20473823ed5d5c88f74cd0d83.
+New native Android interface, service ownership, pt-BR guidance, OSM visible-tile cache, hardware encoder diagnostics and tests.
+No code, credentials or assets extracted from the official APK are distributed.
+
+Rota Auto — independent Android Auto / Tripper experiment, 2026-11-08.
+This combined experiment is distributed under GNU AGPL version 3.
+The Apache-2.0 components above retain their copyright and license notices.
+Their license text is preserved in licenses/Apache-2.0.txt.
+
+Selected components from Open Headunit:
+https://github.com/andreknieriem/open-headunit
+Revision ae74788d8312dd7a735775ddc21370f1741a7af1
+André Rinas and contributors; original headunit work by Michael Reid.
+AGPL-3.0; see LICENSE and licenses/COPYRIGHT_MICHAEL_REID_GPLv3AFFERO.txt.
+Copied: Common/Control/Input/Media/Sensors generated Java, corresponding proto
+definitions, SingleKeyKeyManager (resource namespace adapted), and the public
+receiver interoperability certificate/key pair in res/raw/cert and raw/privkey.
+These public protocol fixtures are not user secrets or application signing keys.
+They are not extracted from the Royal Enfield APK.
+
+Rota Auto additions: loopback AAP receiver, hardware video bridge, foreground
+service, touch preview, 526x300 full-image scaling and automated tests.
+Modifications to the Tripper encoder expose its input Surface for EGL rendering.
+Android Auto and Google Maps are trademarks of Google. This project is not
+affiliated with Google and is not a certified Android Auto receiver.
+
+Additional Open Headunit components in 0.1.5: MicSessionController, MicFlowControl,
+MicUplinkMonitor, MicCaptureFormat, MicChunkAccumulator and their unit tests.
+Same upstream revision and AGPL-3.0 license listed above; platform capture/routing
+and integration with this bridge are implemented separately by Rota Auto.
+
+WhatsApp icon: Bootstrap Icons, https://github.com/twbs/icons (MIT).
+Copyright (c) 2019-2024 The Bootstrap Authors. Full license: licenses/Bootstrap-Icons-MIT.txt.
+
+The MIT License (MIT)
+
+Copyright (c) 2019-2024 The Bootstrap Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+YouTube icon: Bootstrap Icons, https://github.com/twbs/icons (MIT); same license included with the WhatsApp icon.
+

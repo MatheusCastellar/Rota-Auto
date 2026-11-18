@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Public interoperability fixture from AGPL Open Headunit, not a user/server secret.
+         Used only for the AA loopback developer-server handshake. See README and NOTICE.
+         All other packaged-private-key findings remain errors. -->
+    <issue id="PackagedPrivateKey"><ignore path="src/main/res/raw/privkey" /></issue>
+</lint>

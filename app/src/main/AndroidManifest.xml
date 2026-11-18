@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <queries>
+        <package android:name="com.whatsapp" />
+        <intent><action android:name="android.intent.action.TTS_SERVICE" /></intent>
+        <intent><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent>
+        <intent><action android:name="android.media.browse.MediaBrowserService" /></intent>
+        <intent><action android:name="androidx.car.app.CarAppService" /></intent>
+        <intent><action android:name="androidx.car.app.messaging.action.HANDLE_CAR_MESSAGING" /></intent>
+    </queries>
+    <application android:label="Rota Auto" android:theme="@style/AppTheme" android:icon="@drawable/ic_route" android:allowBackup="false" android:dataExtractionRules="@xml/data_extraction_rules" android:supportsRtl="true">
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".auto.BlackScreenActivity" android:exported="false" />
+        <activity android:name=".auto.DiagnosticActivity" android:exported="false" />
+        <activity android:name=".auto.AutoActivity" android:exported="true" android:launchMode="singleTop">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/><category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/><category android:name="android.intent.category.DEFAULT"/><category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="geo"/><data android:scheme="google.navigation"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/><category android:name="android.intent.category.DEFAULT"/><category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/><data android:scheme="http"/>
+                <data android:host="maps.app.goo.gl"/><data android:host="maps.google.com"/><data android:host="maps.google.com.br"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/><category android:name="android.intent.category.DEFAULT"/><category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/><data android:scheme="http"/>
+                <data android:host="www.google.com"/><data android:host="google.com"/><data android:host="www.google.com.br"/><data android:host="google.com.br"/><data android:host="goo.gl"/>
+                <data android:pathPrefix="/maps"/>
+            </intent-filter>
+        </activity>
+        <service android:name=".auto.AutoBridgeService" android:exported="false" android:foregroundServiceType="connectedDevice|mediaPlayback|microphone" />
+    </application>
+</manifest>
