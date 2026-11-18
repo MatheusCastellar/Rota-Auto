@@ -32,7 +32,7 @@ Fotos reais do Rota Auto funcionando em uma Guerrilla 450. A **logo Guerrilla, o
 
 ## No aplicativo
 
-Capturas novas, feitas diretamente no celular em **17/11/2026**, com a versão **0.1.47**. Toque nas imagens para ampliar. As ações e os valores exibidos são exemplos personalizáveis, não os padrões de fábrica.
+Capturas novas, feitas diretamente no celular em **17/11/2026**, com a versão **0.1.47** e a **interface em inglês**, nas duas versões deste README. Toque nas imagens para ampliar. As ações e os valores exibidos são exemplos personalizáveis, não os padrões de fábrica.
 
 <table>
   <tr><th>Conectar</th><th>Perfis e modos de controle</th><th>Comandos personalizados</th></tr>

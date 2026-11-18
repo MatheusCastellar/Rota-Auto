@@ -16,7 +16,59 @@ Rota Auto receives Android Auto video on the phone and streams it over the motor
 
 Choose the interface language from the flag button beside Settings. The app includes a language selector; the project documentation is available in English and Portuguese.
 
-[View current app screenshots and real dashboard photos in the Portuguese gallery](README.pt-BR.md#na-moto).
+<a href="docs/images/app-languages.png"><img src="docs/images/app-languages.png" width="260" alt="Rota Auto language selector: Brazilian Portuguese, English, Spanish and Hindi"></a>
+
+## On the motorcycle
+
+Real photos of Rota Auto running on a Guerrilla 450. The **Guerrilla logo, information widget and display layout are optional customizations**, not the default appearance.
+
+<table>
+  <tr><th>Spotify</th><th>Maps and music together</th></tr>
+  <tr>
+    <td><a href="docs/images/dashboard-spotify.jpg"><img src="docs/images/dashboard-spotify.jpg" height="360" alt="Spotify on Tripper Dash with the optional Guerrilla logo and information widget"></a></td>
+    <td><a href="docs/images/dashboard-maps-music.jpg"><img src="docs/images/dashboard-maps-music.jpg" height="360" alt="Android Auto split view with Google Maps and Spotify on the motorcycle"></a></td>
+  </tr>
+</table>
+
+## In the app
+
+Screenshots captured directly on the phone on **November 17, 2026**, running **0.1.47**, with the **interface in English** in both README versions. Click an image to enlarge it. The actions and values shown are customizable examples, not factory defaults.
+
+<table>
+  <tr><th>Connect</th><th>Profiles and control modes</th><th>Custom controls</th></tr>
+  <tr>
+    <td><a href="docs/images/app-connect.png"><img src="docs/images/app-connect.png" width="240" alt="Current Rota Auto connection screen"></a></td>
+    <td><a href="docs/images/app-menu-settings.png"><img src="docs/images/app-menu-settings.png" width="240" alt="Traditional mode, menu mode and renameable profiles"></a></td>
+    <td><a href="docs/images/app-controls.png"><img src="docs/images/app-controls.png" width="240" alt="Button actions and control preview options"></a></td>
+  </tr>
+</table>
+
+<details>
+<summary>View the circular control preview</summary>
+
+<a href="docs/images/app-command-preview.png"><img src="docs/images/app-command-preview.png" width="280" alt="Circular preview of the selected profile's controls"></a>
+
+</details>
+
+## Display customization
+
+Adjust image fitting, distortion, size and position, the motorcycle logo and the information widget. The logo and widget are optional. Projection is stopped in these screenshots, so the preview area is empty and reveals no location.
+
+<table>
+  <tr><th>Image fitting and distortion</th><th>Motorcycle logo</th><th>Information widget</th></tr>
+  <tr>
+    <td><a href="docs/images/app-geometry.png"><img src="docs/images/app-geometry.png" width="240" alt="Image distortion, width, height and position settings"></a></td>
+    <td><a href="docs/images/app-logo.png"><img src="docs/images/app-logo.png" width="240" alt="Optional Himalayan, Guerrilla or Bear logo with size and position settings"></a></td>
+    <td><a href="docs/images/app-widget.png"><img src="docs/images/app-widget.png" width="240" alt="Optional linear or square widget with size and height controls"></a></td>
+  </tr>
+</table>
+
+<details>
+<summary>View taskbar options and image modes</summary>
+
+<a href="docs/images/app-customization.png"><img src="docs/images/app-customization.png" width="280" alt="Taskbar visibility, display duration and image modes"></a>
+
+</details>
 
 ## Features
 
