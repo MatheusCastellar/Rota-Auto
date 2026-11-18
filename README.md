@@ -4,6 +4,8 @@
 
 [Português (Brasil)](README.pt-BR.md) · English
 
+**[Download the APK](https://github.com/MatheusCastellar/Rota-Auto/releases/latest)**
+
 Created by **Matheus Castellar**. A free, community project developed for riders, with no Rota Auto account required. Current source version: **0.1.47**.
 
 Rota Auto receives Android Auto video on the phone and streams it over the motorcycle's Wi-Fi connection to the Tripper Dash. Maps and compatible media apps run through Android Auto; Rota Auto handles the connection, display adaptation and motorcycle controls. This is the main Android Auto project, not a standalone Google Maps SDK app.
