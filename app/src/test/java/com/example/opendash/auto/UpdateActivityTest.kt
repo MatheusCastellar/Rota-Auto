@@ -20,12 +20,21 @@ class UpdateActivityTest {
         val app=RuntimeEnvironment.getApplication()
         val controls=app.getSharedPreferences("auto-controls-options",Context.MODE_PRIVATE)
         controls.edit().putInt(BikeControlLayout.PROFILE,3).putInt("video-fps",8).commit()
-        val before=controls.all.toMap()
         assertTrue(GitHubUpdates.preferences(app).getBoolean(GitHubUpdates.AUTO,true))
-        val c=Robolectric.buildActivity(UpdateActivity::class.java).setup()
+        val c=Robolectric.buildActivity(AutoActivity::class.java).setup()
+        // The host initializes legacy binding migrations before opening any settings page.
+        assertEquals(3,controls.getInt(BikeControlLayout.PROFILE,0))
+        assertEquals(8,controls.getInt("video-fps",0))
+        val before=controls.all.toMap()
         fun views(v:View):List<View> = listOf(v)+if(v is ViewGroup) (0 until v.childCount).flatMap { views(v.getChildAt(it)) } else emptyList()
         try {
-            views(c.get().window.decorView).filterIsInstance<Switch>().single().isChecked=false
+            val tree=views(c.get().window.decorView)
+            tree.single { it.tag=="settings-link" && it.contentDescription.toString().startsWith("Atualizações.") }.performClick()
+            val page=tree.single { it.tag=="screen-26" }
+            assertEquals(View.VISIBLE,page.visibility)
+            views(page).filterIsInstance<Switch>().single().isChecked=false
+            views(page).single { it.tag=="page-back" }.performClick()
+            assertEquals(View.VISIBLE,tree.single { it.tag=="screen-2" }.visibility)
             assertFalse(GitHubUpdates.preferences(app).getBoolean(GitHubUpdates.AUTO,true))
             assertEquals(before,controls.all)
             val provider=app.packageManager.resolveContentProvider("${app.packageName}.updates",0)!!

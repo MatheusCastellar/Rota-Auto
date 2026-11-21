@@ -13,7 +13,7 @@ Capturas reais do aplicativo com o Android Auto funcionando. Toque para ampliar.
 <a href="docs/images/app-connect-live.png"><img src="docs/images/app-connect-live.png" width="300" alt="Android Auto live phone preview"></a>
 <a href="docs/images/app-widget-live.png"><img src="docs/images/app-widget-live.png" width="300" alt="Live display simulator with Spotify, logo and widget"></a>
 
-Feito por **Matheus Castellar**. Projeto gratuito, da comunidade e sem fins lucrativos, desenvolvido para motociclistas, sem exigir conta no Rota Auto. Versão atual do código: **0.1.48**.
+Feito por **Matheus Castellar**. Projeto gratuito, da comunidade e sem fins lucrativos, desenvolvido para motociclistas, sem exigir conta no Rota Auto. Versão atual do código: **0.1.50**.
 
 O Rota Auto recebe o vídeo do Android Auto no celular e o transmite pela rede Wi-Fi da moto para o Tripper Dash. Mapas e aplicativos de mídia compatíveis funcionam pelo Android Auto; o Rota Auto cuida da conexão, da adaptação da imagem e dos comandos da moto. Este é o projeto principal com Android Auto, não um aplicativo independente do SDK do Google Maps.
 
@@ -78,6 +78,8 @@ Ajuste enquadramento, distorção, tamanho e posição da imagem, logo da moto e
 </details>
 
 ## Atualizações
+
+A versão **0.1.50** organiza a interface em **Conectar, Navegar, Painel, Comandos e Ajustes**, com o seletor de idioma ao lado. É possível personalizar o painel sem iniciar o Android Auto, usando uma prévia offline branca com logo cinza. Atualizações segue o mesmo layout das opções. Os dois círculos de comandos usam ícones das ações, botões ocre, bordas brancas e separações estreitas translúcidas. Seus perfis e configurações são preservados. Os prints abaixo documentam versões anteriores.
 
 Abra **Ajustes → Atualizações** para verificar, baixar e instalar releases deste repositório. A busca automática vem ligada e acontece ao abrir o aplicativo, no máximo uma vez a cada seis horas; pode ser desativada. O download começa quando você solicita. O Android pede permissão para instalar pelo Rota Auto e confirmação da instalação. O atualizador verifica a integridade do APK, o pacote, a versão mais nova e a mesma assinatura antes de instalar. Suas configurações são mantidas.
 

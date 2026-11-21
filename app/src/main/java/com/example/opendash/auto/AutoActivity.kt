@@ -24,6 +24,8 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
     private lateinit var feedback:TextView
     private lateinit var controlsStatus:TextView
     private lateinit var preview:TextureView
+    private var homeExample:OfflinePanelPreview?=null
+    private var panelExample:OfflinePanelPreview?=null
     private lateinit var destination:EditText
     private lateinit var serverSettings:Button
     private lateinit var gpsBubbleSwitch:Switch
@@ -39,6 +41,7 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
     private var lastTouch=0 to 0
     private var visible=false
     private var selectedPage=0
+    private val pageParents=mutableMapOf<Int,Int>()
     private var pendingExport:String?=null
     private var pendingInputLog:String?=null
     private var controlEditorListener:SharedPreferences.OnSharedPreferenceChangeListener?=null
@@ -71,7 +74,7 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
         status=text("Prepare o Android Auto para começar",17f); root.addView(status)
         updateNotice=Button(this).apply {
             visibility=View.GONE; isAllCaps=false
-            setOnClickListener { startActivity(Intent(this@AutoActivity,UpdateActivity::class.java)) }
+            setOnClickListener { selectPage(26) }
         }
         root.addView(updateNotice)
         preview=TextureView(this).apply { surfaceTextureListener=this@AutoActivity; layoutParams=LinearLayout.LayoutParams(-1,dp(190)); isOpaque=true }
@@ -485,17 +488,18 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
                     AlertDialog.Builder(this).setTitle(L("Licenças")).setView(ScrollView(this).apply { addView(content) }).setPositiveButton(L("Fechar"),null).show()
                 }.show()
         }
-        button("Atualizações") { startActivity(Intent(this,UpdateActivity::class.java)) }
+        button("Atualizações") { selectPage(26) }
         button("Ajustes de bateria do aplicativo") {
             startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,android.net.Uri.parse("package:$packageName")))
         }
-        buildScreens(home,routes,root,previewControls,savedInstanceState?.getInt("page",0) ?: 0)
+        buildScreens(home,routes,root,previewControls,savedInstanceState?.getInt("page",0) ?: if(intent.getBooleanExtra("open-updates",false)) 26 else 0)
         intent.getStringExtra("settings-imported")?.let { showFeedback(it); intent.removeExtra("settings-imported") }
         root.isFocusableInTouchMode=true; root.requestFocus()
         if(savedInstanceState==null) receiveDestination(intent)
     }
     override fun onNewIntent(intent:Intent) {
         super.onNewIntent(intent); setIntent(intent); receiveDestination(intent)
+        if(intent.getBooleanExtra("open-updates",false)) selectPage(26)
     }
     private fun receiveDestination(incoming:Intent) {
         routeJob?.cancel()
@@ -539,6 +543,7 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
         AutoBridgeService.simulatePreview(simulatePreview)
         surface?.let { AutoBridgeService.preview(it,preview.width,preview.height) }
         observer=scope.launch { AutoBridgeService.state.collect { s ->
+        updateExampleVisibility(s)
         status.text=s.aa+"\n"+s.bike+if(s.problems.isNotBlank()) "\n"+s.problems else ""
         detail.text="AA: ${s.received} imagens · saída: ${s.sent} · painel: ${s.ack} respostas\n${s.codec}\n${s.screen}\n${s.problems}"
         controlsStatus.text=s.controls
@@ -607,8 +612,7 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
     private fun buildControlsPage(traditional:LinearLayout,prefs:SharedPreferences):LinearLayout {
         return LinearLayout(this).apply {
             orientation=LinearLayout.VERTICAL
-            addView(Button(this@AutoActivity).apply { text="Voltar aos ajustes"; setOnClickListener { selectPage(2) } })
-            addView(TextView(this@AutoActivity).apply { text="Controles da moto"; textSize=22f; setTextColor(Color.WHITE); setPadding(0,dp(12),0,dp(12)) })
+            addView(TextView(this@AutoActivity).apply { text="Comandos da moto"; textSize=22f; setTextColor(Color.WHITE); setPadding(0,dp(12),0,dp(12)) })
             addView(Switch(this@AutoActivity).apply {
                 text="Usar joystick da moto"; setTextColor(Color.WHITE); isChecked=prefs.getBoolean("enabled",true)
                 setOnCheckedChangeListener { _,value -> prefs.edit().putBoolean("enabled",value).apply() }
@@ -816,8 +820,8 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
             v.setTextColor(Color.parseColor(if(index==0) "#F3F8F5" else "#BBD5A0"))
             v.setPadding(0,0,0,0)
             if(index==0) brandText.addView(LinearLayout(this).apply {
-                gravity=Gravity.CENTER_VERTICAL
-                addView(v,LinearLayout.LayoutParams(0,-2,1f))
+                gravity=Gravity.CENTER_VERTICAL; isBaselineAligned=false
+                addView(v,LinearLayout.LayoutParams(-2,-2))
                 addView(TextView(this@AutoActivity).apply { text=com.example.opendash.BuildConfig.VERSION_NAME; textSize=10f; setTextColor(Color.parseColor("#9DB0A3")); includeFontPadding=false },LinearLayout.LayoutParams(-2,-2).apply { marginStart=dp(5) })
             },LinearLayout.LayoutParams(-1,-2))
             else brandText.addView(v,LinearLayout.LayoutParams(-1,-2).apply { topMargin=dp(3) })
@@ -828,7 +832,7 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
         },LinearLayout.LayoutParams(-1,-2).apply { topMargin=dp(3) })
         val titleRow=LinearLayout(this).apply {
             gravity=Gravity.CENTER_VERTICAL
-            addView(ImageView(this@AutoActivity).apply { setImageResource(com.example.opendash.R.drawable.ic_route); contentDescription="Logo Rota Auto" },LinearLayout.LayoutParams(dp(40),dp(48)).apply { marginEnd=dp(8) })
+            addView(ImageView(this@AutoActivity).apply { setImageResource(com.example.opendash.R.drawable.ic_route); contentDescription="Logo Rota Auto" },LinearLayout.LayoutParams(dp(32),dp(42)).apply { marginEnd=dp(8) })
             addView(brandText,LinearLayout.LayoutParams(0,-2,1f))
         }
         fun social(icon:Int,label:String,description:String,url:String) {
@@ -838,16 +842,16 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
                 val highlight=android.util.TypedValue()
                 theme.resolveAttribute(android.R.attr.selectableItemBackgroundBorderless,highlight,true)
                 setBackgroundResource(highlight.resourceId)
-                addView(ImageView(this@AutoActivity).apply { setImageResource(icon); importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO },FrameLayout.LayoutParams(dp(24),dp(24),Gravity.TOP or Gravity.CENTER_HORIZONTAL).apply { topMargin=dp(10) })
-                addView(TextView(this@AutoActivity).apply { text=label; textSize=10f; gravity=Gravity.TOP or Gravity.CENTER_HORIZONTAL; maxLines=2; includeFontPadding=false; setTextColor(Color.parseColor("#9DB0A3")); importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO },FrameLayout.LayoutParams(-1,dp(32),Gravity.TOP).apply { topMargin=dp(40) })
+                addView(ImageView(this@AutoActivity).apply { setImageResource(icon); importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO },FrameLayout.LayoutParams(dp(23),dp(23),Gravity.TOP or Gravity.CENTER_HORIZONTAL).apply { topMargin=dp(5) })
+                addView(TextView(this@AutoActivity).apply { text=label; textSize=10f; gravity=Gravity.TOP or Gravity.CENTER_HORIZONTAL; maxLines=2; includeFontPadding=false; setTextColor(Color.parseColor("#9DB0A3")); importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO },FrameLayout.LayoutParams(-1,dp(28),Gravity.TOP).apply { topMargin=dp(34) })
                 setOnClickListener {
                     try { startActivity(Intent(Intent.ACTION_VIEW,android.net.Uri.parse(url))) }
                     catch(_:ActivityNotFoundException) { showFeedback("Instale um navegador para abrir este link.") }
                 }
-            },LinearLayout.LayoutParams(dp(64),dp(72)).apply { marginStart=dp(CONTROL_GAP) })
+            },LinearLayout.LayoutParams(dp(54),dp(64)).apply { marginStart=dp(CONTROL_GAP) })
         }
-        social(com.example.opendash.R.drawable.ic_whatsapp,"Participe do nosso grupo","Participar do grupo de testers no WhatsApp","https://chat.whatsapp.com/C5hLBC3MRAWK0Avu2F1eXS")
-        social(com.example.opendash.R.drawable.ic_youtube,"Meu canal","Abrir canal Castellar450 no YouTube","https://www.youtube.com/@Castellar450")
+        social(com.example.opendash.R.drawable.ic_whatsapp,"Nosso grupo","Participar do grupo de testers no WhatsApp","https://chat.whatsapp.com/C5hLBC3MRAWK0Avu2F1eXS")
+        social(com.example.opendash.R.drawable.ic_youtube,"YouTube","Abrir canal Castellar450 no YouTube","https://www.youtube.com/@Castellar450")
         header.addView(titleRow)
         home.removeViewAt(0) // The connection card already explains the main screen.
         home.removeView(feedback); header.addView(feedback)
@@ -870,102 +874,197 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
         home.removeView(preview)
         val previewLabel=TextView(this).apply { text="PRÉVIA NO CELULAR"; textSize=11f; letterSpacing=.12f; setTextColor(Color.parseColor("#8DA99A")); setPadding(0,dp(CONTROL_GAP),0,dp(CONTROL_GAP)) }
         home.addView(previewLabel)
-        home.addView(preview)
-        (preview.layoutParams as LinearLayout.LayoutParams).bottomMargin=dp(CONTROL_GAP)
+        val homePreview=FrameLayout(this)
+        homePreview.addView(preview,FrameLayout.LayoutParams(-1,-1))
+        homeExample=OfflinePanelPreview(this,false).also { homePreview.addView(it,FrameLayout.LayoutParams(-1,-1)) }
+        home.addView(homePreview,LinearLayout.LayoutParams(-1,dp(190)).apply { bottomMargin=dp(CONTROL_GAP) })
         home.addView(previewControls)
         status.textSize=14f; status.setLineSpacing(dp(3).toFloat(),1f); status.setPadding(dp(16),dp(16),dp(16),dp(16))
         status.background=android.graphics.drawable.GradientDrawable().apply { setColor(Color.parseColor("#18251F")); setStroke(dp(1),Color.parseColor("#304338")); cornerRadius=dp(16).toFloat() }
         (status.layoutParams as LinearLayout.LayoutParams).bottomMargin=dp(16)
-        val holder=FrameLayout(this)
-        val settingsPreview=FrameLayout(this).apply { contentDescription="Simulação do painel sem toque" }
-        val imageStart=(0 until settings.childCount).first { (settings.getChildAt(it) as? TextView)?.text=="Imagem no painel" }
-        val imageEnd=(imageStart until settings.childCount).first { (settings.getChildAt(it) as? TextView)?.text=="Fluidez do painel" }
-        val imageControls=(imageStart until imageEnd).map { settings.getChildAt(it) }
-        imageControls.forEach { settings.removeView(it) }
-        val appearance=LinearLayout(this).apply { orientation=LinearLayout.VERTICAL }
-        imageControls.forEach { appearance.addView(it) }
-        settings.addView(Button(this).apply { text="Personalizar painel"; setOnClickListener { selectPage(3) } },0)
-        val advanced=LinearLayout(this).apply { orientation=LinearLayout.VERTICAL; visibility=View.GONE }
-        val audioStart=(0 until settings.childCount).first { (settings.getChildAt(it) as? TextView)?.text=="Áudio" }
-        val controlsStart=(audioStart until settings.childCount).first { (settings.getChildAt(it) as? TextView)?.text=="Controles da moto" }
-        val advancedViews=(audioStart until controlsStart).map { settings.getChildAt(it) }.toMutableList()
-        for(label in listOf("Detalhes da conexão","Ajustes de bateria do aplicativo")) {
-            (0 until settings.childCount).map { settings.getChildAt(it) }.filterIsInstance<Button>().firstOrNull { it.text==label }?.let { advancedViews+=it }
+        // Keep every existing control and listener; only move its view into a focused page.
+        val existing=(0 until settings.childCount).map { settings.getChildAt(it) }
+        fun index(label:String)=existing.indexOfFirst { (it as? TextView)?.text==label }.also { check(it>=0) { "Missing settings section: $label" } }
+        fun part(start:String,end:String)=existing.subList(index(start),index(end)).toList()
+        fun original(label:String)=existing.filterIsInstance<Button>().single { it.text==label }
+        fun column()=LinearLayout(this).apply { orientation=LinearLayout.VERTICAL }
+        fun heading(title:String,subtitle:String="")=column().apply {
+            addView(TextView(this@AutoActivity).apply { text=title; textSize=22f; setTextColor(Color.parseColor("#F3F8F5")); typeface=Typeface.create("sans-serif-medium",Typeface.NORMAL) })
+            if(subtitle.isNotBlank()) addView(TextView(this@AutoActivity).apply { text=subtitle; textSize=12f; setTextColor(Color.parseColor("#9DB0A3")); setPadding(0,dp(5),0,dp(14)) })
         }
-        advancedViews+=detail
-        advancedViews.distinct().forEach { settings.removeView(it); advanced.addView(it) }
-        advanced.addView(Button(this).apply { text="Desenvolvedor"; visibility=View.GONE; setOnClickListener { inputCaptureDialog() } },LinearLayout.LayoutParams(-1,dp(BUTTON_HEIGHT)))
-        val advancedButton=Button(this).apply { text="Opções avançadas"; setOnClickListener { advanced.visibility=if(advanced.visibility==View.GONE) View.VISIBLE else View.GONE } }
-        val exportIndex=(0 until settings.childCount).first { (settings.getChildAt(it) as? Button)?.text=="Exportar configurações" }
-        settings.addView(advancedButton,exportIndex); settings.addView(advanced,exportIndex+1)
-        settings.addView(TextView(this).apply { text="Configurações simples"; textSize=20f; setTextColor(Color.WHITE); setPadding(0,dp(8),0,dp(16)) },0)
-        val pages=listOf(home,routes,settings,appearance,controlsPage)
-        routes.addView(TextView(this).apply { text="Para onde vamos?"; textSize=22f; typeface=Typeface.create("sans-serif-medium",Typeface.NORMAL); setTextColor(Color.parseColor("#F3F8F5")); setPadding(0,dp(4),0,dp(20)) },0)
+        fun body(title:String,subtitle:String,children:List<View>)=column().apply {
+            addView(heading(title,subtitle))
+            children.forEach { child -> (child.parent as? ViewGroup)?.removeView(child); addView(child) }
+        }
+        fun link(title:String,subtitle:String,action:()->Unit):View=LinearLayout(this).apply {
+            orientation=LinearLayout.HORIZONTAL; gravity=Gravity.CENTER_VERTICAL
+            tag="settings-link"; contentDescription=L(title)+". "+L(subtitle)
+            isClickable=true; isFocusable=true; minimumHeight=dp(68)
+            setPadding(dp(15),dp(13),dp(15),dp(13))
+            background=android.graphics.drawable.RippleDrawable(android.content.res.ColorStateList.valueOf(0x24FFFFFF),
+                android.graphics.drawable.GradientDrawable().apply { setColor(Color.parseColor("#101C15")); cornerRadius=dp(12).toFloat(); setStroke(dp(1),Color.parseColor("#283A2F")) },null)
+            addView(column().apply {
+                addView(TextView(this@AutoActivity).apply { text=title; textSize=15f; setTextColor(Color.parseColor("#ECF4EE")); importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO })
+                addView(TextView(this@AutoActivity).apply { text=subtitle; textSize=12f; setTextColor(Color.parseColor("#A3B7A9")); setPadding(0,dp(4),0,0); importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO })
+            },LinearLayout.LayoutParams(0,-2,1f))
+            addView(TextView(this@AutoActivity).apply { text="›"; textSize=23f; setTextColor(Color.parseColor("#9DB0A3")); importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO },LinearLayout.LayoutParams(dp(22),-2))
+            setOnClickListener { action() }
+            layoutParams=LinearLayout.LayoutParams(-1,-2).apply { bottomMargin=dp(CONTROL_GAP) }
+        }
+        val mapSettings=existing.take(index("Áudio"))
+        val audioSettings=part("Áudio","Imagem no painel").drop(1)
+        val imageSettings=part("Imagem no painel","Logo · modos B e D")
+        val geometryIndex=imageSettings.indexOfFirst { it.contentDescription=="Modo de imagem do painel" }
+        check(geometryIndex>0)
+        val barSettings=imageSettings.subList(1,geometryIndex)
+        val geometrySettings=imageSettings.drop(geometryIndex)+part("Fundo desfocado · modos B e D","Fluidez do painel")
+        val logoSettings=part("Logo · modos B e D","Widget de informações").drop(1)
+        val widgetSettings=part("Widget de informações","Fundo desfocado · modos B e D").drop(1)
+        val videoSettings=part("Fluidez do painel","Controles da moto").drop(1)
+        val backupSettings=part("Exportar configurações","Créditos")
+        val credits=original("Créditos")
+        val updatePanel=UpdatePanel(this,scope)
+        val battery=original("Ajustes de bateria do aplicativo")
+        val detailsButton=original("Detalhes da conexão")
+        settings.removeAllViews()
+        val panel=column().apply {
+            addView(heading("Painel","Veja o resultado enquanto personaliza."))
+            addView(link("Imagem e enquadramento","Formato, tamanho, posição e desfoque") { selectPage(10) })
+            addView(link("Logo da moto","Marca, tamanho e posição") { selectPage(11) })
+            addView(link("Informações do celular","Hora, bateria e rede móvel") { selectPage(12) })
+            addView(link("Navegação no painel","Bolinha, mapa dia/noite e moto parada") { selectPage(13) })
+            addView(link("Barra do Android Auto","Exibição temporária e duração") { selectPage(14) })
+        }
+        val geometry=body("Imagem e enquadramento","Ajustes aplicados na hora no painel.",geometrySettings)
+        val logo=body("Logo da moto","Opcional e independente do widget.",logoSettings)
+        val widget=body("Informações do celular","A rede exibida é a móvel, não o Wi-Fi da moto.",widgetSettings)
+        val navigation=body("Navegação no painel","Informações nativas do painel e aparência do mapa.",mapSettings)
+        val bar=body("Barra do Android Auto","Controle a exibição temporária.",barSettings)
+        bar.addView(Button(this).apply { text="Mostrar barra"; setOnClickListener {
+            if(panelExample?.visibility==View.VISIBLE) panelExample?.showBar() else AutoBridgeService.showBar()
+        } })
+        val video=body("Vídeo","Predefinições para o uso diário.",videoSettings)
+        val updates=body("Atualizações","Buscar novas versões no GitHub",listOf(updatePanel.view))
+        val audio=body("Som e microfone","Preferências de áudio reunidas.",audioSettings)
+        val backups=body("Salvar e recuperar ajustes","Seus perfis e sua personalização juntos.",backupSettings)
+        val advanced=body("Avançado","Detalhes técnicos e ajustes do Android.",listOf(detailsButton,detail,battery))
+        advanced.addView(Button(this).apply { text="Desenvolvedor"; visibility=View.GONE; setOnClickListener { inputCaptureDialog() } })
+        val connection=column().apply {
+            addView(heading("Conexão com a moto","A reconexão continua enquanto o Android Auto estiver ativo."))
+            addView(Button(this@AutoActivity).apply { text="Reconectar Moto"; setOnClickListener { start(true) } })
+            addView(Button(this@AutoActivity).apply { text="Iniciar nova conexão"; setOnClickListener { start(true,newBike=true) } })
+            addView(link("Opções avançadas","Detalhes da conexão e ajustes de bateria") { selectPage(24) })
+        }
+        val about=column().apply {
+            addView(heading("Sobre o Rota Auto","100% gratuito e sem fins lucrativos."))
+            addView(TextView(this@AutoActivity).apply { text="Feito por Matheus Castellar"; textSize=14f; setTextColor(Color.parseColor("#A3B7A9")); setPadding(0,0,0,dp(16)) })
+            addView(credits)
+        }
+        settings.addView(heading("Configurações","O essencial primeiro. Detalhes em Avançado."))
+        settings.addView(link("Vídeo","Fluidez e taxa de transmissão") { selectPage(20) })
+        settings.addView(link("Som e microfone","Saída de áudio, captura e ganho") { selectPage(21) })
+        settings.addView(link("Conexão com a moto","Rede salva e reconexão") { selectPage(22) })
+        settings.addView(link("Salvar e recuperar ajustes","Exportar, importar e desfazer alterações") { selectPage(23) })
+        settings.addView(link("Atualizações","Buscar novas versões no GitHub") { selectPage(26) })
+        settings.addView(link("Avançado","Detalhes técnicos e ajustes do Android") { selectPage(24) })
+        settings.addView(link("Sobre o Rota Auto","Créditos e comunidade") { selectPage(25) })
+        routes.addView(heading("Para onde vamos?","Você também pode definir a rota no Google Maps."),0)
         destination.background=android.graphics.drawable.GradientDrawable().apply { setColor(Color.parseColor("#18251F")); setStroke(dp(1),Color.parseColor("#3B5747")); cornerRadius=dp(14).toFloat() }
         destination.setPadding(dp(16),0,dp(16),0); destination.textSize=15f
         (destination.layoutParams as LinearLayout.LayoutParams).bottomMargin=dp(12)
-        listOf(settings,appearance).forEach { group ->
-            for(i in 0 until group.childCount) {
-                val child=group.getChildAt(i)
-                if(child is TextView && child !is Button) {
-                    val sectionTitle=child.textSize/resources.displayMetrics.scaledDensity>=16f
-                    child.setPadding(0,dp(if(sectionTitle) 16 else 0),0,dp(CONTROL_GAP))
-                    child.setTextColor(Color.parseColor(if(sectionTitle) "#E5F0E9" else "#9DB0A3"))
-                    if(sectionTitle) child.typeface=Typeface.create("sans-serif-medium",Typeface.NORMAL)
-                }
+        val pages=linkedMapOf(0 to home,1 to routes,2 to settings,3 to panel,4 to controlsPage,
+            10 to geometry,11 to logo,12 to widget,13 to navigation,14 to bar,20 to video,21 to audio,22 to connection,23 to backups,24 to advanced,25 to about,26 to updates)
+        pageParents.clear()
+        for(id in 10..14) pageParents[id]=3
+        for(id in 20..26) pageParents[id]=2
+        val holder=FrameLayout(this)
+        val settingsPreview=FrameLayout(this).apply { contentDescription="Simulação do painel sem toque"; setBackgroundColor(Color.parseColor("#0D3024")) }
+        panelExample=OfflinePanelPreview(this,true).also { settingsPreview.addView(it,FrameLayout.LayoutParams(-1,-1)) }
+        val panelPages=setOf(3,10,11,12,13,14)
+        val previewHosts=mutableMapOf<Int,LinearLayout>()
+        val scrolls=pages.mapValues { (id,content) ->
+            content.setPadding(dp(PAGE_INSET),dp(12),dp(PAGE_INSET),dp(16)); content.setBackgroundColor(Color.TRANSPARENT)
+            pageParents[id]?.let { parent ->
+                content.addView(LinearLayout(this).apply {
+                    orientation=LinearLayout.HORIZONTAL; gravity=Gravity.CENTER_VERTICAL; isBaselineAligned=false
+                    tag="page-back"; isClickable=true; isFocusable=true
+                    setPadding(0,0,dp(16),0)
+                    contentDescription=L(if(parent==3) "Voltar ao painel" else if(parent==0) "Voltar à conexão" else "Voltar aos ajustes")
+                    val arrow=ImageView(this@AutoActivity).apply {
+                        setImageDrawable(NavigationIcon("back",Color.parseColor("#A3B7A9")))
+                        importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO
+                    }
+                    addView(arrow,LinearLayout.LayoutParams(dp(26),dp(26)).apply { marginEnd=dp(8) })
+                    val label=TextView(this@AutoActivity).apply {
+                        text=L(if(parent==3) "Painel" else if(parent==0) "Conectar" else "Ajustes")
+                        textSize=26f; includeFontPadding=false; setTextColor(Color.parseColor("#A3B7A9"))
+                        importantForAccessibility=View.IMPORTANT_FOR_ACCESSIBILITY_NO
+                    }
+                    addView(label,LinearLayout.LayoutParams(-2,-2))
+                    addOnLayoutChangeListener { _,_,_,_,_,_,_,_,_ ->
+                        val ink=Rect(); val value=label.text.toString()
+                        label.paint.getTextBounds(value,0,value.length,ink)
+                        arrow.translationY=label.top+label.baseline+ink.exactCenterY()-(arrow.top+arrow.height/2f)
+                    }
+                    setOnClickListener { selectPage(parent) }
+                    layoutParams=LinearLayout.LayoutParams(-2,dp(48)).apply { bottomMargin=dp(12) }
+                },0)
             }
-        }
-        val scrolls=pages.mapIndexed { index,content ->
-            content.setPadding(dp(PAGE_INSET),dp(CONTROL_GAP),dp(PAGE_INSET),dp(16)); content.setBackgroundColor(Color.TRANSPARENT)
-            spaceControls(content)
-            styleButtons(content)
-            val scroll=ScrollView(this).apply { isFillViewport=true; addView(content) }
-            val pageView:View=if(index==3) LinearLayout(this).apply {
+            spaceControls(content); styleButtons(content)
+            val scroll=ScrollView(this).apply { isFillViewport=true; addView(content); tag="page-scroll-$id" }
+            val pageView:View=if(id in panelPages) LinearLayout(this).apply {
                 orientation=LinearLayout.VERTICAL
-                addView(TextView(this@AutoActivity).apply {
-                    text="SIMULAÇÃO DO PAINEL · SEM TOQUE"; textSize=11f; setTextColor(Color.parseColor("#8DA99A")); setPadding(dp(PAGE_INSET),dp(CONTROL_GAP),dp(PAGE_INSET),dp(CONTROL_GAP))
-                })
-                addView(settingsPreview,LinearLayout.LayoutParams(-1,dp(150)).apply { marginStart=dp(20); marginEnd=dp(20) })
-                addView(LinearLayout(this@AutoActivity).apply {
-                    addView(Button(this@AutoActivity).apply { text="Voltar aos ajustes"; setOnClickListener { selectPage(2) }; styleButtons(this) },LinearLayout.LayoutParams(0,dp(BUTTON_HEIGHT),1f))
-                    addView(Button(this@AutoActivity).apply { text="Mostrar barra"; setOnClickListener { AutoBridgeService.showBar() }; styleButtons(this) },LinearLayout.LayoutParams(0,dp(BUTTON_HEIGHT),1f))
-                    spaceControls(this)
-                },LinearLayout.LayoutParams(-1,-2).apply { marginStart=dp(PAGE_INSET); marginEnd=dp(PAGE_INSET); topMargin=dp(CONTROL_GAP); bottomMargin=dp(CONTROL_GAP) })
+                val previewHost=column(); previewHosts[id]=previewHost
+                addView(previewHost,LinearLayout.LayoutParams(-1,dp(158)).apply { marginStart=dp(PAGE_INSET); marginEnd=dp(PAGE_INSET); topMargin=dp(8) })
                 addView(scroll,LinearLayout.LayoutParams(-1,0,1f))
             } else scroll
+            pageView.tag="screen-$id"
             holder.addView(pageView,FrameLayout.LayoutParams(-1,-1)); pageView
         }
         frame.addView(holder,LinearLayout.LayoutParams(-1,0,1f))
-        val tabs=LinearLayout(this).apply { setPadding(dp(12),dp(10),dp(12),dp(12)); setBackgroundColor(Color.parseColor("#15221B")) }
-        val labels=listOf("Conectar","Navegar","Ajustes")
-        val buttons=labels.mapIndexed { index,label ->
+        val tabs=LinearLayout(this).apply { gravity=Gravity.CENTER_VERTICAL; setPadding(dp(6),dp(8),dp(6),dp(8)); setBackgroundColor(Color.parseColor("#15221B")) }
+        val tabSpecs=listOf(Triple(0,"Conectar","wifi"),Triple(1,"Navegar","navigate"),Triple(3,"Painel","panel"),Triple(4,"Comandos","controls"),Triple(2,"Ajustes","settings"))
+        val buttons=tabSpecs.map { (id,label,icon) ->
             Button(this).apply {
-                text=label; isAllCaps=false; textSize=14f; stateListAnimator=null
-                setOnClickListener { selectPage(index) }
-                tabs.addView(this,LinearLayout.LayoutParams(0,dp(50),1f).apply { marginStart=dp(3); marginEnd=dp(3) })
+                text=label; isAllCaps=false; textSize=10f; includeFontPadding=false; stateListAnimator=null; minWidth=0; minimumWidth=0
+                setAutoSizeTextTypeUniformWithConfiguration(9,11,1,android.util.TypedValue.COMPLEX_UNIT_SP)
+                gravity=Gravity.CENTER; setPadding(dp(2),dp(7),dp(2),dp(5)); compoundDrawablePadding=dp(4)
+                setCompoundDrawables(null,NavigationIcon(icon,Color.parseColor("#9BB5A6")).apply { setBounds(0,0,dp(20),dp(20)) },null,null)
+                setOnClickListener { selectPage(id) }
+                tabs.addView(this,LinearLayout.LayoutParams(0,dp(58),1f).apply { marginStart=dp(2); marginEnd=dp(2) })
             }
         }
-        selectPage={ index ->
-            selectedPage=index.coerceIn(0,4)
-            val simulation=selectedPage==3
+        selectPage={ requested ->
+            selectedPage=requested.takeIf { it in pages } ?: 0
+            if(selectedPage==26) updatePanel.open()
+            val simulation=selectedPage in panelPages
             if(touching) { AutoBridgeService.touch(MotionEvent.ACTION_CANCEL,lastTouch.first,lastTouch.second); touching=false }
             simulatePreview=simulation; AutoBridgeService.simulatePreview(simulation)
-            val parent=if(simulation) settingsPreview else home
+            val parent=if(simulation) settingsPreview else homePreview
             if(preview.parent!==parent) {
                 (preview.parent as? ViewGroup)?.removeView(preview)
-                if(simulation) settingsPreview.addView(preview,FrameLayout.LayoutParams(-1,-1))
-                else home.addView(preview,home.indexOfChild(previewControls),LinearLayout.LayoutParams(-1,dp(190)).apply { bottomMargin=dp(CONTROL_GAP) })
+                parent.addView(preview,0,FrameLayout.LayoutParams(-1,-1))
             }
-            scrolls.forEachIndexed { i,v -> v.visibility=if(i==selectedPage) View.VISIBLE else View.GONE }
+            if(simulation) {
+                val host=previewHosts.getValue(selectedPage)
+                if(settingsPreview.parent!==host) { (settingsPreview.parent as? ViewGroup)?.removeView(settingsPreview); host.addView(settingsPreview,LinearLayout.LayoutParams(-1,-1)) }
+            }
+            scrolls.forEach { (id,v) -> v.visibility=if(id==selectedPage) View.VISIBLE else View.GONE }
+            val active=pageParents[selectedPage] ?: selectedPage
             buttons.forEachIndexed { i,b ->
-                b.isSelected=i==minOf(selectedPage,2); b.setTextColor(Color.parseColor(if(b.isSelected) "#B9F665" else "#9BB5A6"))
-                b.backgroundTintList=null
-                b.background=android.graphics.drawable.GradientDrawable().apply { cornerRadius=dp(14).toFloat(); setColor(Color.parseColor(if(b.isSelected) "#294837" else "#15221B")) }
+                b.isSelected=tabSpecs[i].first==active
+                val color=Color.parseColor(if(b.isSelected) "#B9F665" else "#9BB5A6")
+                b.setTextColor(color); b.compoundDrawables[1]?.setTint(color); b.backgroundTintList=null
+                b.background=android.graphics.drawable.GradientDrawable().apply { cornerRadius=dp(11).toFloat(); setColor(Color.parseColor(if(b.isSelected) "#294837" else "#15221B")) }
             }
         }
-        tabs.addView(UiLanguage.flagButton(this),LinearLayout.LayoutParams(dp(48),dp(50)).apply { marginStart=dp(5) })
+        tabs.addView(UiLanguage.flagButton(this),LinearLayout.LayoutParams(dp(44),dp(48)).apply { marginStart=dp(4) })
         frame.addView(tabs)
-        setContentView(frame); selectPage(page); UiLanguage.apply(frame)
+        setContentView(frame); selectPage(page); updateExampleVisibility(AutoBridgeService.state.value); UiLanguage.apply(frame)
+    }
+    private fun updateExampleVisibility(state:AutoState) {
+        val show=!state.active || state.received==0L
+        listOfNotNull(homeExample,panelExample).forEach { it.visibility=if(show) View.VISIBLE else View.GONE }
     }
     private fun chooseCarApplication(selected:(CarApplications.App)->Unit) {
         scope.launch {
@@ -997,6 +1096,10 @@ class AutoActivity:Activity(),TextureView.SurfaceTextureListener {
                     intent.putExtra("settings-imported","Configuração anterior restaurada. Você já pode ligar o Android Auto."); recreate()
                 },{ showFeedback("Não foi possível restaurar a configuração anterior.") })
             }.show()
+    }
+    @Deprecated("Android back compatibility")
+    override fun onBackPressed() {
+        if(selectedPage!=0) selectPage(pageParents[selectedPage] ?: 0) else super.onBackPressed()
     }
     override fun onSaveInstanceState(outState:Bundle) {
         outState.putInt("page",selectedPage); outState.putString("pending-export",pendingExport); super.onSaveInstanceState(outState)

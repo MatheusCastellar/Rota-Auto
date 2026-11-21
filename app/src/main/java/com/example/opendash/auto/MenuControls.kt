@@ -55,7 +55,7 @@ internal object MenuControls {
         return ProfilePopupState(ProfileNames.label(context,true,profile),MenuDirection.entries.map { d ->
             val b=if(d==cycle(prefs)) BikeBinding(BikeCommand.PROFILE_NEXT) else binding(prefs,profile,d)
             ProfileSlot(CommandNames.short(b.command,UiLanguage.selected(context),
-                if(b.command==BikeCommand.OPEN_OTHER) CarApplications.label(context,b.appPackage) ?: b.appPackage?.substringAfterLast('.') else null),null,b.command==BikeCommand.NONE)
+                if(b.command==BikeCommand.OPEN_OTHER) CarApplications.label(context,b.appPackage) ?: b.appPackage?.substringAfterLast('.') else null),null,b.command==BikeCommand.NONE,b.command)
         },duration(prefs))
     }
 }

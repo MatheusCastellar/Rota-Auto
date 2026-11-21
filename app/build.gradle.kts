@@ -6,8 +6,8 @@ android {
         applicationId = "br.com.matheus.rotalivre.auto"
         minSdk = 29
         targetSdk = 35
-        versionCode = 49
-        versionName = "0.1.48"
+        versionCode = 51
+        versionName = "0.1.50"
         testInstrumentationRunner = "com.example.opendash.auto.UpdateSmokeInstrumentation"
     }
     buildFeatures { buildConfig = true }

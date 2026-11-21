@@ -3,7 +3,7 @@ package com.example.opendash.auto
 import android.content.Context
 import android.graphics.*
 
-internal data class ProfileSlot(val single:String,val double:String?,val inactive:Boolean)
+internal data class ProfileSlot(val single:String,val double:String?,val inactive:Boolean,val command:BikeCommand=BikeCommand.NONE)
 internal data class ProfilePopupState(val title:String,val slots:List<ProfileSlot>,val durationMs:Long=2_000L)
 
 /** Informational overlay: never intercepts or generates motorcycle/Android Auto input. */
@@ -24,25 +24,31 @@ internal object ProfilePopup {
         return ProfilePopupState(ProfileNames.label(context,false,profile),buttons.map { button ->
             val single=BikeControlLayout.binding(prefs,profile,button,false)
             val double=BikeControlLayout.binding(prefs,profile,button,true)
-            ProfileSlot(name(single),if(double.command==BikeCommand.NONE) null else name(double),single.command==BikeCommand.NONE)
+            ProfileSlot(name(single),if(double.command==BikeCommand.NONE) null else name(double),single.command==BikeCommand.NONE,single.command)
         },duration(prefs))
     }
     fun bitmap(state:ProfilePopupState):Bitmap {
         val bitmap=Bitmap.createBitmap(1052,600,Bitmap.Config.ARGB_8888)
         val c=Canvas(bitmap).apply { scale(2f,2f) }
         val p=Paint(Paint.ANTI_ALIAS_FLAG)
-        val green=Color.rgb(189,249,99); val white=Color.rgb(240,246,242)
-        val cx=263f; val cy=162f; val radius=122f; val center=40f
-        p.color=0x88000000.toInt(); c.drawRect(0f,0f,526f,300f,p)
-        p.color=0xF5101E18.toInt(); c.drawCircle(cx,cy,radius,p)
-        p.color=0xFF203A2B.toInt(); c.drawCircle(cx,cy,center,p)
-        p.style=Paint.Style.STROKE; p.strokeWidth=1f; p.color=0xFF4D6958.toInt()
-        c.drawCircle(cx,cy,radius,p)
+        val white=Color.WHITE
+        val cx=263f; val cy=162f; val radius=122f; val center=48f
+        p.color=0xBB000000.toInt(); c.drawRect(0f,0f,526f,300f,p)
+        // Only the narrow ring and divider channels expose the translucent scrim.
+        val sectors=Path().apply { addCircle(cx,cy,radius,Path.Direction.CW) }
+        sectors.op(Path().apply { addCircle(cx,cy,center+3,Path.Direction.CW) },Path.Op.DIFFERENCE)
+        val dividerPaint=Paint(Paint.ANTI_ALIAS_FLAG).apply { style=Paint.Style.STROKE;strokeWidth=3f }
         for(angle in listOf(45.0,135.0,225.0,315.0)) {
             val a=Math.toRadians(angle); val x=kotlin.math.cos(a).toFloat(); val y=kotlin.math.sin(a).toFloat()
-            c.drawLine(cx+x*center,cy+y*center,cx+x*radius,cy+y*radius,p)
+            val line=Path().apply { moveTo(cx,cy);lineTo(cx+x*(radius+2),cy+y*(radius+2)) }
+            val channel=Path();dividerPaint.getFillPath(line,channel)
+            sectors.op(channel,Path.Op.DIFFERENCE)
         }
-        p.style=Paint.Style.STROKE; p.color=green; c.drawCircle(cx,cy,center,p); p.style=Paint.Style.FILL
+        p.color=0xFF887644.toInt();c.drawPath(sectors,p);c.drawCircle(cx,cy,center,p)
+        p.style=Paint.Style.STROKE;p.strokeWidth=1.5f;p.color=white
+        c.drawPath(sectors,p)
+        p.strokeWidth=2f;c.drawCircle(cx,cy,center,p)
+        p.style=Paint.Style.FILL
         fun text(value:String,x:Float,y:Float,size:Float,color:Int,maxWidth:Float) {
             p.textAlign=Paint.Align.CENTER; p.typeface=Typeface.create("sans-serif-medium",Typeface.NORMAL)
             p.textSize=size; p.color=color
@@ -59,23 +65,14 @@ internal object ProfilePopup {
         p.color=Color.rgb(185,246,101)
         c.drawPath(Path().apply { moveTo(24f,6f); lineTo(39f,39f); lineTo(24f,31f); lineTo(9f,39f); close() },p)
         c.restore()
-        text(state.title,cx+(logoWidth+gap)/2f,25f,17f,green,180f)
-        val points=listOf(263f to 81f,348f to 162f,263f to 244f,178f to 162f,263f to 162f)
+        text(state.title,cx+(logoWidth+gap)/2f,25f,17f,white,180f)
+        val points=listOf(263f to 80f,350f to 162f,263f to 244f,176f to 162f,263f to 162f)
         for((index,slot) in state.slots.withIndex()) {
-            val (x,y)=points[index]; val width=if(index==0 || index==2) 116f else if(index==4) 72f else 86f
-            // Small directional marks make the physical positions explicit, independent of the action.
-            p.color=green; p.style=Paint.Style.STROKE; p.strokeWidth=1.8f; p.strokeCap=Paint.Cap.ROUND
-            val iy=y-17f
-            if(index==4) c.drawCircle(x,iy,3f,p) else {
-                val dx=when(index) { 1 -> 1f; 3 -> -1f; else -> 0f }
-                val dy=when(index) { 0 -> -1f; 2 -> 1f; else -> 0f }
-                c.drawLine(x-dx*4,iy-dy*4,x+dx*4,iy+dy*4,p)
-                c.drawLine(x+dx*4,iy+dy*4,x-dx*1-dy*3,iy-dy*1+dx*3,p)
-                c.drawLine(x+dx*4,iy+dy*4,x-dx*1+dy*3,iy-dy*1-dx*3,p)
-            }
-            p.style=Paint.Style.FILL
-            text(slot.single,x,y+4,12f,if(slot.inactive) 0xFF9BAAA0.toInt() else white,width)
-            slot.double?.let { text("2× $it",x,y+20,10f,green,width) }
+            val (x,y)=points[index]
+            val width=if(index==0 || index==2) 110f else if(index==4) 86f else 70f
+            CommandIcon.draw(c,slot.command,x,y-12f,30f)
+            text(slot.single,x,y+17,12f,white,width)
+            slot.double?.let { text("2× $it",x,y+31,9f,white,width) }
         }
         return bitmap
     }

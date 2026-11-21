@@ -80,6 +80,16 @@ class ProfilePopupTest {
         }
     }
     @Test @GraphicsMode(GraphicsMode.Mode.NATIVE)
+    fun centerMatchesOchreSectorsWhileRingAndDividersStayTranslucent() {
+        val bitmap=ProfilePopup.bitmap(ProfilePopupState("",List(5) { ProfileSlot("",null,true) }))
+        try {
+            assertEquals(0xFF887644.toInt(),bitmap.getPixel(596,384))
+            assertEquals(187,android.graphics.Color.alpha(bitmap.getPixel(625,324)))
+            assertEquals(187,android.graphics.Color.alpha(bitmap.getPixel(648,446)))
+            assertEquals(0xFF887644.toInt(),bitmap.getPixel(656,324))
+        } finally { bitmap.recycle() }
+    }
+    @Test @GraphicsMode(GraphicsMode.Mode.NATIVE)
     fun renderAllLanguagesAndAllThreeProfilesForVisualReview() {
         val context=RuntimeEnvironment.getApplication()
         val prefs=context.getSharedPreferences("auto-controls-options",Context.MODE_PRIVATE)

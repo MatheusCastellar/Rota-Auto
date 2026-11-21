@@ -106,7 +106,8 @@ class PersonalizationTest {
             val gain=tree.filterIsInstance<SeekBar>().single { it.contentDescription.toString().startsWith("Ganho do assistente") }
             assertFalse(gain.isShown)
             tree.filterIsInstance<Button>().single { it.text.toString()=="Ajustes" }.performClick()
-            tree.filterIsInstance<Button>().single { it.text.toString()=="Opções avançadas" }.performClick()
+            tree.single { it.tag=="settings-link" && it.contentDescription.toString().startsWith("Avançado.") }.performClick()
+            assertEquals(View.VISIBLE,tree.single { it.tag=="screen-24" }.visibility)
             val center=tree.filterIsInstance<Button>().single { it.text.toString().endsWith("Compartilhado") }
             val span=center.text as android.text.Spanned
             assertTrue(span.getSpans(0,span.length,android.text.style.ForegroundColorSpan::class.java).any { it.foregroundColor==Color.parseColor("#FF7878") })

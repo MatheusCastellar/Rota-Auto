@@ -2134,5 +2134,299 @@
     "Variable bitrate based on the image. Suggested average: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 200 kb/s. Does not measure Wi-Fi quality.",
     "Tasa variable según la imagen. Media sugerida: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 200 kb/s. No mide la calidad del Wi-Fi.",
     "चित्र के अनुसार बदलती बिटरेट। सुझाया औसत: 4 fps = 200 kb/s; 8 fps = 400 kb/s; 12 fps = 200 kb/s। Wi-Fi की गुणवत्ता नहीं मापता।"
+  ],
+  [
+    "Versão de teste · não publicada",
+    "Test version · unpublished",
+    "Versión de prueba · sin publicar",
+    "परीक्षण संस्करण · प्रकाशित नहीं"
+  ],
+  [
+    "Comandos",
+    "Controls",
+    "Controles",
+    "नियंत्रण"
+  ],
+  [
+    "Comandos da moto",
+    "Bike controls",
+    "Controles de la moto",
+    "बाइक नियंत्रण"
+  ],
+  [
+    "Painel",
+    "Dashboard",
+    "Panel",
+    "डैशबोर्ड"
+  ],
+  [
+    "Veja o resultado enquanto personaliza.",
+    "See the result as you customize.",
+    "Mira el resultado mientras personalizas.",
+    "बदलाव करते समय परिणाम देखें।"
+  ],
+  [
+    "Imagem e enquadramento",
+    "Image and framing",
+    "Imagen y encuadre",
+    "छवि और फ़्रेमिंग"
+  ],
+  [
+    "Formato, tamanho, posição e desfoque",
+    "Fit, size, position and blur",
+    "Formato, tamaño, posición y desenfoque",
+    "आकार, स्थिति और धुंधलापन"
+  ],
+  [
+    "Logo da moto",
+    "Bike logo",
+    "Logo de la moto",
+    "बाइक का लोगो"
+  ],
+  [
+    "Marca, tamanho e posição",
+    "Brand, size and position",
+    "Marca, tamaño y posición",
+    "ब्रांड, आकार और स्थिति"
+  ],
+  [
+    "Informações do celular",
+    "Phone information",
+    "Información del teléfono",
+    "फ़ोन की जानकारी"
+  ],
+  [
+    "Hora, bateria e rede móvel",
+    "Time, battery and mobile network",
+    "Hora, batería y red móvil",
+    "समय, बैटरी और मोबाइल नेटवर्क"
+  ],
+  [
+    "Navegação no painel",
+    "Dashboard navigation",
+    "Navegación en el panel",
+    "डैशबोर्ड नेविगेशन"
+  ],
+  [
+    "Bolinha, mapa dia/noite e moto parada",
+    "Maneuver circle, day/night map and parked bike",
+    "Círculo, mapa día/noche y moto estacionada",
+    "दिशा वृत्त, दिन/रात मानचित्र और खड़ी बाइक"
+  ],
+  [
+    "Barra do Android Auto",
+    "Android Auto taskbar",
+    "Barra de Android Auto",
+    "Android Auto टास्कबार"
+  ],
+  [
+    "Exibição temporária e duração",
+    "Temporary display and duration",
+    "Visualización temporal y duración",
+    "अस्थायी प्रदर्शन और अवधि"
+  ],
+  [
+    "Ajustes aplicados na hora no painel.",
+    "Changes apply immediately on the dashboard.",
+    "Los cambios se aplican al instante en el panel.",
+    "बदलाव डैशबोर्ड पर तुरंत लागू होते हैं।"
+  ],
+  [
+    "Opcional e independente do widget.",
+    "Optional and independent of the widget.",
+    "Opcional e independiente del widget.",
+    "वैकल्पिक और विजेट से स्वतंत्र।"
+  ],
+  [
+    "A rede exibida é a móvel, não o Wi-Fi da moto.",
+    "Shows the mobile network, not the bike Wi-Fi.",
+    "Muestra la red móvil, no el Wi-Fi de la moto.",
+    "मोबाइल नेटवर्क दिखाता है, बाइक का Wi-Fi नहीं।"
+  ],
+  [
+    "Informações nativas do painel e aparência do mapa.",
+    "Native dashboard information and map appearance.",
+    "Información nativa del panel y apariencia del mapa.",
+    "डैशबोर्ड की जानकारी और मानचित्र का रूप।"
+  ],
+  [
+    "Controle a exibição temporária.",
+    "Control the temporary display.",
+    "Controla la visualización temporal.",
+    "अस्थायी प्रदर्शन नियंत्रित करें।"
+  ],
+  [
+    "Vídeo",
+    "Video",
+    "Vídeo",
+    "वीडियो"
+  ],
+  [
+    "Predefinições para o uso diário.",
+    "Presets for everyday use.",
+    "Preajustes para el uso diario.",
+    "रोज़ाना उपयोग के लिए प्रीसेट।"
+  ],
+  [
+    "Som e microfone",
+    "Sound and microphone",
+    "Sonido y micrófono",
+    "ध्वनि और माइक्रोफ़ोन"
+  ],
+  [
+    "Preferências de áudio reunidas.",
+    "Audio preferences in one place.",
+    "Preferencias de audio en un solo lugar.",
+    "ऑडियो विकल्प एक ही जगह।"
+  ],
+  [
+    "Salvar e recuperar ajustes",
+    "Save and restore settings",
+    "Guardar y recuperar ajustes",
+    "सेटिंग्स सहेजें और बहाल करें"
+  ],
+  [
+    "Seus perfis e sua personalização juntos.",
+    "Your profiles and customization together.",
+    "Tus perfiles y personalización juntos.",
+    "आपकी प्रोफ़ाइल और व्यक्तिगत सेटिंग्स एक साथ।"
+  ],
+  [
+    "Avançado",
+    "Advanced",
+    "Avanzado",
+    "उन्नत"
+  ],
+  [
+    "Detalhes técnicos e ajustes do Android.",
+    "Technical details and Android settings.",
+    "Detalles técnicos y ajustes de Android.",
+    "तकनीकी जानकारी और Android सेटिंग्स।"
+  ],
+  [
+    "Conexão com a moto",
+    "Bike connection",
+    "Conexión con la moto",
+    "बाइक कनेक्शन"
+  ],
+  [
+    "A reconexão continua enquanto o Android Auto estiver ativo.",
+    "Reconnection continues while Android Auto is active.",
+    "La reconexión continúa mientras Android Auto esté activo.",
+    "Android Auto सक्रिय रहने तक फिर से कनेक्ट करने का प्रयास जारी रहता है।"
+  ],
+  [
+    "Detalhes da conexão e ajustes de bateria",
+    "Connection details and battery settings",
+    "Detalles de conexión y ajustes de batería",
+    "कनेक्शन विवरण और बैटरी सेटिंग्स"
+  ],
+  [
+    "Sobre o Rota Auto",
+    "About Rota Auto",
+    "Acerca de Rota Auto",
+    "Rota Auto के बारे में"
+  ],
+  [
+    "100% gratuito e sem fins lucrativos.",
+    "100% free and nonprofit.",
+    "100% gratuito y sin fines de lucro.",
+    "100% मुफ़्त और गैर-लाभकारी।"
+  ],
+  [
+    "Configurações",
+    "Settings",
+    "Configuración",
+    "सेटिंग्स"
+  ],
+  [
+    "O essencial primeiro. Detalhes em Avançado.",
+    "Essentials first. Details under Advanced.",
+    "Lo esencial primero. Detalles en Avanzado.",
+    "ज़रूरी विकल्प पहले। अधिक जानकारी उन्नत में।"
+  ],
+  [
+    "Fluidez e taxa de transmissão",
+    "Smoothness and bitrate",
+    "Fluidez y tasa de transmisión",
+    "सुचारुता और बिटरेट"
+  ],
+  [
+    "Saída de áudio, captura e ganho",
+    "Audio output, capture and gain",
+    "Salida de audio, captura y ganancia",
+    "ऑडियो आउटपुट, कैप्चर और गेन"
+  ],
+  [
+    "Rede salva e reconexão",
+    "Saved network and reconnection",
+    "Red guardada y reconexión",
+    "सहेजा नेटवर्क और पुनः कनेक्शन"
+  ],
+  [
+    "Exportar, importar e desfazer alterações",
+    "Export, import and undo changes",
+    "Exportar, importar y deshacer cambios",
+    "निर्यात, आयात और बदलाव पूर्ववत करें"
+  ],
+  [
+    "Buscar novas versões no GitHub",
+    "Check GitHub for new versions",
+    "Buscar nuevas versiones en GitHub",
+    "GitHub पर नए संस्करण खोजें"
+  ],
+  [
+    "Detalhes técnicos e ajustes do Android",
+    "Technical details and Android settings",
+    "Detalles técnicos y ajustes de Android",
+    "तकनीकी जानकारी और Android सेटिंग्स"
+  ],
+  [
+    "Créditos e comunidade",
+    "Credits and community",
+    "Créditos y comunidad",
+    "श्रेय और समुदाय"
+  ],
+  [
+    "Você também pode definir a rota no Google Maps.",
+    "You can also plan the route in Google Maps.",
+    "También puedes definir la ruta en Google Maps.",
+    "आप Google Maps में भी मार्ग तय कर सकते हैं।"
+  ],
+  [
+    "Voltar ao painel",
+    "Back to dashboard",
+    "Volver al panel",
+    "डैशबोर्ड पर वापस जाएँ"
+  ],
+  [
+    "Voltar à conexão",
+    "Back to connection",
+    "Volver a conexión",
+    "कनेक्शन पर वापस जाएँ"
+  ],
+  [
+    "Nosso grupo",
+    "Our group",
+    "Nuestro grupo",
+    "हमारा समूह"
+  ],
+  [
+    "Prévia de exemplo sem conexão",
+    "Example preview without a connection",
+    "Vista de ejemplo sin conexión",
+    "बिना कनेक्शन के उदाहरण पूर्वावलोकन"
+  ],
+  [
+    "Mapa de exemplo",
+    "Example map",
+    "Mapa de ejemplo",
+    "उदाहरण मानचित्र"
+  ],
+  [
+    "Offline",
+    "Offline",
+    "Sin conexión",
+    "ऑफ़लाइन"
   ]
 ]

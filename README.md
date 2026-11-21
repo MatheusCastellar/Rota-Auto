@@ -13,7 +13,7 @@ Actual app screenshots with Android Auto running. Click to enlarge.
 <a href="docs/images/app-connect-live.png"><img src="docs/images/app-connect-live.png" width="300" alt="Android Auto live phone preview"></a>
 <a href="docs/images/app-widget-live.png"><img src="docs/images/app-widget-live.png" width="300" alt="Live display simulator with Spotify, logo and widget"></a>
 
-Created by **Matheus Castellar**. A free, community project developed for riders, with no Rota Auto account required. Current source version: **0.1.48**.
+Created by **Matheus Castellar**. A free, community project developed for riders, with no Rota Auto account required. Current source version: **0.1.50**.
 
 Rota Auto receives Android Auto video on the phone and streams it over the motorcycle's Wi-Fi connection to the Tripper Dash. Maps and compatible media apps run through Android Auto; Rota Auto handles the connection, display adaptation and motorcycle controls. This is the main Android Auto project, not a standalone Google Maps SDK app.
 
@@ -78,6 +78,8 @@ Adjust image fitting, distortion, size and position, the motorcycle logo and the
 </details>
 
 ## Updates
+
+Version **0.1.50** organizes the interface into **Connect, Navigate, Display, Controls and Settings**, with the language selector beside them. Display customization works without starting Android Auto, using a white offline preview with a gray logo. Updates now share the settings layout. Both command wheels use action icons, ochre buttons, white borders and narrow translucent separators. Existing profiles and settings are preserved. The screenshots below document earlier versions.
 
 Open **Settings → Updates** to check, download and install releases from this repository. Automatic checks are enabled by default when opening the app, at most once every six hours; they can be disabled. Downloads are started by the user. Android asks you to allow installs from Rota Auto and confirm installation. The updater checks the APK checksum, package, newer version and matching signing certificate before installation. Settings are kept.
 

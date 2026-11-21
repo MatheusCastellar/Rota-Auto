@@ -84,7 +84,7 @@ class AutoActivityTest {
         val c=Robolectric.buildActivity(AutoActivity::class.java).setup()
         try {
             val tree=views(c.get().window.decorView)
-            tree.filterIsInstance<Button>().single { it.text=="Personalizar painel" }.performClick()
+            tree.filterIsInstance<Button>().single { it.text=="Painel" }.performClick()
             assertEquals("Simulação do painel sem toque",(tree.filterIsInstance<TextureView>().single().parent as View).contentDescription)
             tree.filterIsInstance<RadioButton>().single { it.tag=="logo.GUERRILLA" }.isChecked=true
             tree.filterIsInstance<Button>().single { it.contentDescription=="Logo Y: Baixo" }.performClick()
@@ -94,7 +94,7 @@ class AutoActivityTest {
             tree.filterIsInstance<RadioButton>().single { it.tag=="blur.ALL" }.isChecked=true
             assertEquals("ARC",prefs.getString(CurveStyle.PREFERENCE,null))
             assertEquals("ALL",prefs.getString(BlurArea.PREFERENCE,null))
-            tree.filterIsInstance<Button>().single { it.text=="Voltar aos ajustes" && it.isShown }.performClick()
+            tree.filterIsInstance<Button>().single { it.text=="Conectar" }.performClick()
             assertNull((tree.filterIsInstance<TextureView>().single().parent as View).contentDescription)
             assertFalse(AutoBridgeService.state.value.active)
         } finally { c.pause().stop().destroy() }
@@ -113,7 +113,7 @@ class AutoActivityTest {
                 assertFalse(AutoBridgeService.state.value.active)
             }
             tree.filterIsInstance<Button>().single { it.text=="Ajustes" }.performClick()
-            tree.filterIsInstance<Button>().single { it.text=="Personalizar painel" }.performClick()
+            tree.filterIsInstance<Button>().single { it.text=="Painel" }.performClick()
             assertEquals("Simulação do painel sem toque",(tree.filterIsInstance<TextureView>().single().parent as View).contentDescription)
             tree.filterIsInstance<Button>().single { it.text=="Conectar" }.performClick()
             assertNull((tree.filterIsInstance<TextureView>().single().parent as View).contentDescription)
@@ -133,7 +133,7 @@ class AutoActivityTest {
         app.getSharedPreferences("auto-controls-options",android.content.Context.MODE_PRIVATE).edit().putBoolean("native-area",true).commit()
         val c=Robolectric.buildActivity(AutoActivity::class.java).setup()
         val tree=views(c.get().window.decorView)
-        for(label in listOf("Conectar","Navegar","Ajustes")) assertTrue(tree.filterIsInstance<Button>().any { it.text==label })
+        for(label in listOf("Conectar","Navegar","Painel","Comandos","Ajustes")) assertTrue(tree.filterIsInstance<Button>().any { it.text==label })
         assertFalse(tree.filterIsInstance<TextView>().any { it.text.contains("Área nativa") || it.text.contains("Recorta as margens") })
         assertTrue(tree.filterIsInstance<Button>().any { it.text=="Reconectar Moto" })
         assertEquals("Destino",tree.filterIsInstance<EditText>().single().contentDescription)

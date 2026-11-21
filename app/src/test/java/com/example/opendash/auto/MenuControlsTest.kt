@@ -19,7 +19,7 @@ class MenuControlsTest {
             val p=activity.getSharedPreferences("auto-controls-options",Context.MODE_PRIVATE)
             fun tree()=views(activity.window.decorView)
             fun click(text:String)=tree().filterIsInstance<android.widget.Button>().single { it.text.toString()==text && it.isShown }.performClick()
-            click("Ajustes"); click("Controles da moto")
+            click("Comandos")
             val before=p.all.filterKeys { it.startsWith("button.") }
             tree().filterIsInstance<android.widget.RadioButton>().single { it.text=="Modo menu" }.isChecked=true
             assertTrue(p.getBoolean(MenuControls.ENABLED,false))
